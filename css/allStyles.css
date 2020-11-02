@@ -752,6 +752,8 @@ body {
 
 .moreInfoJS {
   opacity: 1;
+  animation: menuSkillShadow linear 3s infinite;
+  -webkit-animation: menuSkillShadow linear 3s infinite;
 }
 
 .meTxtCont {
@@ -907,6 +909,8 @@ body {
   z-index: 1;
   background-color: rgba(37, 37, 37, 0.8);
   cursor: pointer;
+  animation: menuSkillShadow linear 3s infinite;
+  -webkit-animation: menuSkillShadow linear 3s infinite;
 }
 
 .menuCareerContainerJS {
@@ -2334,8 +2338,6 @@ body {
     font-size: 14px;
     padding: 5px 10px;
     border: 0;
-    animation: none;
-    -webkit-animation: none;
   }
   .dutiesContainer {
     font-size: 12px;
