@@ -51,9 +51,9 @@ $(ENG).on("click", function(){
     }, 1000);
 });
 // -- start strony
+$( document ).ready(function() {
 $(START_BUTTON).on("click", function(){
     $(INFO_START).fadeOut(500);
-    $( document ).ready(function() {
     // -- FUNKCJE OGÓLNE
         // -- [ 0 ] zmiana tekstu
             $.fn.extend({
@@ -117,15 +117,12 @@ $(START_BUTTON).on("click", function(){
         // -- [ 1 ] przewinięcie ekranów głownych
             function przewin_ekran_glowny(el1){
                 let mnoznik = el1.attr("index-nr");
-                let przesuniecie = 100;
-                let wynik = "-" + mnoznik*przesuniecie + "%";
                 $(page[mnoznik]).css("left" , "0");
                 let pageSi = $(page[mnoznik]);
                 $(pageSi).siblings().css("left" , "100%");
             }
     // STRONA START,ONE 
         // -- ZMIENNE, STAŁE
-            var allPagesBox = $('.allPagesBox');
             var page = $('.Page');
             var HELLO_BOX = $(".helloBox");
             var nameLewandowskiBox = $('.nameLewandowskiBox');
@@ -189,9 +186,9 @@ $(START_BUTTON).on("click", function(){
                 }
                 
             }
-            var textAnimeSiteOne = ["Cześć,", "mam na imię Łukasz", "chcę zacząc karierę w IT"];
+            var textAnimeSiteOne = ["Cześć,", "mam na imię Łukasz", "chcę pracować w IT"];
             if(lang === "eng"){
-                textAnimeSiteOne = ["Hello,", "my name is Luke", "I want to start a career in IT"];
+                textAnimeSiteOne = ["Hello,", "my name is Luke", "i want to work in IT"];
             }
         // -- START FUNKCJI
             create_word_append_to_element_and_animate(textAnimeSiteOne[0], HELLO_BOX, "helloLetter", "helloLetterJS1", "helloLetterJS2", "helloLetterRefresh");
@@ -201,11 +198,10 @@ $(START_BUTTON).on("click", function(){
             setTimeout(function(){
                 create_word_append_to_element_and_animate(textAnimeSiteOne[2], sloganKodowanieBox, "sloganLetter", "sloganLetterJS1", "sloganLetterJS2", "sloganLetterRefresh");
             }, 2000);
-            
             setTimeout(function(){
                 add_class($(OPIS_O_MNIE) , "moreInfoJS");
             },6500);
-    
+
             $(OPIS_O_MNIE).on("click", function(){
                 $(this).fadeOut(200);
                 $(OPIS_O_MNIE_TXT).addClass("meTxtContJS");
@@ -214,7 +210,6 @@ $(START_BUTTON).on("click", function(){
                 $(OPIS_O_MNIE_TXT).removeClass("meTxtContJS");
                 $(OPIS_O_MNIE).fadeIn(200);
             });
-    
     
             $(MENU_POINTS[0]).on("click", function(){
                 setTimeout(function(){
@@ -283,20 +278,6 @@ $(START_BUTTON).on("click", function(){
             const DUTIES_BUTTON = $(".dutiesButton");
             const DUTIES_CONTAINER = $(".dutiesContainer");
             const DUTIES_CLOSE = $(".dutiesClose");
-
-            var resize_600 = window.matchMedia("(max-width: 600px)");
-            if (resize_600.matches) { 
-                wallTab = wallTabM;
-            } else {
-                wallTab = wallTab;
-            }
-            $(window).on("resize", function(){
-                if (resize_600.matches) { 
-                    wallTab = wallTabM;
-                } else {
-                    wallTab = wallTab;
-                }
-            });
             
         // -- START FUNKCJI OGÓLNYCH
             nadaj_index($(COMPANY_NAME),"index-nr4");
@@ -322,12 +303,13 @@ $(START_BUTTON).on("click", function(){
                 let relX = event.pageX - $(this).offset().left;
                 let relY = event.pageY - $(this).offset().top;
                 let par = $(this).outerWidth() / 2;
+                var resize_600 = window.matchMedia("(max-width: 600px)");
                 // left years
                 setTimeout(function(){
                     if(relX<par && relY<par){
-                        add_class($(YEAR_LEFT_TOP),"yearsJS");
-                        add_class($(MENU_CAREER_INDICATOR),"menuCareerIndicatorJS1");
-                        $(WALLPAPER_PAGE_TWO).css("background-image", wallTab[0]);
+                        add_class($(YEAR_LEFT_TOP), "yearsJS");
+                        add_class($(MENU_CAREER_INDICATOR), "menuCareerIndicatorJS1");
+                        resize_wall_page_two(WALLPAPER_PAGE_TWO, wallTab[0], wallTabM[0]);
                     }else{
                         remove_class($(YEAR_LEFT_TOP),"yearsJS");
                         remove_class($(MENU_CAREER_INDICATOR),"menuCareerIndicatorJS1");
@@ -336,7 +318,7 @@ $(START_BUTTON).on("click", function(){
                     if(relX>par && relY<par){
                         add_class($(YEAR_RIGHT_TOP),"yearsJS");
                         add_class($(MENU_CAREER_INDICATOR),"menuCareerIndicatorJS2");
-                        $(WALLPAPER_PAGE_TWO).css("background-image", wallTab[1]);
+                        resize_wall_page_two(WALLPAPER_PAGE_TWO, wallTab[1], wallTabM[1]);
                     }else{
                         remove_class($(YEAR_RIGHT_TOP),"yearsJS");
                         remove_class($(MENU_CAREER_INDICATOR),"menuCareerIndicatorJS2");
@@ -345,7 +327,7 @@ $(START_BUTTON).on("click", function(){
                     if(relX>par && relY>par){
                         add_class($(YEAR_RIGHT_BOTTOM),"yearsJS");
                         add_class($(MENU_CAREER_INDICATOR),"menuCareerIndicatorJS3");
-                        $(WALLPAPER_PAGE_TWO).css("background-image", wallTab[2]);
+                        resize_wall_page_two(WALLPAPER_PAGE_TWO, wallTab[2], wallTabM[2]);
                     }else{
                         remove_class($(YEAR_RIGHT_BOTTOM),"yearsJS");
                         remove_class($(MENU_CAREER_INDICATOR),"menuCareerIndicatorJS3");
@@ -354,10 +336,17 @@ $(START_BUTTON).on("click", function(){
                     if(relX<par && relY>par){
                         add_class($(YEAR_LEFT_BOTTOM),"yearsJS");
                         add_class($(MENU_CAREER_INDICATOR),"menuCareerIndicatorJS4");
-                        $(WALLPAPER_PAGE_TWO).css("background-image", wallTab[3]);
+                        resize_wall_page_two(WALLPAPER_PAGE_TWO, wallTab[3], wallTabM[3]);
                     }else{
                         remove_class($(YEAR_LEFT_BOTTOM),"yearsJS");
                         remove_class($(MENU_CAREER_INDICATOR),"menuCareerIndicatorJS4");
+                    }
+                    function resize_wall_page_two(el, wall, wallM){
+                        if (resize_600.matches) { 
+                            $(el).css("background-image", wallM);
+                        } else {
+                            $(el).css("background-image", wall);
+                        }
                     }
                 },100);
             });
@@ -730,7 +719,6 @@ $(START_BUTTON).on("click", function(){
             iteration(dodaj_nowy_tekst_do_braci_edu, EL4_ADDED, indx);
             // -- funkcje pomocnicze
             function dodaj_nowy_tekst_do_braci_edu(i){
-                // $(EDU_CONT).css({"border": "solid 2px white", "color": "white"});
                 $(EDU_CONT).css({"box-shadow": "0 0 20px 0px" + colorArr[indx]});
                 $(EL4_ADDED[i]).text(CURRENT_ARRAY[i]);
                 $(EL4_ADDED[i]).css("color", colorArr[indx]);
@@ -751,7 +739,6 @@ $(START_BUTTON).on("click", function(){
             przywroc_txt();
             // -- funkcje pomocnicze
             function przywroc_txt(){
-                // $(EDU_CONT).css({"border": "solid 2px #00a1b7", "color": "#00a1b7"});
                 $(EDU_CONT).css({"box-shadow": "rgba(0, 161, 183, 1) 0 0 20px 0px, inset 0 0 20px 0 rgba(0, 161, 183, 1)"});
                 
                 add_class($(EL3_TXT), "eduTxtJS");
@@ -822,7 +809,6 @@ $(START_BUTTON).on("click", function(){
                 TABLICA_OFFSETS.push(Math.floor(par.left), Math.floor(par.top));
             }
             var elWidth = $(EDU_CONT).width();
-            console.log(elWidth);
             var NEW_LEFT = elWidth - 70;
             var NEW_TOP = elWidth - 70;
             for(z=0; z<ARR_THEME.length; z++){
@@ -870,8 +856,8 @@ $(START_BUTTON).on("click", function(){
         const EMAIL_PHONE_CONT = $(".emailPhoneCont");
         const MAIL = $("#mail");
         const PHONE = $("#phone");
-        var ADRESS = ["https://www.linkedin.com/in/lukaszlewandowskilaboratorium/", "https://www.facebook.com/lukasz.lewandowski.14/", "https://github.com/LukaszLevy"];
-        var TEXT_ADD_ICON = ["LINKEDIN", "FACEBOOK", "GITHUB"];
+        var ADRESS = ["https://www.linkedin.com/in/lukaszlewandowskilaboratorium/", "https://www.facebook.com/lukasz.lewandowski.14/", "https://github.com/LukaszLevy/lukaszlewandowski.pl", "https://profil.pracuj.pl/?_ga=2.86218074.371591003.1604301688-1302104470.1604301688&_gac=1.83668452.1604314620.CjwKCAiA-f78BRBbEiwATKRRBHI3vFWBWTwBpfXAWVG9JpBK2ByUiXVp6DfYZC6S-NMisIWJUbRjpxoCDiEQAvD_BwE"];
+        var TEXT_ADD_ICON = ["LINKEDIN", "FACEBOOK", "GITHUB", "PRACUJ.PL"];
         var NEW_TEXT_PROFILE = "Przejdź do profilu";
         var OLD_TEXT_PROFILE = "Moje profile";
         var DOCS_LINK_ARR = ["img/docs/cv.pdf",  "img/docs/istqb_pl_s.png", "img/docs/sda_tester_s.png", "img/docs/sda_scrum_s.png"]; 
@@ -940,13 +926,11 @@ $(START_BUTTON).on("click", function(){
         function pokaz_el_kontakt(i,el){
             setTimeout(function(){
                 add_class($(el[i]), "contJS2");
-                console.log(el[i]);
             }, 1000 + 150 * i);
         }
         function ukryj_el_kontakt(i,el){
             setTimeout(function(){
                 remove_class($(el[i]), "contJS2");
-                console.log(el[i]);
             }, 50 + 100 * i);
         }
         function iteracja_for(el, callback){
@@ -973,20 +957,21 @@ $(START_BUTTON).on("click", function(){
         zmien_tekst_sec_title(MAIL, NEW_TXT_MAIL, OLD_TXT_MAILPHONE);
         zmien_tekst_sec_title(PHONE, NEW_TXT_PHONE, OLD_TXT_MAILPHONE);
     
-    }); // document ready finish
+    
 }); // finish start button function
-
+}); // document ready finish
 //-- jezyki
 var elementsToTranslate = [];
 var elementsToTranslateTxt = [];
 var eng = [
     "Hello, ", 
-    "Site prepared for recruitment purposes", 
-    "Prepared for devices with different resolutions", 
+    "Site prepared for recruitment purposes.", 
+    "Prepared for devices with different resolutions. ", 
     "Designed and tested on browsers:", 
-    "If you have an older version, you can update it by clicking on the browser names above", 
-    "Other browsers have not been tested and the website may not display the content properly. If you find any errors, please send me such information. The website does not collect any user data", 
-    "Start", 
+    "For the website to work properly, it is recommended to use the latest versions of browsers and devices with computing power equal to or higher than Snapdragon 600.", 
+    "If you have an older version, you can update it by clicking on the browser names above. ", 
+    "Site tested for computers with Windows 10 and devices with Android version 9+ and with Snapdragon 700+ / Snapdragon 800+ processors. IOS devices and other browsers have not been tested. In case of problems with displaying the content or the smoothness of the animation, please send me such information. The website does not collect any user data.", 
+    "Start browsing", 
     "ABOUT ME", 
     "CAREER", 
     "SKILLS", 
