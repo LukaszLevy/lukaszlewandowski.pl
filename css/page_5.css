@@ -1,0 +1,124 @@
+.Five {
+  position: absolute;
+  left: 400%;
+  z-index: 5;
+}
+
+.wallFive {
+  background-image: url(../img/wallpapers/wallpaper_3.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.societyCont, .documentsCont, .emailPhoneCont {
+  position: relative;
+  top: 60px;
+  left: 80%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  width: max-content;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  transition: 0.3s all ease-in-out;
+  -webkit-transition: 0.3s all ease-in-out;
+  -moz-transition: 0.3s all ease-in-out;
+  -ms-transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  border: 1px solid #00a1b7;
+  opacity: 0;
+  text-align: center;
+}
+
+.documentsCont, .emailPhoneCont {
+  top: 130px;
+}
+
+.emailPhoneCont {
+  top: 200px;
+}
+
+.contJS {
+  transition: 0.2s all ease-in-out;
+  -webkit-transition: 0.2s all ease-in-out;
+  -moz-transition: 0.2s all ease-in-out;
+  -ms-transition: 0.2s all ease-in-out;
+  -o-transition: 0.2s all ease-in-out;
+  background-color: #252525;
+  border-radius: 20px;
+}
+
+.contJS2 {
+  left: 50%;
+  opacity: 1;
+}
+
+.secTitle {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  padding: 5px 10px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  transition: 0.3s all ease-in-out;
+  -webkit-transition: 0.3s all ease-in-out;
+  -moz-transition: 0.3s all ease-in-out;
+  -ms-transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  background-color: #00a1b7;
+  color: black;
+}
+
+.secTitleJS {
+  background-color: white;
+}
+
+.contactLinks {
+  display: inline-block;
+  text-decoration-line: none;
+}
+
+.icons {
+  transition: 0.2s all ease-in-out;
+  -webkit-transition: 0.2s all ease-in-out;
+  -moz-transition: 0.2s all ease-in-out;
+  -ms-transition: 0.2s all ease-in-out;
+  -o-transition: 0.2s all ease-in-out;
+  position: relative;
+  top: 10px;
+  margin: 20px 50px;
+  width: 80px;
+  box-sizing: border-box;
+}
+
+.icons:hover {
+  box-shadow: 0 0 0 2px #00a1b7;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.iconsName {
+  color: white;
+  display: block;
+  padding-bottom: 20px;
+}
+
+.emailPhone {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}

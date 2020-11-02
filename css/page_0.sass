@@ -1,0 +1,226 @@
+@import 'overallStyles';
+@import 'allVariables';
+html
+    +PADDING_MARGIN(ab)
+    +OVERX_OVERY(ab,hidden,hidden)
+    background-color: $Black
+    font-family: 'system-ui', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+body
+    +PADDING_MARGIN(ab)
+    +OVERX_OVERY(ab,hidden,hidden)
+.preloader
+    +POS_TB_LR(ab1c1, absolute, 0, 0)
+    +WIDTH_HEIGHT(ab, 100%, 100%)
+    background-color: black
+    overflow-y: auto
+    overflow-x: hidden
+    z-index: 1000000000000
+.preloaderTxtCont
+    +POS_TB_LR(ab1c1, relative, 50%, 50%)
+    +TRANSFORM(translate(-50%, -50%))
+    color: white
+    font-size: 18px
+    text-align: center
+.prelTxt
+    display: inline-block
+    +PADDING_MARGIN(a, 20px)
+    +BORDER_RADIUS(10px)
+    border: 1px solid $myTheme
+    background-color: #252525
+.prelImg
+    display: block
+    +POS_TB_LR(ab1c1, relative, 50px, 50%)
+    +TRANSFORM(translateX(-50%))
+    width: 200px
+    height: 10px
+    border-radius: 5px
+    border: 1px solid $myTheme
+.prelImg > span
+    +POS_TB_LR(ab1c1, absolute, 0, 0)
+    +WIDTH_HEIGHT(ab, 1%, 100%)
+    background-color: $myTheme
+    +ANIMATION(fillPreloader 5s linear)
+.chooseLang
+    +POS_TB_LR(ab1c1, absolute, 0, 0)
+    +WIDTH_HEIGHT(ab, 100%, 100%)
+    background-color: black
+    overflow-y: auto
+    overflow-x: hidden
+    +TRANSITION(.9s)
+    z-index: 99996
+    opacity: 0
+.chooseLangJS
+    opacity: 1
+.borderLng
+    position: relative
+    top: 50%
+    transform: translateY(-50%)
+.flag
+    +POS_TB_LR(ab1c1, absolute, 50%, 50%)
+    +WIDTH_HEIGHT(ab, 600px, 480px)
+    +TRANSFORM(translate(-50%, -50%))
+    background-color: #252525
+    +TRANSITION(.3s)
+    +FILTER(opacity(.4))
+    border-radius: 20px
+    background-attachment: initial
+    border: 2px solid $myTheme
+.flagJS1
+    +BACKGROUND_IMG(url(../img/startPage/wallpaper_1.jpg))
+    background-attachment: initial
+.flagJS2
+    +BACKGROUND_IMG(url(../img/startPage/wallpaper_2.jpg))
+    background-attachment: initial
+.lng
+    +POS_TB_LR(ab1c1, relative, 30%, 50%)
+    +TRANSFORM(translate(-50%, -50%))
+    +PADDING_MARGIN(ab, 10px 30px, 20px 0)
+    +WIDTH_HEIGHT(a, max-content)
+    +BORDER_RADIUS(10px)
+    +FILTER(drop-shadow(2px 4px 6px black))
+    background-color: black
+    color: white
+    font-size: 20px
+    text-align: center
+    cursor: pointer
+    &:hover
+        color: $myTheme
+.lngsp
+    font-size: 24px
+    color: $myTheme
+    cursor: default
+    display: block
+    margin-bottom: 50px
+.infoStart
+    @extend .preloader
+    z-index: 99995
+    display: block
+    overflow-y: auto
+    overflow-x: hidden
+.infoBut
+    +POS_TB_LR(ab1c1, absolute, 50%, 50%)
+    +WIDTH_HEIGHT(a, 600px)
+    +TRANSFORM(translate(-50%, -50%))
+    +PADDING_MARGIN(a, 30px)
+    +TRANSITION(1s)
+    border: 1px solid $myTheme
+    +BORDER_RADIUS(10px)
+    font-size: 15px
+    color: white
+    background-color: #212121
+    opacity: 0
+    box-sizing: border-box
+.infoButJS
+    opacity: 1
+.infoBut > .meTxtPoints
+    &:hover
+        background-color: white
+.meTxtPoints > a
+    text-decoration-line: none
+    color: black
+.closeInfoStartTxt
+    +WIDTH_HEIGHT(a, max-content)
+    +POS_TB_LR(ac1, relative, 50%)
+    +TRANSFORM(translateX(-50%))
+    +PADDING_MARGIN(a, 10px)
+    +BORDER_RADIUS(10px)
+    margin-top: 30px
+    background-color: $myTheme
+    color: black
+    cursor: pointer
+    &:hover
+        background-color: greenyellow
+.header
+    +POS_TB_LR(ab1c1,absolute, 0, 0)
+    +WIDTH_HEIGHT(ab,100%,100px)
+    +MINWIDTH_MINHEIGHT(a,260px)
+    z-index: 100
+    border-bottom: 1px solid $myTheme
+    background-color: #252525
+.naglowek
+    +WIDTH_HEIGHT(b,100%)
+    &:hover .logo
+        color: $myTheme
+.menuKontener
+    +POS_TB_LR(ab1, relative, 50%)
+    +WIDTH_HEIGHT(a, max-content)
+    +TRANSITION(.3s)
+    +TRANSFORM(translateY(-50%))
+    padding-top: 15px
+    overflow: hidden
+.menuPunkty
+    +PADDING_MARGIN(a, 10px)
+    +TRANSITION(.5s)
+    display: inline
+    cursor: pointer 
+    color: $myGrey
+    letter-spacing: 1px
+.colorMenuPunkty
+    color: $myTheme
+.tagMenu
+    +POS_TB_LR(a, relative)
+    +WIDTH_HEIGHT(ab, 0, 3px)
+    +TRANSITION(.5s)
+    +BORDER_RADIUS(10px)
+    background-color: $myTheme
+    margin-top: 10px
+.logo
+    +POS_TB_LR(ab1c2, absolute, 50%, 40px)
+    +TRANSITION(.2s)
+    +TRANSFORM(translateY(-50%))
+    font-size: 60px
+    color: #6f6f6f
+    cursor: default
+.logo > div:nth-child(1)
+    +POS_TB_LR(ac1, relative, 16px)
+    +TRANSFORM(rotateY(-180deg))
+    +FILTER(drop-shadow(2px 4px 6px black))
+    display: inline-block
+.logo > div:nth-child(2)
+    display: inline-block
+    +FILTER(drop-shadow(2px 4px 6px black))
+.copyRigths
+    +POS_TB_LR(ab2c1, absolute, 0, 0)
+    +WIDTH_HEIGHT(ab, 100%, 50px)
+    +PADDING_MARGIN(a, 12px 0 0 0)
+    +TRANSITION(.3s)
+    opacity: 1
+    z-index: 100
+    color: $myGrey
+    font-size: 14px
+    letter-spacing: 1px
+    box-sizing: border-box
+    border-top: 1px solid $myTheme
+    background-color: #252525
+.social
+    +POS_TB_LR(ab1c2, absolute, -78px, 0)
+    +WIDTH_HEIGHT(a, max-content)
+    +PADDING_MARGIN(a, 10px)
+    +TRANSITION(.1s)
+    background-color: #252525
+    border-top: 1px solid #00a1b7
+.social a
+    display: block
+.social:hover
+    background-color: black
+.social a img
+    +WIDTH_HEIGHT(a, 35px)
+    +BORDER_RADIUS(50%)
+    +TRANSITION(.1s)
+.social a img:hover
+    box-shadow: 0 0 0 1px white
+.me
+    +POS_TB_LR(ab1c1, absolute, -1px, -84px)
+    +WIDTH_HEIGHT(b, 100%)
+    border-top: 1px solid #00a1b7
+    border-left: 1px solid #00a1b7
+.wall
+    +POS_TB_LR(a, absolute)
+    +WIDTH_HEIGHT(ab, 100%, 100%)
+    +FILTER(grayscale(1) brightness(0.6))
+    +TRANSITION(.3s)
+@keyframes fillPreloader
+    100%
+        width: 100%
+        
+

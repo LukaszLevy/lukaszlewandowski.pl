@@ -1,0 +1,193 @@
+@import 'overallStyles'
+@import 'allVariables';
+.allPagesBox
+    +POS_TB_LR(ac1, relative, 0)
+    +WIDTH_HEIGHT(ab,100%, 100vh)
+    +TRANSITION(.5s)
+.Page
+    +POS_TB_LR(ab1,relative, 0)
+    +WIDTH_HEIGHT(ab,100%, calc( 100% - 50px ))
+    +TRANSITION(.5s)
+    display: inline-block
+    overflow: hidden
+.One
+    z-index: 10
+.wallOne
+    +BACKGROUND_IMG(url(../img/wallpapers/wallpaper_1.jpg))
+.nameLewSloganKodBox
+    +POS_TB_LR(ab1, relative, 0)
+    +WIDTH_HEIGHT(ab, 100%, 100%)
+.helloBox
+    +POS_TB_LR(ab1c1, absolute, 50px, 30%)
+    +WIDTH_HEIGHT(ab, max-content)
+    +TRANSFORM(translateX(-50%))
+    +PADDING_MARGIN(a, 5px 25px)
+    +TRANSITION(.5s)
+    +FILTER(drop-shadow(2px 4px 6px black))
+    text-align: center
+.helloLetter
+    +WIDTH_HEIGHT(ab, max-content, max-content)
+    +POS_TB_LR(ac2, relative, -200px)
+    +PADDING_MARGIN(b, 0px 35px)
+    +TRANSITION(.9s)
+    display: inline-block
+    box-sizing: border-box
+    font-size: 0px
+    text-align: center
+    opacity: 0
+.helloLetterJS1
+    +POS_TB_LR(c2, 0px)
+    +TRANSFORM(scale(1.5))
+    font-size: 85px
+    color: $White
+    opacity: .5
+.helloLetterJS2
+    +PADDING_MARGIN(b, 0px 3px)
+    +POS_TB_LR(c1, 0)
+    +TRANSFORM(scale(1))
+    color: $myTheme
+    opacity: 1
+.nameLewandowskiBox
+    +POS_TB_LR(ab1c1, absolute, 220px, 50%)
+    +TRANSFORM(translateX(-50%))
+    +WIDTH_HEIGHT(ab, max-content, max-content)
+    +PADDING_MARGIN(a, 5px 25px)
+    +TRANSITION(.5s)
+    +FILTER(drop-shadow(2px 4px 6px black))
+    text-align: center
+.nameLetter
+    +WIDTH_HEIGHT(ab, max-content, max-content)
+    +POS_TB_LR(ab1, relative, 70px)
+    +PADDING_MARGIN(b, 0px 35px)
+    +TRANSITION(.9s)
+    display: inline-block
+    box-sizing: border-box
+    font-size: 0px
+    text-align: center
+    opacity: 0
+.nameLetterJS1
+    +POS_TB_LR(b1, -70px)
+    font-size: 55px
+    color: $myGrey
+    opacity: 0.5
+.nameLetterJS2
+    +PADDING_MARGIN(b, 0px 3px)
+    +POS_TB_LR(b1, 0)
+    color: $White
+    opacity: 1
+.sloganKodowanieBox
+    +POS_TB_LR(ab1c1, relative, 350px, 50%)
+    +WIDTH_HEIGHT(a, max-content)
+    +TRANSFORM(translateX(-50%))
+    +PADDING_MARGIN(a, 10px 3px 10px 3px)
+    +TRANSITION(.5s)
+    +FILTER(drop-shadow(2px 4px 6px black))
+.sloganKodowanieBoxJS2
+    opacity: 0
+.sloganLetter
+    +WIDTH_HEIGHT(ab, max-content, max-content)
+    +POS_TB_LR(ab1, relative, -70px)
+    +PADDING_MARGIN(b, 0px 35px)
+    +TRANSITION(.9s)
+    display: inline-block
+    box-sizing: border-box
+    font-size: 0px
+    text-align: center
+    opacity: 0
+.sloganLetterJS1
+    +POS_TB_LR(b1, 70px)
+    +TRANSFORM(scale(1.5))
+    font-size: 55px
+    color: $White
+    opacity: .5
+.sloganLetterJS2
+    +PADDING_MARGIN(b, 0px 3px)
+    +POS_TB_LR(b1, 0)
+    +TRANSFORM(scale(1))
+    color: $myTheme
+    opacity: 1
+.helloLetterRefresh
+    +POS_TB_LR(a, absolute)
+    +WIDTH_HEIGHT(a, 35px)
+    +BORDER_RADIUS(50%)
+    +PADDING_MARGIN(b, 0 0 0 20px)
+    +ANIMATION(show 1s 4s linear forwards) 
+    +TRANSITION(.3s)
+    opacity: 0
+    cursor: pointer
+.helloLetterRefresh:hover
+    +TRANSFORM(rotate(90deg))
+.nameLetterRefresh
+    @extend .helloLetterRefresh 
+.sloganLetterRefresh
+    @extend .helloLetterRefresh  
+.moreInfo
+    opacity: 0
+    z-index: 100
+    +POS_TB_LR(ab1c1, relative, 450px, 50%)
+    +TRANSFORM(translateX(-50%))
+    +WIDTH_HEIGHT(a, max-content)
+    +BORDER_RADIUS(10px)
+    +PADDING_MARGIN(a, 5px 10px)
+    +TRANSITION(.2s)
+    background-color: white
+    border: 1px solid $myTheme
+    cursor: pointer
+    &:hover
+        background-color: $myTheme
+.moreInfoJS
+    opacity: 1
+.meTxtCont
+    +POS_TB_LR(ab1c1, absolute, -700px, 50%)
+    +WIDTH_HEIGHT(a, 700px)
+    +TRANSFORM(translate(-50%))
+    +PADDING_MARGIN(a, 15px)
+    +TRANSITION(.5s)
+    +BORDER_RADIUS(10px)
+    background-color: #252525
+    color: rgb(230, 230, 230)
+    font-size: 14px
+    box-sizing: border-box
+.meTxtContJS
+    +POS_TB_LR(ab1c1, absolute, 50px, 50%)
+.meTxtCont > img 
+    +POS_TB_LR(ab1c1, relative, 0, 0)
+    +WIDTH_HEIGHT(ab, 50px, 50px)
+    +BORDER_RADIUS(50%)
+    border: 2px solid $myTheme
+    margin-right: 10px
+.meTxtPoints
+    +PADDING_MARGIN(ab, 1px 6px, 0px 5px)
+    +BORDER_RADIUS(5px)
+    background-color: $myTheme
+    display: inline-block
+    color: black
+.txtmar
+    +PADDING_MARGIN(ab, 1px 6px, 10px 5px)
+.closeMeInfo
+    +POS_TB_LR(ac1, relative, 50%)
+    display: block
+    +TRANSFORM(translateX(-50%))
+    +BORDER_RADIUS(50%)
+    +WIDTH_HEIGHT(ab, 20px, 20px)
+    +PADDING_MARGIN(a, 2px)
+    font-size: 14px
+    background-color: crimson
+    text-align: center
+    cursor: pointer
+    &:hover
+        +FILTER(drop-shadow(2px 4px 6px black))
+.siteOneChildrenJS
+    left: -300px
+    opacity: 0
+    transition: .3s
+.marginLetter
+    +PADDING_MARGIN(b, 0 15px 0 0)
+@keyframes show
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+
+

@@ -1,0 +1,233 @@
+.Three {
+  position: absolute;
+  left: 200%;
+  z-index: 4;
+}
+
+.wallThree {
+  background-image: url(../img/wallpapers/wallpaper_4.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.skillsMainText {
+  position: absolute;
+  top: 350px;
+  left: 50%;
+  transform: translate(-50%, -65%);
+  -webkit-transform: translate(-50%, -65%);
+  -moz-transform: translate(-50%, -65%);
+  -ms-transform: translate(-50%, -65%);
+  -o-transform: translate(-50%, -65%);
+  width: max-content;
+  height: auto;
+  filter: drop-shadow(2px 4px 6px black);
+  -webkit-filter: drop-shadow(2px 4px 6px black);
+  font-size: 65px;
+  text-align: center;
+}
+
+.textMain {
+  position: relative;
+  top: -70px;
+  transition: 1s all ease-in-out;
+  -webkit-transition: 1s all ease-in-out;
+  -moz-transition: 1s all ease-in-out;
+  -ms-transition: 1s all ease-in-out;
+  -o-transition: 1s all ease-in-out;
+  opacity: 0;
+  color: transparent;
+  letter-spacing: 2px;
+}
+
+.textMainJS {
+  top: 0;
+  color: #00a1b7;
+  opacity: 1;
+}
+
+.skillsContainer {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 0 75px 0 75px;
+  box-sizing: border-box;
+  text-align: -webkit-center;
+  text-align: center;
+}
+
+.menuSkillsContainer {
+  position: relative;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  width: max-content;
+  height: max-content;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: 0.5s all ease-in-out;
+  -webkit-transition: 0.5s all ease-in-out;
+  -moz-transition: 0.5s all ease-in-out;
+  -ms-transition: 0.5s all ease-in-out;
+  -o-transition: 0.5s all ease-in-out;
+  filter: drop-shadow(2px 4px 6px black);
+  -webkit-filter: drop-shadow(2px 4px 6px black);
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 2px solid #00a1b7;
+  text-align: -webkit-center;
+  opacity: 0;
+}
+
+.menuSkillsContainerJS {
+  animation: menuSkillShadow linear 3s infinite;
+  -webkit-animation: menuSkillShadow linear 3s infinite;
+}
+
+.menuSkillsContainerJS2 {
+  position: relative;
+  top: 50px;
+  opacity: 1;
+}
+
+.menuSkillsTabs {
+  position: relative;
+  width: max-content;
+  padding: 10px 20px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  color: white;
+  cursor: pointer;
+}
+
+.menuSkillsIndicator {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.7s all ease-in-out;
+  -webkit-transition: 0.7s all ease-in-out;
+  -moz-transition: 0.7s all ease-in-out;
+  -ms-transition: 0.7s all ease-in-out;
+  -o-transition: 0.7s all ease-in-out;
+  z-index: -1;
+  opacity: 0;
+  background-color: #00a1b7;
+}
+
+.skillsPointContainer {
+  position: relative;
+  top: 140px;
+  left: 0;
+  width: max-content;
+  height: max-content;
+  padding: 5px 10px;
+  margin: 40px 40px 0 0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.2s all ease-in-out;
+  -webkit-transition: 0.2s all ease-in-out;
+  -moz-transition: 0.2s all ease-in-out;
+  -ms-transition: 0.2s all ease-in-out;
+  -o-transition: 0.2s all ease-in-out;
+  display: inline-block;
+  opacity: 0;
+  background-color: #303030;
+  color: #00a1b7;
+  font-size: 18px;
+  text-align: center;
+}
+
+.skillsPointContainer:hover {
+  background-color: #000000;
+}
+
+.firstContainerSkills {
+  left: 50%;
+  width: max-content;
+  transition: 0.3s all ease-in-out;
+  -webkit-transition: 0.3s all ease-in-out;
+  -moz-transition: 0.3s all ease-in-out;
+  -ms-transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  margin: 0 0 40px 0;
+  display: block;
+  max-width: 80%;
+  background-color: #00a1b7;
+  color: white;
+  font-size: 18px;
+}
+
+.skillsPointContainerJS {
+  top: 110px;
+  opacity: 1;
+}
+
+.firstContainerSkills > img {
+  display: none;
+}
+
+.skillsImg {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+}
+
+.skillsText {
+  position: relative;
+  top: 2px;
+  width: fit-content;
+  padding: 0 20px 5px 20px;
+  display: inline-block;
+  cursor: default;
+}
+
+.shadowMenuSkill {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  box-shadow: 0 0 30px 10px rgba(0, 161, 183, 0.5);
+  background-color: rgba(70, 233, 255, 0.502);
+  z-index: -1;
+  opacity: .4;
+}
+
+@keyframes menuSkillShadow {
+  0% {
+    box-shadow: 0 0 0 0 #00a1b7;
+  }
+  100% {
+    box-shadow: 0 0 120px 40px transparent;
+  }
+}

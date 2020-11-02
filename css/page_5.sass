@@ -1,0 +1,63 @@
+@import 'overallStyles'
+@import 'allVariables';
+.Five
+    +POS_TB_LR(ac1, absolute, 400%)
+    z-index: 5
+.wallFive
+    +BACKGROUND_IMG(url(../img/wallpapers/wallpaper_3.jpg))
+.societyCont
+    +POS_TB_LR(ab1c1, relative, 60px, 80%)
+    +TRANSFORM(translateX(-50%))
+    +WIDTH_HEIGHT(a, max-content )
+    +BORDER_RADIUS(20px)
+    +TRANSITION(.3s)
+    border: 1px solid $myTheme
+    opacity: 0
+    text-align: center
+.documentsCont
+    @extend .societyCont
+    +POS_TB_LR(b1, 130px)
+.emailPhoneCont
+    @extend .documentsCont
+    +POS_TB_LR(b1, 200px)
+.contJS
+    +TRANSITION(.2s)
+    background-color: #252525
+    border-radius: 20px
+.contJS2
+    +POS_TB_LR(c1, 50%)
+    opacity: 1
+.secTitle
+    +POS_TB_LR(ab1c1, absolute, 0, 100px)
+    +TRANSFORM(translate(-50%,-50%))
+    +PADDING_MARGIN(a, 5px 10px)
+    +BORDER_RADIUS(20px)
+    +TRANSITION(.3s)
+    background-color: $myTheme
+    color: black
+.secTitleJS
+    background-color: white  
+.contactLinks
+    display: inline-block
+    text-decoration-line: none
+.icons
+    +TRANSITION(.2s)
+    +POS_TB_LR(ab1, relative, 10px)
+    +PADDING_MARGIN(b, 20px 50px)
+    +WIDTH_HEIGHT(a, 80px)
+    box-sizing: border-box
+.icons:hover
+    box-shadow: 0 0 0 2px $myTheme
+    border-radius: 50%
+    background-color: white
+.iconsName
+    color: white
+    display: block
+    padding-bottom: 20px
+.emailPhone
+    display: inline-block
+    position: relative
+    cursor: pointer
+
+
+    

@@ -1,0 +1,64 @@
+@import 'overallStyles'
+@import 'allVariables';
+.Four
+    +POS_TB_LR(ac1, absolute, 300%)
+    z-index: 4
+    text-align: -webkit-center
+.wallFour
+    +BACKGROUND_IMG(url(../img/wallpapers/wallpaper_5.jpg))
+    z-index: -10
+.packFour
+    text-align: center
+.eduContainer
+    +POS_TB_LR(ab1c1, relative, 300px, 0)
+    +WIDTH_HEIGHT(ab, 220px, 220px)
+    +PADDING_MARGIN(b, 40px)
+    +BORDER_RADIUS(50%)
+    +TRANSITION(.3s)
+    +FILTER(drop-shadow(2px 4px 6px black))
+    background-color: rgba(0,0,0,.3)
+    opacity: 0
+    display: inline-block
+    text-align: center
+    color: $myTheme
+    z-index: 0
+    overflow: hidden
+    cursor: pointer
+    box-shadow: rgba(0, 161, 183, 1) 0 0 20px 0px, inset 0 0 20px 0 rgba(0, 161, 183, 1)
+.eduContainerJS
+    +POS_TB_LR(b1c1, 200px, 0)
+    opacity: 1
+.eduTxt
+    +POS_TB_LR(ab1, absolute, 60%)
+    +WIDTH_HEIGHT(ab, 100%)
+    +TRANSFORM(translateY(-50%))
+    +TRANSITION(.3s)
+    cursor: pointer
+    transform-origin: center
+    opacity: 0
+    font-size: 18px
+.eduTxtJS
+    +POS_TB_LR(b1, 50%)
+    opacity: 1
+.added
+    +POS_TB_LR(ab1c1, absolute, 100%, 50%)
+    +TRANSFORM(translate(-50%,-50%))
+    +TRANSITION(.3s)
+    font-size: 18px
+    width: 100%
+    opacity: 0
+    // background-color: rgba(0, 0, 0, 0.95)
+    cursor: pointer
+.addedJS
+    +POS_TB_LR(b1, 50%)
+    opacity: 1
+.dynamicTheme
+    +POS_TB_LR(ab1c1, absolute, 40%, 50%)
+    +FILTER(drop-shadow(2px 4px 6px rgb(37, 37, 37)))
+    +TRANSITION(.7s)
+    +BORDER_RADIUS(5px)
+    +TRANSFORM(translate(-100%, -100%))
+    z-index: -2
+    transform-origin: center
+.eduContBG_4
+    color: white

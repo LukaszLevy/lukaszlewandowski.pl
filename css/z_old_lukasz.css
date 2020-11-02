@@ -1,0 +1,1060 @@
+:root{
+    --White: white;
+    --Black: black;
+    --myGrey: rgba(150,150,150);
+    --myTheme:  rgb(0, 161, 183);
+    --myRed: rgb(245, 68, 56);
+    --transparentColor: transparent;
+    }
+html{
+    position: relative;
+    min-height: 100vh;
+    height: auto;
+    background-color: var(--Black);
+    margin: 0; padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+body{
+    min-height: 100vh;
+    height: auto;
+    top: 0;
+    margin: 0; padding: 0;
+    }
+/* Nagłówek */
+.header{
+    z-index: 100;
+    position: fixed;
+    top: 0; width: 100%;
+    height: 90px; min-width: 260px;
+    overflow: hidden;
+    }
+    .naglowek{
+        position: relative;
+        top: 0;
+        width: 100%; height: 100%;
+        background-color: var(--transparentColor);
+        transition: .5s;
+        -webkit-transition: .5s;
+        -moz-transition: .5s;
+        -ms-transition: .5s;
+        -o-transition: .5s;
+        }
+            .naglowekJS{
+                background-color:  var(--Black);
+                }
+        /* Menu przycisk */
+        .menuKreski{
+            position: relative; top: 10%; display: inline-block;
+            height: 90%; width: max-content;
+            cursor: pointer;
+            }
+                .menuKreski:hover .menuKreskaTwo{
+                    width: 40px;
+                    }
+            .menuKreskaOne{
+                position: relative; top: 20px;
+                width: 40px; height: 5px;
+                background-color: var(--White);
+                transition: transform .3s linear, width .3s linear, background-color .3s linear;
+                -webkit-transition: transform .3s linear, width .3s linear, background-color .3s linear;
+                -moz-transition: transform .3s linear, width .3s linear, background-color .3s linear;
+                -ms-transition: transform .3s linear, width .3s linear, background-color .3s linear;
+                -o-transition: transform .3s linear, width .3s linear, background-color .3s linear;
+                }
+                    .menuKreskaOneJS{
+                        width: 40px;
+                        top: 35px;
+                        background-color: var(--myTheme);
+                        transform: rotate(45deg);
+                        -webkit-transform: rotate(45deg);
+                        -moz-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        -o-transform: rotate(45deg);
+                        transition: transform .3s linear, width .3s linear, background-color .3s linear, top .3s;
+                        -webkit-transition: transform .3s linear, width .3s linear, background-color .3s linear, top .3s;
+                        -moz-transition: transform .3s linear, width .3s linear, background-color .3s linear, top .3s;
+                        -ms-transition: transform .3s linear, width .3s linear, background-color .3s linear, top .3s;
+                        -o-transition: transform .3s linear, width .3s linear, background-color .3s linear, top .3s;
+                        }
+            .menuKreskaTwo{
+                position: relative;
+                top: 35px;
+                width: 50px;
+                height: 5px;
+                background-color: var(--White);
+                transition: transform .3s linear, width .3s linear, background-color .3s linear, top .3s;
+                -webkit-transition: transform .3s linear, width .3s linear, background-color .3s linear, top .3s;
+                -moz-transition: transform .3s linear, width .3s linear, background-color .3s linear, top .3s;
+                -ms-transition: transform .3s linear, width .3s linear, background-color .3s linear, top .3s;
+                -o-transition: transform .3s linear, width .3s linear, background-color .3s linear, top .3s;
+                }
+                    .menuKreskaTwoJS{
+                        width: 40px;
+                        top: 35px;
+                        background-color: var(--myTheme);
+                        transform: rotate(-45deg);
+                        -webkit-transform: rotate(-45deg);
+                        -moz-transform: rotate(-45deg);
+                        -ms-transform: rotate(-45deg);
+                        -o-transform: rotate(-45deg);
+                        transition: transform .3s linear, width .3s linear, background-color .3s linear, top .3s;
+                        -webkit-transition: transform .3s linear, width .3s linear, background-color .3s linear, top .3s;
+                        -moz-transition: transform .3s linear, width .3s linear, background-color .3s linear, top .3s;
+                        -ms-transition: transform .3s linear, width .3s linear, background-color .3s linear, top .3s;
+                        -o-transition: transform .3s linear, width .3s linear, background-color .3s linear, top .3s;
+                        }   
+        /* Menu napisy */
+        .menuKontener{
+            position: absolute; top: -199px; left: 100px; display: inline-block;
+            width: max-content; height: 100%;
+            background-color: var(--transparentColor);
+            color: var(--White);
+            transition: top .3s linear;
+            -webkit-transition: top .3s linear;
+            -moz-transition: top .3s linear;
+            -ms-transition: top .3s linear;
+            -o-transition: top .3s linear;
+            }
+                .menuKontenerJS{
+                    top: 0px;
+                    transition: top .3s linear;
+                    -webkit-transition: top .3s linear;
+                    -moz-transition: top .3s linear;
+                    -ms-transition: top .3s linear;
+                    -o-transition: top .3s linear;
+                    }
+            .menuPunkty{
+                display: inline; position: relative;
+                left: 0px; top: -48px;
+                margin: 0 5px; padding: 10px;
+                cursor: pointer;
+                transition: 0.7s;
+                -webkit-transition: 0.7s;
+                -moz-transition: 0.7s;
+                -ms-transition: 0.7s;
+                -o-transition: 0.7s;
+                color: var(--White);
+                letter-spacing: 1px;
+                }
+                .colorMenuPunkty{
+                    color: var(--myTheme);
+                    }
+                        .menuPunktyJS{
+                            top: 40px;
+                            }
+            .tagMenu{
+                display: block;
+                opacity: 0;
+                position: absolute;
+                left: 0;
+                bottom: 16px;
+                width: 0px;
+                height: 3px;
+                background-color: var(--myTheme);
+                margin: 0 5px;
+                transition: color 0.5s , left 0.5s, width 0.5s, opacity 1.2s;
+                -webkit-transition: color 0.5s , left 0.5s, width 0.5s, opacity 1.2s;
+                -moz-transition: color 0.5s , left 0.5s, width 0.5s, opacity 1.2s;
+                -ms-transition: color 0.5s , left 0.5s, width 0.5s, opacity 1.2s;
+                -o-transition: color 0.5s , left 0.5s, width 0.5s, opacity 1.2s;
+                border-radius: 10px;
+                }
+            .tagMenuDisplay{
+                opacity: 100%;
+                }
+        /* Zdjęcie nagłowek */
+        .imgcontainerinheader{
+            display: inline-block;
+            width: 75px;
+            height: 80%;
+            position: absolute;
+            right: 0px;
+            top: 15px;
+            border-radius: 50% 0 0 50%;
+            background-color: var(--myTheme);
+            -webkit-border-radius: 50% 0 0 50%;
+            -moz-border-radius: 50% 0 0 50%;
+            -ms-border-radius: 50% 0 0 50%;
+            -o-border-radius: 50% 0 0 50%;
+            }
+            .imginheader{
+                width: 100%;
+                height: 100%;
+                right: 10px;
+                position: relative;
+                border-radius: 50% 0 0 50%;
+                -webkit-border-radius: 50% 0 0 50%;
+                -moz-border-radius: 50% 0 0 50%;
+                -ms-border-radius: 50% 0 0 50%;
+                -o-border-radius: 50% 0 0 50%;
+                border: 4px solid var(--myTheme);
+                box-sizing: border-box;
+}
+.allPagesBox{
+    position: relative;
+    width: 100%;
+    min-height: 900px;
+    top: 0;
+    left: 0;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    }
+    .Page{
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: .5s;
+        -webkit-transition: .5s;
+        -moz-transition: .5s;
+        -ms-transition: .5s;
+        -o-transition: .5s;
+        }
+    /* Strona 1 */
+    .One{
+        z-index: 10;
+        }
+        .OneWallpaper{
+            background-image: url(../img/startPage/wallpaper_0.jpg);
+            background-size: cover;
+            height: 750px;
+            background-attachment: fixed;
+            filter: grayscale(1) brightness(0.5);
+            width: 100%;
+            top: 85px;
+            position: absolute;
+            -webkit-filter: grayscale(1) brightness(0.2);
+            border-top: solid 2px white;
+            border-bottom: solid 2px white;
+            }
+        .nameLewSloganKodBox{
+            position: absolute;
+            top: 0;
+            height: calc(100% - 90px);
+            width: 100%;
+            transform: translateY(90px);
+            background-color: var(--transparentColor);
+            -webkit-transform: translateY(90px);
+            -moz-transform: translateY(90px);
+            -ms-transform: translateY(90px);
+            -o-transform: translateY(90px);
+            }
+            .nameLewandowskiBox{
+                position: relative;
+                width: 100%; top: 100px; left: 0;
+                text-align: center;
+                }
+                    .nameLewandowskiBox::before{
+                        z-index: -1;
+                        content: " ";
+                        background-color: var(--Black);
+                        width: 80%;
+                        height: 100%;
+                        left: 50%;
+                        top: -6px;
+                        position: absolute;
+                        filter: drop-shadow(2px 4px 6px black);
+                        padding: 10px;
+                        transform: translateX(-50%) rotate(-1deg);
+                        -webkit-transform: translateX(-50%) rotate(-1deg);
+                        -moz-transform: translateX(-50%) rotate(-1deg);
+                        -ms-transform: translateX(-50%) rotate(-1deg);
+                        -o-transform: translateX(-50%) rotate(-1deg);
+                        -webkit-filter: drop-shadow(2px 4px 6px black);
+}
+                .nameLewandowski{
+                    color: var(--myTheme);
+                    position: relative;
+                    font-size: 0px;
+                    }  
+                        .letterJS{
+                            display: inline-block;
+                            margin: 2px 30px; padding: 20px 30px;
+                            width: fit-content;
+                            font-size: 75px; text-align: center;
+                            transition: .5s;
+                            -webkit-transition: .5s;
+                            -moz-transition: .5s;
+                            -ms-transition: .5s;
+                            -o-transition: .5s;
+                            color: var(--myTheme);
+                            }
+                        .letterJS2{
+                            margin: 2px 5px; padding: 2px 5px;
+                            }
+                        .letterJS3{
+                            color: var(--White);
+                            }
+            .wiecejStartBox{
+                opacity: 0;
+                position: relative;
+                z-index: 1;
+                width: 60px;
+                height: 30px;
+                top: 250px;
+                left: 50%;
+                font-size: 20px;
+                text-align: center;
+                cursor: pointer;
+                color: var(--myTheme);
+                transform: translateX(-50%);
+                background-color: var(--transparentColor);
+                padding: 10px 25px;
+                border-radius: 5px;
+                -webkit-transform: translateX(-50%);
+                transition: .5s;
+                -webkit-transition: .5s;
+                -moz-transition: .5s;
+                -ms-transition: .5s;
+                -o-transition: .5s;
+                overflow: hidden;
+                -moz-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                -o-transform: translateX(-50%);
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                -ms-border-radius: 5px;
+                -o-border-radius: 5px;
+                -webkit-transition: .5s;
+                }
+                    .wiecejStartBoxJS{
+                        opacity: 1;
+                        }
+                    .wiecejStartBoxJS2{
+                        animation: lupa 4s linear infinite;
+                        -webkit-animation: lupa 4s linear infinite;
+                        }
+                    .wiecejStartBoxJS3{
+                        top: -70px;
+                        background-color: var(--myTheme);
+                        filter: drop-shadow(2px 4px 6px black);
+                        -webkit-filter: drop-shadow(2px 4px 6px black);
+                        }
+                    .wiecejStartBoxJS4{
+                        width: 500px;
+                        height: 450px;
+                        }
+                .wiecejNapis{
+                    opacity: 1;
+                    transition: .5s;
+                    -webkit-transition: .5s;
+                    -moz-transition: .5s;
+                    -ms-transition: .5s;
+                    -o-transition: .5s;
+                    }
+                        .wiecejNapis:hover{
+                            color: var(--White);
+                            }
+                        .wiecejNapisJS{
+                            opacity: 0;
+                            }
+                .opisOmnie{
+                    color: var(--Black);
+                    position: relative;
+                    top: 500px;
+                    font-size: 14px;
+                    padding: 50px;
+                    width: 340px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    text-align: justify;
+                    transition: .5s;
+                    -webkit-transition: .5s;
+                    -moz-transition: .5s;
+                    -ms-transition: .5s;
+                    -o-transition: .5s;
+                    opacity: 0;
+                    -webkit-transform: translateX(-50%);
+                    -moz-transform: translateX(-50%);
+                    -ms-transform: translateX(-50%);
+                    -o-transform: translateX(-50%);
+}
+                        .opisOmnieJS{
+                            top: 0;
+                            opacity: 1;
+                            }
+                    .opisOmnie > li{
+                        text-indent: 150px;
+                        }
+                .closeWiecejStartBox{
+                    position: absolute;
+                    top: 0px;
+                    transform: translate(-50%,-100%);
+                    left: 50%;
+                    padding: 8px 12px;
+                    background-color: var(--Black);
+                    color: var(--White);
+                    border-radius: 0 0 10px 10px;
+                    font-size: 16px;
+                    transition: .5s;
+                    -webkit-transition: .5s;
+                    -moz-transition: .5s;
+                    -ms-transition: .5s;
+                    -o-transition: .5s;
+                    -webkit-transform: translate(-50%,-100%);
+                    -moz-transform: translate(-50%,-100%);
+                    -ms-transform: translate(-50%,-100%);
+                    -o-transform: translate(-50%,-100%);
+                    -webkit-border-radius: 0 0 10px 10px;
+                    -moz-border-radius: 0 0 10px 10px;
+                    -ms-border-radius: 0 0 10px 10px;
+                    -o-border-radius: 0 0 10px 10px;
+}
+                        .closeWiecejStartBox:hover{
+                            color: var(--myRed);
+                            }
+                        .closeWiecejStartBoxJS{
+                            transform: translate(-50%,0);
+                            -webkit-transform: translate(-50%,0);
+                            -moz-transform: translate(-50%,0);
+                            -ms-transform: translate(-50%,0);
+                            -o-transform: translate(-50%,0);
+                            }
+                .imginwiecej{
+                    opacity: 0;
+                    bottom: -100px;
+                    left: 0;
+                    width: 100%;
+                    position: absolute;
+                    filter: grayscale(1);
+                    mix-blend-mode: darken;
+                    transition: .5s;
+                    -webkit-transition: .5s;
+                    -moz-transition: .5s;
+                    -ms-transition: .5s;
+                    -o-transition: .5s;
+                    -webkit-filter: grayscale(1);
+                    }
+                        .imginwiecejJS{
+                            opacity: 1;
+                            }
+            .sloganKodowanieBox{
+                position: relative;
+                width: max-content; top: 350px;left: 50%;
+                transform: translateX(-50%);
+                background-color: var(--transparentColor);
+                padding-bottom: 15px;
+                -webkit-transform: translateX(-50%);
+                -moz-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                -o-transform: translateX(-50%);
+                }
+                    .sloganKodowanieBoxJS{
+                        transition: .5s;
+                        background-color: var(--Black);
+                        filter: drop-shadow(2px 4px 6px black);
+                        -webkit-transition: .5s;
+                        -moz-transition: .5s;
+                        -ms-transition: .5s;
+                        -o-transition: .5s;
+                        -webkit-filter: drop-shadow(2px 4px 6px black);
+                        }
+                            .sloganKodowanieBoxJS2{
+                                top: -200px;
+                                }
+                .sloganKodowanie{
+                    color: var(--White);
+                    position: relative;
+                    font-size: 0px;
+                    } 
+                        .letterSloganJS{
+                            font-size: 22px; text-align: center;
+                            transition: .5s;
+                            -webkit-transition: .5s;
+                            -moz-transition: .5s;
+                            -ms-transition: .5s;
+                            -o-transition: .5s;
+                            }
+                        .letterSloganJS2{
+                            margin: 2px 0px; padding: 2px 5px; 
+                            }
+                        .letterSloganJS3{
+                            margin-left: 20px; 
+                            }
+                        .letterSloganJS4{
+                            font-size: 50px;
+                            position: relative;
+                            color: var(--myTheme);
+                            top: 9px;
+                            }                
+/*  */
+/* Strona 2 */
+/*  */
+.Two{
+    position: absolute;
+    left: 100%; z-index: 0;
+    overflow-y: auto;
+    }
+.wallpaperPageTwo{
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    height: 750px;
+    border-top: solid 2px white;
+    border-bottom: solid 2px white;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: .5;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    background-image: url(../img/pageTwo/wallpaper_3.jpg)
+}
+.menuCareerContainer{
+    position: absolute;
+    z-index: 1;
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: -25px;
+    background-color: rgba(0, 0, 0, .9);
+    cursor: pointer;
+    border: solid 2px var(--myTheme);
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    }
+    .menuCareerContainerJS  {left: -275px;}
+.menuCareerPoints{
+    position: absolute;
+    width: auto;
+    text-align: center;
+    font-size: 35px;
+    color: var(--Black);
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+    box-sizing: border-box;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    padding: 100px;
+    }
+    .menuCareerPointsJS {padding: 15px; color: var(--White);}
+    #leftYear   {left: 15px;top: 15px;}
+    #topYear    {right: 15px;top: 15px;}
+    #rightYear  {bottom: 15px;right: 15px;}
+    #bottomYear {left: 15px;bottom: 15px;}
+    .yearsJS    {color: var(--myTheme);}
+.menuCareerIndicator{
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    left: 50%;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0px 0 4px 2px black , 0px 0px 8px 6px var(--myTheme);
+    background-color: var(--Black);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+    .menuCareerIndicatorJS1{ box-shadow: 2px 0 4px 2px black , -8px -8px 12px 6px var(--myTheme);}
+    .menuCareerIndicatorJS2{ box-shadow: 2px 0 4px 2px black , 8px -8px 12px 6px var(--myTheme);}
+    .menuCareerIndicatorJS3{ box-shadow: 2px 0 4px 2px black , 8px 8px 12px 6px var(--myTheme);}
+    .menuCareerIndicatorJS4{ box-shadow: 2px 0 4px 2px black , -8px 8px 12px 6px var(--myTheme);}
+.menuCareerInfo{
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: 50%;
+    left: 50%;
+    background-color: var(--Black);
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    box-shadow: 0 0 220px 50px black;
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -ms-transition: .2s;
+    -o-transition: .2s;
+    }
+    .menuCareerInfo::before{
+        content: "Poruszaj myszką aby nawigować";
+        position: absolute;
+        width: fit-content;
+        height: fit-content;
+        color: rgba(255, 255, 255, 0.6);
+        left: 50%;
+        font-weight: lighter;
+        top: 85px;
+        font-size: 11px;
+        transform: translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        -o-transform: translate(-50%,-50%);
+        }
+    .menuCareerInfoJS   {opacity:0;}
+.menuCareerMouseAnimation{
+    position: absolute;
+    width: 20px;
+    height: 25px;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%) ;
+    border: 2px solid var(--myTheme);
+    border-radius: 30% 30% 10% 10%;
+    -webkit-border-radius: 30% 30% 10% 10%;
+    -moz-border-radius: 30% 30% 10% 10%;
+    -ms-border-radius: 30% 30% 10% 10%;
+    -o-border-radius: 30% 30% 10% 10%;
+    -webkit-transform: translate(-50%,-50%) ;
+    -moz-transform: translate(-50%,-50%) ;
+    -ms-transform: translate(-50%,-50%) ;
+    -o-transform: translate(-50%,-50%) ;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+    .menuCareerMouseAnimationActive{
+        animation: mouseMove 3s ease-in-out infinite;
+        -webkit-animation: mouseMove 3s ease-in-out infinite;
+        transition: .3s;
+        -webkit-transition: .3s;
+        -moz-transition: .3s;
+        -ms-transition: .3s;
+        -o-transition: .3s;
+        }
+    .menuCareerMouseAnimationActive::before{
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 2px;
+        background-color: var(--White);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-200%) rotate(-90deg);
+        -webkit-transform: translate(-50%,-200%) rotate(-90deg);
+        -moz-transform: translate(-50%,-200%) rotate(-90deg);
+        -ms-transform: translate(-50%,-200%) rotate(-90deg);
+        -o-transform: translate(-50%,-200%) rotate(-90deg);
+        }
+.menuCareerNav{
+    right: -30px;
+    position: absolute;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--myTheme);
+    top: 50%;
+    background-color: var(--Black);
+    padding: 8px;
+    border: solid 2px rgb(0, 161, 183);
+    border-radius: 10px;
+    transform: translateY(-50%);
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -ms-transition: .2s;
+    -o-transition: .2s;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}  
+    .menuCareerNav:hover{
+        background-color: var(--myTheme);
+        color: var(--Black);
+    }                 
+    .menuCareerNavJS    {right: -47px;}
+.companyContainer{
+    position: relative;
+    display: block;
+    left: 50%;
+    width: max-content;
+    top: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: max-content;
+    box-sizing: border-box;
+    font-size: 70px;
+    padding: 20px 35px;
+    border-radius: 20px;
+    text-align: 5px;
+    opacity: 0;
+    transition: .7s;
+    -webkit-transition: .7s;
+    -moz-transition: .7s;
+    -ms-transition: .7s;
+    -o-transition: .7s;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+    .companyContainerJS1{border: 2px solid var(--myTheme);}
+    .companyContainerJS2{border: 2px solid var(--myTheme); opacity: 1;top: 200px;}
+.companyName{
+    position: relative;
+    color: var(--transparentColor);
+}
+.companyNameLettersJS1{
+    position: relative;
+    top: -50px;
+    opacity: 0;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+.companyNameLettersJS2{
+    position: relative;
+    top: 50px;
+    opacity: 0;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+.companyNameLettersJS3{
+    color: var(--myTheme);
+    top: 0px;
+    opacity: 1;
+}
+.companyPosition{
+    position: relative;
+    color: var(--transparentColor);
+    font-size: 25px;
+}
+.companyPositionLettersJS1{
+    position: relative;
+    left: 4px;
+    opacity: 0;
+    margin: 2px;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+.companyPositionLettersJS3{
+    color: var(--myGrey);
+    opacity: 1;
+}
+.companyYears{
+    position: relative;
+    color: var(--transparentColor);
+    font-size: 25px;
+}
+.companyYearsLettersJS1{
+    position: relative;
+    left: 2px;
+    opacity: 0;
+    margin: 4px;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+.companyYearsLettersJS3{
+    color: var(--myGrey);
+    opacity: 1;
+}
+.careerLikeIndicatorConatainer{
+    position: relative;
+    display: block;
+    left: 50%;
+    width: max-content;
+    top: 400px;
+    height: max-content;
+    box-sizing: border-box;
+    font-size: 30px;
+    padding: 20px 35px;
+    border: 2px solid var(--myTheme);
+    text-align: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--myTheme);
+    opacity: 0;
+    transition: .7s;
+    -webkit-transition: .7s;
+    -moz-transition: .7s;
+    -ms-transition: .7s;
+    -o-transition: .7s;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+    .careerLikeIndicatorConatainerJS1{
+        top:250px;
+        opacity:1;
+    }
+.careerLikeStarsContainer{
+    position: relative;
+    width: max-content;
+    height: max-content;
+    padding: 10px 0;
+    margin-top: 10px;
+    }  
+.careerLikeStars{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: var(--myGrey);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    }
+    .careerLikeStarsJS1{
+        background-color: var(--White);
+    }
+.dutiesButton{
+    position: relative;
+    width: max-content;
+    height: max-content;
+    top: 450px;
+    left: 50%;
+    color: var(--myTheme);
+    opacity: 0;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    padding: 20px 35px;
+    border: 2px solid var(--myTheme);
+    transition: .7s;
+    -webkit-transition: .7s;
+    -moz-transition: .7s;
+    -ms-transition: .7s;
+    -o-transition: .7s;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+    .dutiesButtonJS1{
+        top: 300px;
+        opacity: 1;
+    }
+    .dutiesButton:hover{
+        color:white;
+    }
+.dutiesContainer{
+    position: relative;
+    z-index: 2;
+    display: block;
+    top: -250px;
+    left: -900px;
+    cursor: pointer;
+    opacity: 0;
+    padding: 15px 35px 25px 35px;
+    width: max-content;
+    height: max-content;
+    transition: .7s;
+    -webkit-transition: .7s;
+    -moz-transition: .7s;
+    -ms-transition: .7s;
+    -o-transition: .7s;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    }
+    .dutiesContainerJS1{
+        opacity: 1;
+        left: -20px;
+    }
+.dutiesClose{
+    color: var(--White);
+    position: absolute;
+    text-align: center;
+    padding: 6px 10px;
+    width: fit-content;
+    top: -50px;
+    left: 50%;
+    border: solid #ffffff 2px;
+    background-color: var(--Black);
+    border-radius: 20px;
+    margin: 30px 0 10px 0;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    }
+    .dutiesClose:hover{
+        color: var(--myRed);
+        border: var(--myRed) solid 2px;
+    }
+.dutiesBoxesJS1{
+    position: relative;
+    width: fit-content;
+    color: var(--White);
+    margin: 25px 0;
+    padding: 10px 35px;
+    border: 2px solid var(--myTheme);
+    border-radius: 25px;
+    left: 50%;
+    transition: .5s, background-color .1s;
+    -webkit-transition: .5s, background-color .1s;
+    -moz-transition: .5s, background-color .1s;
+    -ms-transition: .5s, background-color .1s;
+    -o-transition: .5s, background-color .1s;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
+    .dutiesBoxesJS1:hover{
+        background-color: var(--myTheme);
+    }
+.Three{
+    position: absolute;
+    left: 200%; z-index: 4;
+    }
+.Four{
+    position: absolute;
+    left: 300%; z-index: 4;
+    }
+/* Stopka */
+.copyRigths {
+    position: absolute;
+    bottom: 0px;
+    height: 70px;
+    right: 0px;
+    width: 100%;
+    padding-top: 25px;
+    z-index: 10;
+    color: var(--myGrey);
+    background-color: var(--Black);
+    font-size: 14px;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+}
+
+
+
+@media only screen and (max-width: 950px), screen and (max-height: 700px) {
+    .letterJS2 {
+        font-size: 35px;
+        margin: 1px 3px; padding: 1px 3px;
+        }
+    .wiecejStartBoxJS3 {
+        top: 25px; 
+        }
+    .letterSloganJS{
+        font-size: 18px;
+        position: inherit;
+        top: 9px;
+        }
+    .letterSloganJS4{
+        font-size: 18px;
+        }
+}
+@media only screen and (max-width: 500px) {
+    .letterJS2 {
+        font-size: 18px;
+        }
+    .wiecejStartBoxJS4{
+        width: 80%;
+        font-size: 12px;
+        width: 260px;
+        height: auto;
+        }
+    .opisOmnie{
+        padding: 5px;
+        width: 260px;
+        }
+    .opisOmnie > li{
+        text-indent: 50px;
+        }
+    .letterSloganJS{
+        font-size: 12px;
+        }
+    .letterSloganJS2{
+        margin: 0px 0px; padding: 5px 3px;
+        }  
+    .letterSloganJS3{
+        margin-left: 10px; 
+        }
+    .letterSloganJS4{
+        font-size: 12px;
+    }
+    .copyRigths{
+        font-size: 10px;
+    }
+}
+@media only screen and (max-height: 700px){
+    .nameLewandowskiBox{
+        top: 50px;
+        }
+    .wiecejStartBox{
+        top: 150px;
+        }
+    .sloganKodowanieBox{
+        top: 250px;
+    }
+}

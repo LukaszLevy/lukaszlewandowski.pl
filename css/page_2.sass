@@ -1,0 +1,290 @@
+@import 'overallStyles'
+@import 'allVariables';
+.Two
+    +POS_TB_LR(ac1, absolute, 100%)
+    z-index: 0
+.pack
+    height: calc(100vh - 150px)
+    +OVERX_OVERY(ab, hidden, auto)
+    +POS_TB_LR(a, relative)
+    top: 100px
+.wallTwo
+    +BACKGROUND_IMG(url(../img/wallpapers/wallpaper_2_0.jpg))
+.menuCareerContainer
+    +POS_TB_LR(ab1c1, absolute, 100px, -25px)
+    +WIDTH_HEIGHT(ab, 300px, 300px)
+    +TRANSITION(.3s)
+    +BORDER_RADIUS(10px)
+    z-index: 1
+    background-color: rgba(37, 37, 37, 0.8)
+    cursor: pointer
+.menuCareerContainerJS
+    +POS_TB_LR(c1, -275px)
+.menuCareerPoints
+    +POS_TB_LR(a, absolute)
+    +WIDTH_HEIGHT(a, auto)
+    +PADDING_MARGIN(a, 100px)
+    +TRANSITION()
+    +BORDER_RADIUS(10px)
+    box-sizing: border-box
+    text-align: center
+    font-size: 35px
+    color: $Black
+.menuCareerPointsJS
+    +PADDING_MARGIN(a, 15px)
+    color: $White
+#leftYear
+    +POS_TB_LR(b1c1, 15px, 15px)
+#topYear
+    +POS_TB_LR(b1c2, 15px, 15px)
+#rightYear
+    +POS_TB_LR(b2c2, 15px, 15px)
+#bottomYear
+    +POS_TB_LR(b2c1, 15px, 15px)
+.yearsJS
+    color: $myTheme
+.menuCareerIndicator  
+    +POS_TB_LR(ab1c1, absolute, 50%, 50%)
+    +WIDTH_HEIGHT(ab, 100px, 100px)
+    +BORDER_RADIUS(50%)
+    +TRANSFORM(translate(-50%,-50%))
+    +TRANSITION(.3s)
+    display: block
+    box-sizing: border-box
+    background-color: $Black
+    box-shadow: 0px 0 4px 2px black , 0px 0px 8px 6px $myTheme
+.menuCareerIndicatorJS1
+    box-shadow: 2px 0 4px 2px $Black , -8px -8px 12px 6px $myTheme
+.menuCareerIndicatorJS2
+    box-shadow: 2px 0 4px 2px $Black , 8px -8px 12px 6px $myTheme
+.menuCareerIndicatorJS3
+    box-shadow: 2px 0 4px 2px $Black , 8px 8px 12px 6px $myTheme
+.menuCareerIndicatorJS4
+    box-shadow: 2px 0 4px 2px $Black , -8px 8px 12px 6px $myTheme
+.menuCareerInfo
+    +POS_TB_LR(ab1c1, absolute, 50%, 50%)
+    +WIDTH_HEIGHT(ab, 180px, 180px)
+    +TRANSFORM(translate(-50%,-50%))
+    +BORDER_RADIUS(50%)
+    +TRANSITION(.2s)
+    background-color: $Black
+    box-shadow: 0 0 220px 50px black
+.menuCareerInfo::before
+    +POS_TB_LR(ab1c1, absolute, 85px, 50%)
+    +WIDTH_HEIGHT(ab, max-content, max-content)
+    +TRANSFORM(translate(-50%,-50%))
+    color: rgba(255, 255, 255, 0.6)
+    font-weight: lighter
+    font-size: 11px
+    content: "Poruszaj myszką aby nawigować"
+.menuCareerInfoJS2
+.menuCareerInfoJS2::before
+    content: "Move the mouse to navigate"
+.menuCareerInfoJS
+    opacity: 0
+.menuCareerMouseAnimation
+    +POS_TB_LR(ab1c1, absolute, 60%, 50%)
+    +WIDTH_HEIGHT(ab, 20px, 25px)
+    +TRANSFORM(translate(-50%,-50%))
+    +BORDER_RADIUS(30% 30% 10% 10%)
+    background-color: rgba(0, 0, 0, 0.4)
+    border: 2px solid $myTheme
+.menuCareerMouseAnimationActive
+    +TRANSITION(.3s)
+    +ANIMATION(mouseMove 3s ease-in-out infinite)
+.menuCareerMouseAnimationActive::before
+    +POS_TB_LR(ab1c1, absolute, 50%, 50%)
+    +WIDTH_HEIGHT(ab, 8px, 2px)
+    +TRANSFORM(translate(-50%,-200%) rotate(-90deg))
+    background-color: $White
+    content: ""
+.menuCareerNav
+    +POS_TB_LR(ab1c2, absolute, 50%, -1px)
+    +PADDING_MARGIN(a, 5px)
+    +BORDER_RADIUS(2px)
+    +TRANSFORM(translateY(-50%))
+    +TRANSITION(.2s)
+    border: solid 1px rgb(0, 161, 183)
+    background-color: rgba(37, 37, 37, 0.8)
+    font-size: 10px
+    letter-spacing: 1px
+    color: $myTheme
+.menuCareerNav:hover
+    background-color: $myTheme
+    color: $Black
+.menuCareerNavJS
+    +POS_TB_LR(c2, -47px)
+.companyContainer
+    +POS_TB_LR(ab1c1, relative, 30px, 50%)
+    +WIDTH_HEIGHT(ab, max-content, max-content)
+    +TRANSFORM(translateX(-50%))
+    +PADDING_MARGIN(a, 20px 35px)
+    +BORDER_RADIUS(10px)
+    +TRANSITION(.7s)
+    display: block
+    opacity: 0
+    box-sizing: border-box
+    background-color: rgba(37, 37, 37, 0.8)
+    font-size: 70px
+    text-align: 5px
+.companyContainerJS2
+    +POS_TB_LR(b1, 100px)
+    opacity: 1
+.companyName
+    +POS_TB_LR(a, relative)
+    color: transparent
+.companyNameLettersJS1
+    +POS_TB_LR(ab1, relative, -50px)
+    +TRANSITION(.3s)
+    opacity: 0
+.companyNameLettersJS2
+    +POS_TB_LR(ab1, relative, 50px)
+    +TRANSITION(.3s)
+    opacity: 0
+.companyNameLettersJS3
+    +POS_TB_LR(b1, 0)
+    +PADDING_MARGIN(b, 2px)
+    color: $myTheme
+    opacity: 1
+.companyPosition
+    +POS_TB_LR(a, relative)
+    color: transparent
+    font-size: 25px
+.companyPositionLettersJS1
+    +POS_TB_LR(ac1, relative, 0)
+    +PADDING_MARGIN(b, 2px)
+    +TRANSITION(.3s)
+    opacity: 0
+.companyPositionLettersJS3
+    opacity: 1
+    color: $myGrey
+.companyYears
+    +POS_TB_LR(a, relative)
+    color: transparent
+    font-size: 25px
+.companyYearsLettersJS1
+    +POS_TB_LR(ac1, relative, 2px)
+    +PADDING_MARGIN(b, 4px)
+    +TRANSITION(.3s)
+    opacity: 0
+.companyYearsLettersJS3
+    opacity: 1
+    color: $myGrey
+.careerLikeIndicatorConatainer
+    +POS_TB_LR(ab1c1, relative, 100px, 50%)
+    +WIDTH_HEIGHT(ab, max-content, max-content)
+    +TRANSFORM(translateX(-50%))
+    +PADDING_MARGIN(a, 20px 35px)
+    +TRANSITION(.7s)
+    +BORDER_RADIUS(10px)
+    display: block
+    opacity: 0
+    box-sizing: border-box
+    background-color: rgba(37, 37, 37, 0.8)
+    color: $myTheme
+    font-size: 30px
+    text-align: 5px
+.careerLikeIndicatorConatainerJS1
+    +POS_TB_LR(b1, 150px)
+    opacity: 1
+.careerLikeStarsContainer
+    +POS_TB_LR(a, relative)
+    +WIDTH_HEIGHT(ab, max-content, max-content)
+    +PADDING_MARGIN(ab, 10px 0, 20px 0 0 0)
+.careerLikeStars
+    +POS_TB_LR(a, relative)
+    +WIDTH_HEIGHT(ab, 50px, 50px)
+    +TRANSITION(.3s)
+    display: inline-block
+    background-color: $myGrey
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)
+.careerLikeStarsJS1
+    background-color: crimson
+.dutiesButton
+    +POS_TB_LR(ab1c1, relative, 150px, 50%)
+    +WIDTH_HEIGHT(ab, max-content, max-content)
+    +TRANSFORM(translateX(-50%))
+    +PADDING_MARGIN(a, 10px 15px)
+    +TRANSITION(.5s)
+    +BORDER_RADIUS(10px)
+    opacity: 0
+    background-color: rgba(37, 37, 37, 0.8)
+    color: $myTheme
+    font-size: 30px
+    cursor: pointer
+.dutiesButtonJS1
+    +POS_TB_LR(b1, 200px)
+    opacity: 1
+    +ANIMATION(menuSkillShadow linear 3s infinite)
+.dutiesButton:hover
+    background-color: $Black
+.dutiesContainer
+    +POS_TB_LR(ab1c1, relative, -1150px, 50%)
+    +WIDTH_HEIGHT(ab, max-content, max-content)
+    +TRANSITION(.7s)
+    +BORDER_RADIUS(10px)
+    +PADDING_MARGIN(a, 15px 35px 25px 35px)
+    +TRANSFORM(translateX(-50%))
+    z-index: 2
+    opacity: 0
+    display: block
+    cursor: pointer
+    background-color: rgba(37, 37, 37, 0.8)
+.dutiesContainerJS1
+    +POS_TB_LR(b1, -350px)
+    opacity: 1
+.dutiesClose
+    +POS_TB_LR(ab1c1, absolute, -45px, 50%)
+    +WIDTH_HEIGHT(a, max-content)
+    +TRANSFORM(translateX(-50%))
+    +BORDER_RADIUS(10px)
+    +PADDING_MARGIN(ab, 6px 10px, 30px 0 10px 0)
+    background-color: $Black
+    color: crimson
+    text-align: center
+.dutiesClose:hover
+    color: $myRed
+.dutiesBoxesJS1
+    +POS_TB_LR(ac1, relative, 50%)
+    +WIDTH_HEIGHT(a, max-content)
+    +TRANSFORM(translateX(-50%))
+    +PADDING_MARGIN(ab, 10px 35px, 25px 0)
+    +BORDER_RADIUS(10px)
+    border: 1px solid $myTheme
+    color: $White
+.dutiesBoxesJS1:hover
+    background-color: $myTheme
+@keyframes mouseMove
+    from
+        height: 25px
+        transform: translate(-50%,-50%)
+        -webkit-transform: translate(-50%,-50%)
+        -moz-transform: translate(-50%,-50%)
+        -ms-transform: translate(-50%,-50%)
+        -o-transform: translate(-50%,-50%)
+    25%
+        height: 33px
+        width: 22px
+    50%
+        box-shadow: 0 0 4px 1px #00a1b7
+        height: 25px
+        width: 20px
+        transform: translate(-50%,-200%) 
+        -webkit-transform: translate(-50%,-200%)
+        -moz-transform: translate(-50%,-200%)
+        -ms-transform: translate(-50%,-200%)
+        -o-transform: translate(-50%,-200%)
+    75%
+        height: 33px
+        width: 22px
+    to
+        height: 25px
+        transform: translate(-50%,-50%)
+        -webkit-transform: translate(-50%,-50%)
+        -moz-transform: translate(-50%,-50%)
+        -ms-transform: translate(-50%,-50%)
+        -o-transform: translate(-50%,-50%)
+.siteChildrenJS
+    top: -100px
+    opacity: 0
+    transition: .5s
