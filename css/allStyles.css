@@ -893,7 +893,7 @@ body {
 .menuCareerContainer {
   position: absolute;
   top: 100px;
-  left: -25px;
+  left: 15px;
   width: 300px;
   height: 300px;
   transition: 0.3s all ease-in-out;
@@ -914,7 +914,7 @@ body {
 }
 
 .menuCareerContainerJS {
-  left: -275px;
+  left: -325px;
 }
 
 .menuCareerPoints {
@@ -993,19 +993,19 @@ body {
   box-shadow: 0px 0 4px 2px black, 0px 0px 8px 6px #00a1b7;
 }
 
-.menuCareerIndicatorJS1 {
+.menuCareerIndicatorJS0 {
   box-shadow: 2px 0 4px 2px black, -8px -8px 12px 6px #00a1b7;
 }
 
-.menuCareerIndicatorJS2 {
+.menuCareerIndicatorJS1 {
   box-shadow: 2px 0 4px 2px black, 8px -8px 12px 6px #00a1b7;
 }
 
-.menuCareerIndicatorJS3 {
+.menuCareerIndicatorJS2 {
   box-shadow: 2px 0 4px 2px black, 8px 8px 12px 6px #00a1b7;
 }
 
-.menuCareerIndicatorJS4 {
+.menuCareerIndicatorJS3 {
   box-shadow: 2px 0 4px 2px black, -8px 8px 12px 6px #00a1b7;
 }
 
@@ -1104,40 +1104,38 @@ body {
   content: "";
 }
 
-.menuCareerNav {
+.menuCareerTip {
+  opacity: 0;
+  width: max-content;
   position: absolute;
-  top: 50%;
-  right: -1px;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
   padding: 5px;
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transition: 0.2s all ease-in-out;
-  -webkit-transition: 0.2s all ease-in-out;
-  -moz-transition: 0.2s all ease-in-out;
-  -ms-transition: 0.2s all ease-in-out;
-  -o-transition: 0.2s all ease-in-out;
-  border: solid 1px #00a1b7;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: 0.4s all ease-in-out;
+  -webkit-transition: 0.4s all ease-in-out;
+  -moz-transition: 0.4s all ease-in-out;
+  -ms-transition: 0.4s all ease-in-out;
+  -o-transition: 0.4s all ease-in-out;
   background-color: rgba(37, 37, 37, 0.8);
-  font-size: 10px;
-  letter-spacing: 1px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 12px;
   color: #00a1b7;
 }
 
-.menuCareerNav:hover {
-  background-color: #00a1b7;
-  color: black;
-}
-
-.menuCareerNavJS {
-  right: -47px;
+.menuCareerTipJS {
+  bottom: -35px;
+  opacity: 1;
 }
 
 .companyContainer {
@@ -1166,7 +1164,7 @@ body {
   opacity: 0;
   box-sizing: border-box;
   background-color: rgba(37, 37, 37, 0.8);
-  font-size: 70px;
+  font-size: 40px;
   text-align: 5px;
 }
 
@@ -1282,7 +1280,7 @@ body {
   box-sizing: border-box;
   background-color: rgba(37, 37, 37, 0.8);
   color: #00a1b7;
-  font-size: 30px;
+  font-size: 22px;
   text-align: 5px;
 }
 
@@ -2088,7 +2086,7 @@ body {
     left: -600px;
   }
   .companyContainer {
-    font-size: 20px;
+    font-size: 18px;
   }
   .companyPosition {
     font-size: 14px;
@@ -2097,7 +2095,7 @@ body {
     font-size: 14px;
   }
   .careerLikeIndicatorConatainer {
-    font-size: 16px;
+    font-size: 14px;
     padding: 10px;
   }
   .careerLikeStarsContainer {
@@ -2131,21 +2129,31 @@ body {
     height: 150px;
   }
   .menuCareerContainerJS {
-    left: -140px;
+    left: -200px;
   }
   .menuCareerPointsJS {
     padding: 0;
   }
   .menuCareerPoints {
     font-size: 15px;
-    padding: 0;
+    padding: 20px;
     color: white;
   }
   #leftYear {
-    left: 30px;
+    top: 0;
+    left: 0;
+  }
+  #topYear {
+    top: 0;
+    right: 0;
+  }
+  #rightYear {
+    bottom: 0;
+    right: 0;
   }
   #bottomYear {
-    left: 30px;
+    bottom: 0;
+    left: 0;
   }
   .yearsJS {
     color: #00a1b7;
@@ -2298,7 +2306,7 @@ body {
     background-repeat: no-repeat;
   }
   .companyContainer {
-    font-size: 14px;
+    font-size: 13px;
     top: 250px;
     padding: 10px;
     width: 90%;
@@ -2314,19 +2322,13 @@ body {
     font-size: 12px;
     margin-top: 5px;
   }
-  #leftYear {
-    left: 15px;
-  }
-  #bottomYear {
-    left: 15px;
-  }
   .careerLikeIndicatorConatainer {
     top: 300px;
     width: 90%;
     max-width: 300px;
     border: 0;
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
     padding: 10px;
   }
   .careerLikeStars {
