@@ -244,17 +244,12 @@ $(START_BUTTON).on("click", function(){
             const MENU_CAREER_CONTAINER = $(".menuCareerContainer");
             const MENU_CAREER_POINTS = $(".menuCareerPoints");
             const MENU_CAREER_INDICATOR = $(".menuCareerIndicator");
-            const YEAR_LEFT_TOP = $("#leftYear");
-            const YEAR_RIGHT_TOP = $("#topYear");
-            const YEAR_RIGHT_BOTTOM = $("#rightYear");
-            const YEAR_LEFT_BOTTOM = $("#bottomYear");
             const MENU_CAREER_INFO = $(".menuCareerInfo");
-            const MENU_CAREER_NAV = $(".menuCareerNav");
             const COMPANY_CONTAINER = $(".companyContainer");
             const COMPANY_NAME = $(".companyName");
             const COMPANY_POSITION = $(".companyPosition");
             const COMPANY_YEARS = $(".companyYears");
-            
+            const MENU_CAR_TIP = $(".menuCareerTip");
             var wallTab = ["url(img/wallpapers/wallpaper_2_0.jpg)", "url(img/wallpapers/wallpaper_2_1.jpg)", "url(img/wallpapers/wallpaper_2_2.jpg)", "url(img/wallpapers/wallpaper_2_3.jpg)"];
             var wallTabM = ["url(img/wallpapers/wallpaper_2_0m.jpg)", "url(img/wallpapers/wallpaper_2_1m.jpg)", "url(img/wallpapers/wallpaper_2_2m.jpg)", "url(img/wallpapers/wallpaper_2_3m.jpg)"];
             var Company_Name_Board = ["GEOSTANDARD","ASTALDI","PIZZAROTTI","ERPLAST"];
@@ -272,7 +267,7 @@ $(START_BUTTON).on("click", function(){
                 Duties3 = ["Preparation of valuations","Technical consulting based on design documentation","Monitorowanie rezultatów złożonych ofert", "Monitoring the results of submitted offers","Acquiring new customers / identifying potential recipients of products"];
                 $(MENU_CAREER_INFO).addClass("menuCareerInfoJS2");
             }
-            var Duties = [Duties0,Duties1,Duties2,Duties3];
+            var Duties = [Duties0, Duties1, Duties2, Duties3];
             const CAREER_LIKE_INDICATOR_CONTAINER = $(".careerLikeIndicatorConatainer");
             const CAREER_LIKE_STARS = $(".careerLikeStars");
             const DUTIES_BUTTON = $(".dutiesButton");
@@ -283,76 +278,26 @@ $(START_BUTTON).on("click", function(){
             nadaj_index($(COMPANY_NAME),"index-nr4");
             nadaj_index($(MENU_CAREER_POINTS),"index-nr6");
         // -- EVENTY
-        // -- [ 1 ] najechanie myszką na nawigację/menu po stronie 
-            $(MENU_CAREER_CONTAINER).one("mouseover" , function(){
-                add_remove_toggle_class("add",$(COMPANY_CONTAINER),"companyContainerJS2");
-                add_remove_toggle_class("add",$(CAREER_LIKE_INDICATOR_CONTAINER),"careerLikeIndicatorConatainerJS1");
-                add_remove_toggle_class("add",$(DUTIES_BUTTON),"dutiesButtonJS1");
-            });
             $(MENU_CAREER_CONTAINER).on("mouseover" , function(){
                 add_class($(MENU_CAREER_INFO), "menuCareerInfoJS");
                 add_class($(MENU_CAREER_POINTS), "menuCareerPointsJS");
+                add_class($(MENU_CAR_TIP), "menuCareerTipJS");
             });
-        // -- [ 2 ] zjechanie myszką z nawigacji/menu po stronie
+        // -- zjechanie myszką z nawigacji/menu po stronie
             $(MENU_CAREER_CONTAINER).on("mouseleave" , function(){
                 remove_class($(MENU_CAREER_INFO), "menuCareerInfoJS");
                 remove_class($(MENU_CAREER_POINTS), "menuCareerPointsJS");
+                remove_class($(MENU_CAR_TIP), "menuCareerTipJS");
             });
-        // -- [ 3 ] poruszanie myszka po nawigacji/menu
-            $(MENU_CAREER_CONTAINER).on("mousemove" , function(event){
-                let relX = event.pageX - $(this).offset().left;
-                let relY = event.pageY - $(this).offset().top;
-                let par = $(this).outerWidth() / 2;
-                var resize_600 = window.matchMedia("(max-width: 600px)");
-                // left years
-                setTimeout(function(){
-                    if(relX<par && relY<par){
-                        add_class($(YEAR_LEFT_TOP), "yearsJS");
-                        add_class($(MENU_CAREER_INDICATOR), "menuCareerIndicatorJS1");
-                        resize_wall_page_two(WALLPAPER_PAGE_TWO, wallTab[0], wallTabM[0]);
-                    }else{
-                        remove_class($(YEAR_LEFT_TOP),"yearsJS");
-                        remove_class($(MENU_CAREER_INDICATOR),"menuCareerIndicatorJS1");
-                    }
-                    // top year
-                    if(relX>par && relY<par){
-                        add_class($(YEAR_RIGHT_TOP),"yearsJS");
-                        add_class($(MENU_CAREER_INDICATOR),"menuCareerIndicatorJS2");
-                        resize_wall_page_two(WALLPAPER_PAGE_TWO, wallTab[1], wallTabM[1]);
-                    }else{
-                        remove_class($(YEAR_RIGHT_TOP),"yearsJS");
-                        remove_class($(MENU_CAREER_INDICATOR),"menuCareerIndicatorJS2");
-                    }
-                    // right year
-                    if(relX>par && relY>par){
-                        add_class($(YEAR_RIGHT_BOTTOM),"yearsJS");
-                        add_class($(MENU_CAREER_INDICATOR),"menuCareerIndicatorJS3");
-                        resize_wall_page_two(WALLPAPER_PAGE_TWO, wallTab[2], wallTabM[2]);
-                    }else{
-                        remove_class($(YEAR_RIGHT_BOTTOM),"yearsJS");
-                        remove_class($(MENU_CAREER_INDICATOR),"menuCareerIndicatorJS3");
-                    }
-                    // botoom year
-                    if(relX<par && relY>par){
-                        add_class($(YEAR_LEFT_BOTTOM),"yearsJS");
-                        add_class($(MENU_CAREER_INDICATOR),"menuCareerIndicatorJS4");
-                        resize_wall_page_two(WALLPAPER_PAGE_TWO, wallTab[3], wallTabM[3]);
-                    }else{
-                        remove_class($(YEAR_LEFT_BOTTOM),"yearsJS");
-                        remove_class($(MENU_CAREER_INDICATOR),"menuCareerIndicatorJS4");
-                    }
-                    function resize_wall_page_two(el, wall, wallM){
-                        if (resize_600.matches) { 
-                            $(el).css("background-image", wallM);
-                        } else {
-                            $(el).css("background-image", wall);
-                        }
-                    }
-                },100);
-            });
-        // -- [ 4 ] najechanie myszki na jeden z punktow menu nawigacji kariery
+        // -- eventy dla punktów lat w menu
             $(MENU_CAREER_POINTS).each(function(index){
-                $(this).on("mouseover" , function(){
+                $(this).one("click", function(){
+                    add_class($(COMPANY_CONTAINER), "companyContainerJS2");
+                    add_class($(CAREER_LIKE_INDICATOR_CONTAINER), "careerLikeIndicatorConatainerJS1");
+                    add_class($(DUTIES_BUTTON),"dutiesButtonJS1");
+                });
+                $(this).on("click" , function(){
+                    $(this).addClass("yearsJS").siblings(".menuCareerPoints").removeClass("yearsJS");
                     create_objects_from_boards(index, $(COMPANY_NAME),Company_Name_Board,"companyNameLettersJS1","companyNameLettersJS2");
                     show($(COMPANY_NAME).children(),"companyNameLettersJS3", 100, "add");
                     create_objects_from_boards(index, $(COMPANY_POSITION),Company_Position_Board,"companyPositionLettersJS1","companyPositionLettersJS1");
@@ -360,37 +305,58 @@ $(START_BUTTON).on("click", function(){
                     create_objects_from_boards(index, $(COMPANY_YEARS),Company_Years_Work_Board,"companyPositionLettersJS1","companyPositionLettersJS1");
                     show($(COMPANY_YEARS).children(),"companyYearsLettersJS3", 100, "add");
                     how_i_like_job(index);
+                    resize_wall_page_two(WALLPAPER_PAGE_TWO, wallTab[index], wallTabM[index]);
+                });
+                $(this).on("mouseover", function(){
+                    $(MENU_CAREER_INDICATOR).addClass("menuCareerIndicatorJS" + index);
+                });
+                $(this).on("mouseleave", function(){
+                    $(MENU_CAREER_INDICATOR).removeClass("menuCareerIndicatorJS" + index);
                 });
             });
-        //  -- [ 5 ] klinięcie w przycisk nawiguj/ukryj
-            $(MENU_CAREER_NAV).on("click" , function(){
-                show_hide_menu_career();
-            });
-        //  -- [ 6 ] kliknięcie w obowiazki
+        //  kliknięcie w obowiazki
             $(DUTIES_BUTTON).on("click" , function(){
                 let actualIndexNr = $(MENU_CAREER_CONTAINER).children(".yearsJS").index();
                 hide_elements_on_page_two();
                 setTimeout(function(){
-                    create_elements_duties_to_duties_container(actualIndexNr);
-                    add_remove_toggle_class("add",$(DUTIES_CONTAINER),"dutiesContainerJS1");           
+                    create_elements_duties_to_duties_container(actualIndexNr); 
+                    add_class($(DUTIES_CONTAINER), "dutiesContainerJS1"); 
                 },400);
             });
-        //  -- [ 7 ] klikniecie w close
+        //  -- klikniecie w close w obowiązkach
             $(DUTIES_CLOSE).on("click" , function(){
-                add_remove_toggle_class("remove",$(DUTIES_CONTAINER),"dutiesContainerJS1");
+                remove_class($(DUTIES_CONTAINER), "dutiesContainerJS1"); 
                 setTimeout(function(){
                     $(DUTIES_CONTAINER).children(".dutiesBoxesJS1").remove();
                     show_elements_on_page_two();
                 },400); 
             });
-        // -- FUNKCJE
-        // -- [ 1 ] funkcja pokaz ukryj po kliknieciu menu kariery
-            function show_hide_menu_career(){
-                change_class($(MENU_CAREER_CONTAINER),"menuCareerContainerJS");
-                $(MENU_CAREER_NAV).toggleText("ukryj" , "nawiguj");
-                change_class($(MENU_CAREER_NAV),"menuCareerNavJS");
+        // -- klikniecie w punkty menu glownego
+            $(MENU_POINTS[1]).siblings(".menuPunkty").on("click", function(){
+                WALLPAPER_PAGE_TWO.css("opacity", "0");
+                iteracja_for($(".packTwo").children(), animuj_children_page_two);
+            });
+            function animuj_children_page_two(i){
+                setTimeout(function(){
+                    let a = $(".packTwo").children();
+                    $(a[i]).addClass("siteChildrenJS");
+                }, 20 + 200 * i); 
             }
-        // -- [ 2 ] funkcja tworzenie objektow i animaowanie liter tych obiektow w kontenerze company
+        // -- FUNKCJE
+        // -- funkcja zmieniajća tło drugiej strony w zależności czy urządzenie małe / duże
+        function resize_wall_page_two(el, wall, wallM){
+            var resize_600 = window.matchMedia("(max-width: 600px)");
+            if (resize_600.matches) { 
+                $(el).css("background-image", wallM);
+            } else {
+                $(el).css("background-image", wall);
+            }
+        }
+        // -- funkcja pokaz ukryj po kliknieciu menu kariery
+            function show_hide_menu_career(){
+                change_class($(MENU_CAREER_CONTAINER), "menuCareerContainerJS");
+            }
+        // -- funkcja tworzenie objektow i animaowanie liter tych obiektow w kontenerze company
             function create_objects_from_boards(nr,el,el2,classes1,classes2){
                 el.text("");
                 for(j=0;j<el2[nr].length; j++){
@@ -398,7 +364,7 @@ $(START_BUTTON).on("click", function(){
                     else{el.append("<span class="+classes2+">"+el2[nr][j]+"</span>");}
                 }
             }
-        // -- [ 3 ] funkcje ( dwie połączone ze sobą ) nadania lub odjecia klasy z opoznieniem czasowym dla kazdego pojedynczego elementu
+        // -- funkcje ( dwie połączone ze sobą ) nadania lub odjecia klasy z opoznieniem czasowym dla kazdego pojedynczego elementu
             function show(el,classes,time,a){
                 var i;
                 for (i = 0; i < el.length; i++){
@@ -415,13 +381,7 @@ $(START_BUTTON).on("click", function(){
                     }
                 }, 50 + i * time);
             }
-        // -- [ 4 ] funkcja zmieniaj, usuwaj, dodawaj klasy
-            function add_remove_toggle_class(addRemoveTogle,el,classes){
-                if(addRemoveTogle === "add"){add_class(el, classes);}
-                else if(addRemoveTogle === "remove"){remove_class(el, classes);}
-                else if(addRemoveTogle === "toggle"){change_class(el, classes);}
-            }
-        //  -- [ 5 ] funkcja wskaznika polubienia pracy
+        //  -- funkcja wskaznika polubienia pracy
         function how_i_like_job(indexNr){
             let howMuchLike;
             remove_class($(CAREER_LIKE_STARS), "careerLikeStarsJS1");
@@ -443,7 +403,7 @@ $(START_BUTTON).on("click", function(){
                     add_class($(CAREER_LIKE_STARS[i]), "careerLikeStarsJS1");
                 }, 50 + i * 100);
             }
-        // -- [ 6 ] funkcja tworząca liste obowiazkow w kontenerze obwiazki
+        // -- funkcja tworząca liste obowiazkow w kontenerze obwiazki
         function create_elements_duties_to_duties_container(el){
             for(let i of Duties[el]){
                 var newDutiesBox = $(document.createElement('div'));
@@ -452,19 +412,19 @@ $(START_BUTTON).on("click", function(){
                 $(newDutiesBox).appendTo(DUTIES_CONTAINER);
             }
         }
-        // -- [ 7 ] funkcja ukryj elementy strony drugiej - menu, company, stars, duties button
+        // -- funkcja ukryj elementy strony drugiej - menu, company, stars, duties button
         function hide_elements_on_page_two(){
             show_hide_menu_career();
-            add_remove_toggle_class("remove",$(COMPANY_CONTAINER),"companyContainerJS2");
-            add_remove_toggle_class("remove",$(CAREER_LIKE_INDICATOR_CONTAINER),"careerLikeIndicatorConatainerJS1");
-            add_remove_toggle_class("remove",$(DUTIES_BUTTON),"dutiesButtonJS1");
+            remove_class($(COMPANY_CONTAINER), "companyContainerJS2");
+            remove_class($(CAREER_LIKE_INDICATOR_CONTAINER), "careerLikeIndicatorConatainerJS1");
+            remove_class($(DUTIES_BUTTON), "dutiesButtonJS1");
         }
-        // -- [ 8 ] funkcja pokaż elementy strony drugiej - menu, company, stars, duties button
+        // -- funkcja pokaż elementy strony drugiej - menu, company, stars, duties button
         function show_elements_on_page_two(){
             show_hide_menu_career();
-            add_remove_toggle_class("add",$(COMPANY_CONTAINER),"companyContainerJS2");
-            add_remove_toggle_class("add",$(CAREER_LIKE_INDICATOR_CONTAINER),"careerLikeIndicatorConatainerJS1");
-            add_remove_toggle_class("add",$(DUTIES_BUTTON),"dutiesButtonJS1");
+            add_class($(COMPANY_CONTAINER), "companyContainerJS2");
+            add_class($(CAREER_LIKE_INDICATOR_CONTAINER), "careerLikeIndicatorConatainerJS1");
+            add_class($(DUTIES_BUTTON), "dutiesButtonJS1");
         }
         $(MENU_POINTS[1]).on("click", function(){
             setTimeout(function(){
@@ -474,16 +434,7 @@ $(START_BUTTON).on("click", function(){
                 },700);
             },700);
         });
-        $(MENU_POINTS[1]).siblings(".menuPunkty").on("click", function(){
-            WALLPAPER_PAGE_TWO.css("opacity", "0");
-            iteracja_for($(".packTwo").children(), animuj_children_page_two);
-        });
-        function animuj_children_page_two(i){
-            setTimeout(function(){
-                let a = $(".packTwo").children();
-                $(a[i]).addClass("siteChildrenJS");
-            }, 20 + 200 * i); 
-        }
+        
     
     
     
@@ -985,8 +936,8 @@ var eng = [
     "I gain programming knowledge mainly on the Internet, namely on the following portals: udemy.com, w3school.com, developer.mozilla.org, stackoverflow.com. This web page is the effects of my learning to-date", 
     "My next steps will be to improve my JavaScript programming skills and start learning", 
     "and", 
-    "My goal is to start a career in the IT industry.", 
-    "hide", 
+    "My goal is to start a career in the IT industry.",
+    "Click year to change",
     "HOW MUCH I LOVED WORK ?", 
     "DUTIES", 
     "close",
