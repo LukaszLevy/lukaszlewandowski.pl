@@ -1,255 +1,284 @@
-var lang = "";
-var isLoaded = false;
-const PRELOADER = $('.preloader');
-const INFO_BUT = $(".infoBut");
-const INFO_START = $(".infoStart");
-const START_BUTTON = $(".closeInfoStartTxt");
-const POLAND = $(".pol");
-const ENG = $(".ang");
-const CHOOSELANG_SITE = $(".chooseLang");
-const FLAG = $(".flag");
-var check = function(){
-    if($(PRELOADER).css("display") === "none"){
-        $(CHOOSELANG_SITE).addClass("chooseLangJS");
-    }
-    else {
-        setTimeout(check, 500); 
-    }
-};
-check();
-$( window ).load(function() {
-    $(PRELOADER).fadeOut(4000);
-});
-$(POLAND).on("mouseover", function(){
-    $(FLAG).addClass("flagJS1");
-});
-$(POLAND).on("mouseleave", function(){
-    $(FLAG).removeClass("flagJS1");
-});
-$(ENG).on("mouseover", function(){
-    $(FLAG).addClass("flagJS2");
-});
-$(ENG).on("mouseleave", function(){
-    $(FLAG).removeClass("flagJS2");
-});
-$(POLAND).on("click", function(){
-    lang = "pl";
-    languagesEng();
-    $(CHOOSELANG_SITE).removeClass("chooseLangJS");
-    setTimeout(function(){
-        $(CHOOSELANG_SITE).css("display", "none");
-        $(INFO_BUT).addClass("infoButJS");
-    }, 1000);
-});
-$(ENG).on("click", function(){
-    lang = "eng";
-    languagesEng();
-    $(CHOOSELANG_SITE).removeClass("chooseFlagJS");
-    setTimeout(function(){
-        $(CHOOSELANG_SITE).css("display", "none");
-        $(INFO_BUT).addClass("infoButJS");
-    }, 1000);
-});
-// -- start strony
-$( document ).ready(function() {
-$(START_BUTTON).on("click", function(){
-    $(INFO_START).fadeOut(500);
-    // -- FUNKCJE OGÓLNE
-        // -- [ 0 ] zmiana tekstu
-            $.fn.extend({
-                toggleText: function(a, b){
-                    return this.text(this.text() == b ? a : b);
-                }
-            });
-        // -- [ 1 ] nadanie data -index dla dowolnego elementu
-            function nadaj_index(el,indexName){
-                let a = 0;
-                for(j=0;j<el.length;j++){
-                    let currentEl = $(el[a]);
-                    currentEl.attr(indexName , a);
-                    a++;
-                }
+// -- PREPAGE
+    // -- ZMIENNE
+        var lang = "";
+        var isLoaded = false;
+        const PRELOADER = $('.preloader');
+        const INFO_BUT = $(".infoBut");
+        const INFO_START = $(".infoStart");
+        const START_BUTTON = $(".closeInfoStartTxt");
+        const POLISH = $(".pol");
+        const ENGLISH = $(".ang");
+        const CHOOSE_LANG_SITE = $(".chooseLang");
+        const FLAG = $(".flag");
+    // -- START
+    // -- FUNKCJE
+        var check = function(){
+            if($(!PRELOADER.length)){
+                $(CHOOSE_LANG_SITE).addClass("chooseLangJS");
             }
-        // -- [ 2 ] zmiana klas funkcja ogolna
-            function change_class(el1,className){
-                el1.toggleClass(className);
+            else {
+                setTimeout(check, 500); 
             }
-        // -- [ 3 ] dodawanie klas funkcja ogolna
-            function add_class(el1,className){
-                el1.addClass(className);
-            }
-        // -- [ 4 ] usuwanie klas funkcja ogolna
-            function remove_class(el1,className){
-                el1.removeClass(className);
-            }
-    
-    // NAGŁÓWEK , stopka
-        // -- ZMIENNE, STAŁE
-            var MENU_TAG = $('.tagMenu');
-            var MENU_POINTS = $('.menuPunkty');
-        // -- start funkcji ogolnych
-            nadaj_index(MENU_POINTS,"index-nr");
-        // -- EVENTY
-        // -- [ 1 ] klikniecie w punkty menu
-        MENU_POINTS.on('click' , function(){
-            a = $(this);
+        };
+        check();
+    // -- EVENTY
+        $(window).load(function() {
             setTimeout(function(){
-                let y = $(a).outerWidth();
-                let x = $(a).position();
-                let n = $(a).siblings('p');
-                MENU_TAG.css({left: x.left , width: y});
-                add_class($(a), 'colorMenuPunkty');
-                remove_class(n, 'colorMenuPunkty');
-                przewin_ekran_glowny($(a));
-            },400);
-        });
-        $( window ).resize(function() {
-            setTimeout(function(){
-                let a = $(".colorMenuPunkty");
-                let y = $(a).outerWidth();
-                let x = $(a).position();
-                MENU_TAG.css({left: x.left , width: y});
-            }, 400);
+                $(PRELOADER).remove();
+            }, 4000);
             
         });
+        $(POLISH).on({
+            mouseover: () => $(FLAG).addClass("flagJS1"),
+            mouseleave: () => $(FLAG).removeClass("flagJS1"),
+            click: () => {
+                lang = "pl";
+                languagesEng();
+                $(CHOOSE_LANG_SITE).removeClass("chooseLangJS");
+                setTimeout(function(){
+                    $(CHOOSE_LANG_SITE).remove();
+                    $(INFO_BUT).addClass("infoButJS");
+                }, 1000);
+            }
+        });
+        $(ENGLISH).on({
+            mouseover: () => $(FLAG).addClass("flagJS2"),
+            mouseleave: () => $(FLAG).removeClass("flagJS2"),
+            click: () => {
+                lang = "eng";
+                languagesEng();
+                $(CHOOSE_LANG_SITE).removeClass("chooseLangJS");
+                setTimeout(function(){
+                    $(CHOOSE_LANG_SITE).remove();
+                    $(INFO_BUT).addClass("infoButJS");
+                }, 1000);
+            }
+        });
+// -- start strony
+$( document ).ready(function() {
+$(START_BUTTON).one("click", function(){
+    padding_cont(100);
+    $(INFO_START).remove();
+    // -- FUNKCJE OGÓLNE
+        $.fn.extend({
+            toggleText: function(a, b){
+                return this.text(this.text() == b ? a : b);
+            }
+        });
+        function nadaj_index(el,indexName){
+            let a = 0;
+            for(j=0;j<el.length;j++){
+                let currentEl = $(el[a]);
+                currentEl.attr(indexName , a);
+                a++;
+            }
+        }
+        function change_class(el1,className){
+            el1.toggleClass(className);
+        }
+        function add_class(el1,className){
+            el1.addClass(className);
+        }
+        function remove_class(el1,className){
+            el1.removeClass(className);
+        }
         
-        // -- FUNKCJE
-        // -- [ 1 ] przewinięcie ekranów głownych
-            function przewin_ekran_glowny(el1){
-                let mnoznik = el1.attr("index-nr");
-                $(page[mnoznik]).css("left" , "0");
-                let pageSi = $(page[mnoznik]);
-                $(pageSi).siblings().css("left" , "100%");
-            }
-    // STRONA START,ONE 
+    // NAGŁÓWEK , stopka
         // -- ZMIENNE, STAŁE
-            var page = $('.Page');
-            var HELLO_BOX = $(".helloBox");
-            var nameLewandowskiBox = $('.nameLewandowskiBox');
-            var sloganKodowanieBox = $('.sloganKodowanieBox');
-            var OPIS_O_MNIE = $(".moreInfo");
-            var OPIS_O_MNIE_TXT = $(".meTxtCont");
-            const CLOS_ME_INFO = $(".closeMeInfo");
-        // -- START FUNKCJI OGÓLNYCH
-            nadaj_index(page,"index-nr2");
+            const ALL_PAGES_BOX = $(".allPagesBox");
+            const MENU_TAG = $('.tagMenu');
+            const MENU_POINTS = $('.menuPunkty');
+            const OPT_BUT = $('.optionButton');
+            const HEADER = $('.header');
+            const OPT_AREA = $(".optionArea");
+            const LOGO = $(".logo");
+            const MENU_CONT = $("#menuKontener");
+            const BRIGHT_LESS = $(".brightLess");
+            const PAGE = $('.Page');
+            const SOCIAL = $(".social");
+            var WIDTH_MENU_CONT = $(MENU_CONT).width();
+        // -- start funkcji ogolnych
+            nadaj_index(MENU_POINTS,"index-nr");
+            // $(OPT_BUT).css("left", WIDTH_MENU_CONT / 2 );
+        // -- EVENTY
+        $(MENU_POINTS).each(function(index){
+            $(this).on("click", function(){
+                let current = $(this);
+                let y = $(this).outerWidth();
+                let x = $(this).position();
+                setTimeout(function(){
+                    $(MENU_TAG).css({left: x.left , width: y});
+                    $(current).addClass('colorMenuPunkty');
+                    $(current).siblings("p").removeClass('colorMenuPunkty');
+                    $(ALL_PAGES_BOX).css("left" , "-" + index * 100 + "%");
+                }, 800);
+                padding_cont();
+            });
+        });
+        $(LOGO).on({
+            click: () => {
+                var OPT_MENU = $(OPT_BUT).hasClass("optionButtonJS") ? option_menu_show("off") : option_menu_show("on");
+                return OPT_MENU;
+            }
+        });
+        $(BRIGHT_LESS).on({
+            click: () => {
+                var OPT_MENU = $(OPT_BUT).hasClass("optionButtonJS") ? option_menu_show("off") : option_menu_show("on");
+                return OPT_MENU;
+            }
+        });
         // -- FUNKCJE
-        // -- [ 1 ] rozdziel napis na pojedyncze litery, stworz oddzielne elementy dla kazdej z liter, zrob petle dla kazdej z liter i ostyluj je, animuj 
-            function create_word_append_to_element_and_animate(wordToAddAndStyle, whereAppendWord, mainClassForApendedWord, firstAnimateClassForWord, secondAnimateClassForWord, refreshClass){
-                whereAppendWord.children("."+mainClassForApendedWord).remove();
-                var appendWord = (i) => whereAppendWord.append("<span class="+mainClassForApendedWord+">"+wordToAddAndStyle[i]+"</span>");
-                createLoop(appendWord, wordToAddAndStyle);
-                var letters = $("."+mainClassForApendedWord);
-                for(k=0; k < letters.length; k++){if($(letters[k]).text() == " "){$(letters[k]).addClass("marginLetter");}}
-                if(firstAnimateClassForWord == null){}
-                    else{
-                        addOrRemoveNewClass(firstAnimateClassForWord, "add");
-                    if(secondAnimateClassForWord == null){}
-                    else{
-                        addOrRemoveNewClass(secondAnimateClassForWord, "add", 900);
-                    }
+            $(window).resize(function() {
+                setTimeout(function(){
+                    let a = $(".colorMenuPunkty");
+                    let y = $(a).outerWidth();
+                    let x = $(a).position();
+                    MENU_TAG.css({left: x.left , width: y});
+                    // $(OPT_BUT).css("left", WIDTH_MENU_CONT / 2 );
+                }, 400);
+            });
+            function option_menu_show(opt){
+                if(opt === "on"){
+                    $(BRIGHT_LESS).addClass("brightLessJS");
+                    $(SOCIAL).addClass("socialJS");
+                    $(OPT_BUT).addClass("optionButtonJS");
+                    $(OPT_AREA).addClass("optionAreaJS");
+                    $(LOGO).addClass("logoJS");
+                    
+                }else if(opt === "off"){
+                    $(OPT_BUT).removeClass("optionButtonJS");
+                    $(OPT_AREA).removeClass("optionAreaJS");
+                    $(LOGO).removeClass("logoJS");
+                    $(BRIGHT_LESS).removeClass("brightLessJS");
+                    $(SOCIAL).removeClass("socialJS");
                 }
-                whereAppendWord.last().append("<img class='"+refreshClass+"'" + "src='img/icn/repeat.png' />");
-                $("."+refreshClass).on("click" , function(e){
-                    var time = 200;
-                    if($(this).hasClass("helloLetterRefresh")){time = 500;}
-                    $("."+refreshClass).remove();
-                    addOrRemoveNewClass(secondAnimateClassForWord, "remove");
-                    addOrRemoveNewClass(firstAnimateClassForWord, "remove", 900);
-                    setTimeout(function(){
-                        create_word_append_to_element_and_animate(wordToAddAndStyle, whereAppendWord, mainClassForApendedWord, firstAnimateClassForWord, secondAnimateClassForWord, refreshClass);
-                    },letters.length*time);
-                });
-                // -- metody dodatkowe dla funkcji 1
-                function createLoop(functionName, elLength){
-                    for (let i = 0, k = elLength.length; i < k; i++){functionName(i);}
-                }
-                function addOrRemoveNewClass(currentClass, addRemove, timeOrNotime){
-                    if(timeOrNotime == null){
-                        var addNewClass = function(i){
-                            setTimeout(function() {
-                                if(addRemove == "add"){$(letters[i]).addClass(currentClass);}
-                                if(addRemove == "remove"){$(letters[i]).removeClass(currentClass);}
-                            }, 50 + i * 100);
-                        };
-                        createLoop(addNewClass, letters);
-                    }else{
-                        setTimeout(function(){
-                            var addNewClass = function(i){
-                                setTimeout(function() {
-                                    if(addRemove == "add"){$(letters[i]).addClass(currentClass);}
-                                    if(addRemove == "remove"){$(letters[i]).removeClass(currentClass);}
-                                }, 50 + i * 100);
-                            };
-                            createLoop(addNewClass, letters);
-                        },timeOrNotime);
-                    }
-                }
-                
             }
-            var textAnimeSiteOne = ["Cześć,", "mam na imię Łukasz", "chcę pracować w IT"];
+    // STRONA 1
+        // -- ZMIENNE, STAŁE
+            var TEXT_ARR = ["Cześć,", "mam na imię Łukasz", "chcę pracować w IT."];
             if(lang === "eng"){
-                textAnimeSiteOne = ["Hello,", "my name is Luke", "i want to work in IT"];
+                TEXT_ARR = ["Hello,", "my name is Luke", "i want to work in IT."];
             }
-        // -- START FUNKCJI
-            create_word_append_to_element_and_animate(textAnimeSiteOne[0], HELLO_BOX, "helloLetter", "helloLetterJS1", "helloLetterJS2", "helloLetterRefresh");
-            setTimeout(function(){
-                create_word_append_to_element_and_animate(textAnimeSiteOne[1], nameLewandowskiBox, "nameLetter", "nameLetterJS1", "nameLetterJS2", "nameLetterRefresh");
-            }, 1000);
-            setTimeout(function(){
-                create_word_append_to_element_and_animate(textAnimeSiteOne[2], sloganKodowanieBox, "sloganLetter", "sloganLetterJS1", "sloganLetterJS2", "sloganLetterRefresh");
-            }, 2000);
-            setTimeout(function(){
-                add_class($(OPIS_O_MNIE) , "moreInfoJS");
-            },6500);
-
-            $(OPIS_O_MNIE).on("click", function(){
-                $(this).fadeOut(200);
-                $(OPIS_O_MNIE_TXT).addClass("meTxtContJS");
-            });
-            $(CLOS_ME_INFO).on("click", function(){
-                $(OPIS_O_MNIE_TXT).removeClass("meTxtContJS");
-                $(OPIS_O_MNIE).fadeIn(200);
-            });
-    
+            
+            const HELLO_BOX = $(".helloBox");
+            const NAME_LEWANDOWSKI_BOX = $('.nameLewandowskiBox');
+            const SLOGAN_BOX = $('.sloganKodowanieBox');
+            const MORE_INFO_BUT = $(".moreInfo");
+            const OPIS_O_MNIE_CONT = $(".meTxtCont");
+            const CLOS_ME_INFO = $(".closeMeInfo");
+            var EL_ARR_TEXT = [HELLO_BOX, NAME_LEWANDOWSKI_BOX, SLOGAN_BOX];
+            const EL_TO_ANIMATE_SITE_ONE = $(".nameLewSloganKodBox").children("div");
+            const CONT_Z_INDEX_SITE_ONE = $(".contZindx");
+        // -- START FUNKCJI OGÓLNYCH
+            nadaj_index(PAGE,"index-nr2");
+        // -- START
+            animate_text_page_one(createTextOnPage);
             $(MENU_POINTS[0]).on("click", function(){
                 setTimeout(function(){
-                    iteracja_for($(".packOne").children().children(), animuj_el_site_one_2);
-                    setTimeout(function(){
-                        $(".wallOne").css("opacity", "1");
-                    },800);
-                },700);
+                    if($(OPIS_O_MNIE_CONT).hasClass("meTxtContJS")){
+                        $(OPIS_O_MNIE_CONT).removeClass("siteOneChildrenJS2");
+                    }else{
+                        iteracja_for(EL_TO_ANIMATE_SITE_ONE, show_el_site_one);
+                    }
+                }, 1600);
+            }).siblings(".menuPunkty").on("click", function(){
+                if($(OPIS_O_MNIE_CONT).hasClass("meTxtContJS")){
+                    $(OPIS_O_MNIE_CONT).addClass("siteOneChildrenJS2");
+                }else{
+                    iteracja_for(EL_TO_ANIMATE_SITE_ONE, hide_el_site_one);
+                }
             });
-            $(MENU_POINTS[0]).siblings(".menuPunkty").on("click", function(){
-                $(".wallOne").css("opacity", "0");
-                iteracja_for($(".packOne").children().children(), animuj_el_site_one);
-            });
-            function animuj_el_site_one(i){
+            $(MORE_INFO_BUT).on("click", function(){
+                iteracja_for(EL_TO_ANIMATE_SITE_ONE, hide_el_site_one);
                 setTimeout(function(){
-                    let a = $(".packOne").children().children();
-                    $(a[i]).addClass("siteOneChildrenJS");
-                }, 100 + 100 * i);
+                    $(OPIS_O_MNIE_CONT).addClass("meTxtContJS");
+                    $(CONT_Z_INDEX_SITE_ONE).addClass("contZindxJS");
+                    padding_cont();
+                }, 400);
+            });
+            $(CLOS_ME_INFO).on("click", function(){
+                $(OPIS_O_MNIE_CONT).removeClass("meTxtContJS");
+                setTimeout(function(){
+                    iteracja_for(EL_TO_ANIMATE_SITE_ONE, show_el_site_one);
+                    padding_cont();
+                    $(CONT_Z_INDEX_SITE_ONE).removeClass("contZindxJS");
+                }, 400);
+            });
+        // -- FUNKCJE
+            function createTextOnPage(){
+                $(EL_ARR_TEXT).each(function(index){
+                    var letterArr = [];
+                    letterArr.push(TEXT_ARR[index].split(""));
+                    for(i=0; i<letterArr.length ;i++){
+                        for(j=0; j<letterArr[i].length; j++){
+                            if(letterArr[i][j] == " "){
+                                $(this).append("<span class='helloLetter marginLetter'>"+letterArr[i][j]+"</span>");
+                            }else{
+                                $(this).append("<span class='helloLetter'>"+letterArr[i][j]+"</span>");
+                            }
+                        }
+                    }
+                });
             }
-            function animuj_el_site_one_2(i){
+            function animate_text_page_one(cb1){
+                cb1();
+                itteration_for__animate_text_page_one();
                 setTimeout(function(){
-                    let a = $(".packOne").children().children();
-                    $(a[i]).removeClass("siteOneChildrenJS");
-                }, 100 + 100 * i);
+                    add_class($(MORE_INFO_BUT) , "moreInfoJS");
+                }, 4500);
+            }
+            function iteration_for_adding_class_fn(el){
+                for(i=0; i<el.length; i++){
+                    adding_class_for_each_letter(i, el);
+                }
+            }
+            function adding_class_for_each_letter(i, el){
+                setTimeout(function(){
+                    if($(el[i]).parent().hasClass("nameLewandowskiBox")){
+                        $(el[i]).addClass("helloLetterJS2");
+                    }else
+                    $(el[i]).addClass("helloLetterJS1");
+                }, 300 + i * 50);
+            }
+            function animate_text_page_one_by_adding_class(j){
+                setTimeout(function(){
+                    var current = $(EL_ARR_TEXT[j]).children(".helloLetter");
+                    iteration_for_adding_class_fn(current);
+                }, 300 + j * 1000);
                 
             }
-    
-    
+            function itteration_for__animate_text_page_one(){
+                for(j=0; j<EL_ARR_TEXT.length; j++){
+                    animate_text_page_one_by_adding_class(j);
+                }
+            }
+            function hide_el_site_one(i){
+                setTimeout(function(){
+                    $(EL_TO_ANIMATE_SITE_ONE[i]).addClass("siteOneChildrenJS");
+                }, 100 + 100 * i);
+            }
+            function show_el_site_one(i){
+                setTimeout(function(){
+                    $(EL_TO_ANIMATE_SITE_ONE[i]).removeClass("siteOneChildrenJS");
+                }, 100 + 100 * i);
+            }
     // -- STRONA DRUGA, TWO -- //
         // -- ZMIENNE, STAŁE
             const WALLPAPER_PAGE_TWO = $(".wallTwo");
+            const ELEMENTS_TO_ANIAMTE_PAGE_TWO = $(".packTwo").children(".contChildren").children("div");
             const MENU_CAREER_CONTAINER = $(".menuCareerContainer");
             const MENU_CAREER_POINTS = $(".menuCareerPoints");
             const MENU_CAREER_INDICATOR = $(".menuCareerIndicator");
             const MENU_CAREER_INFO = $(".menuCareerInfo");
-            const COMPANY_CONTAINER = $(".companyContainer");
             const COMPANY_NAME = $(".companyName");
             const COMPANY_POSITION = $(".companyPosition");
             const COMPANY_YEARS = $(".companyYears");
             const MENU_CAR_TIP = $(".menuCareerTip");
+            const CAREER_LIKE_STARS = $(".careerLikeStars");
+            const DUTIES_BUTTON = $(".dutiesButton");
+            const DUTIES_CONTAINER = $(".dutiesContainer");
+            const DUTIES_CLOSE = $(".dutiesClose");
+            const DUTIES_MAIN_CONT = $(".contMenuPage2").next("div");
             var wallTab = ["url(img/wallpapers/wallpaper_2_0.jpg)", "url(img/wallpapers/wallpaper_2_1.jpg)", "url(img/wallpapers/wallpaper_2_2.jpg)", "url(img/wallpapers/wallpaper_2_3.jpg)"];
             var wallTabM = ["url(img/wallpapers/wallpaper_2_0m.jpg)", "url(img/wallpapers/wallpaper_2_1m.jpg)", "url(img/wallpapers/wallpaper_2_2m.jpg)", "url(img/wallpapers/wallpaper_2_3m.jpg)"];
             var Company_Name_Board = ["GEOSTANDARD","ASTALDI","PIZZAROTTI","ERPLAST"];
@@ -268,81 +297,112 @@ $(START_BUTTON).on("click", function(){
                 $(MENU_CAREER_INFO).addClass("menuCareerInfoJS2");
             }
             var Duties = [Duties0, Duties1, Duties2, Duties3];
-            const CAREER_LIKE_INDICATOR_CONTAINER = $(".careerLikeIndicatorConatainer");
-            const CAREER_LIKE_STARS = $(".careerLikeStars");
-            const DUTIES_BUTTON = $(".dutiesButton");
-            const DUTIES_CONTAINER = $(".dutiesContainer");
-            const DUTIES_CLOSE = $(".dutiesClose");
-            
+            var elementsToAddClassJSArr = [MENU_CAREER_INFO, MENU_CAREER_POINTS, MENU_CAR_TIP];
+            var classesToAddArr = ["menuCareerInfoJS", "menuCareerPointsJS", "menuCareerTipJS"];
+            var PageTwoClicked = false;
         // -- START FUNKCJI OGÓLNYCH
             nadaj_index($(COMPANY_NAME),"index-nr4");
             nadaj_index($(MENU_CAREER_POINTS),"index-nr6");
-        // -- EVENTY
-            $(MENU_CAREER_CONTAINER).on("mouseover" , function(){
-                add_class($(MENU_CAREER_INFO), "menuCareerInfoJS");
-                add_class($(MENU_CAREER_POINTS), "menuCareerPointsJS");
-                add_class($(MENU_CAR_TIP), "menuCareerTipJS");
-            });
-        // -- zjechanie myszką z nawigacji/menu po stronie
-            $(MENU_CAREER_CONTAINER).on("mouseleave" , function(){
-                remove_class($(MENU_CAREER_INFO), "menuCareerInfoJS");
-                remove_class($(MENU_CAREER_POINTS), "menuCareerPointsJS");
-                remove_class($(MENU_CAR_TIP), "menuCareerTipJS");
-            });
         // -- eventy dla punktów lat w menu
+            $(MENU_CAREER_CONTAINER).on({
+                mouseover: () => {
+                    $(elementsToAddClassJSArr).each(function(index){
+                        $(this).addClass(classesToAddArr[index]);
+                    });
+                },
+                mouseleave: () => {
+                    $(elementsToAddClassJSArr).each(function(index){
+                        $(this).removeClass(classesToAddArr[index]);
+                    });
+                }
+            });
             $(MENU_CAREER_POINTS).each(function(index){
                 $(this).one("click", function(){
-                    add_class($(COMPANY_CONTAINER), "companyContainerJS2");
-                    add_class($(CAREER_LIKE_INDICATOR_CONTAINER), "careerLikeIndicatorConatainerJS1");
-                    add_class($(DUTIES_BUTTON),"dutiesButtonJS1");
+                    PageTwoClicked = true;
+                    iteracja_for(ELEMENTS_TO_ANIAMTE_PAGE_TWO, show_content_page_two);
+                    padding_cont();
                 });
-                $(this).on("click" , function(){
-                    $(this).addClass("yearsJS").siblings(".menuCareerPoints").removeClass("yearsJS");
-                    create_objects_from_boards(index, $(COMPANY_NAME),Company_Name_Board,"companyNameLettersJS1","companyNameLettersJS2");
-                    show($(COMPANY_NAME).children(),"companyNameLettersJS3", 100, "add");
-                    create_objects_from_boards(index, $(COMPANY_POSITION),Company_Position_Board,"companyPositionLettersJS1","companyPositionLettersJS1");
-                    show($(COMPANY_POSITION).children(),"companyPositionLettersJS3", 100, "add");
-                    create_objects_from_boards(index, $(COMPANY_YEARS),Company_Years_Work_Board,"companyPositionLettersJS1","companyPositionLettersJS1");
-                    show($(COMPANY_YEARS).children(),"companyYearsLettersJS3", 100, "add");
-                    how_i_like_job(index);
-                    resize_wall_page_two(WALLPAPER_PAGE_TWO, wallTab[index], wallTabM[index]);
-                });
-                $(this).on("mouseover", function(){
-                    $(MENU_CAREER_INDICATOR).addClass("menuCareerIndicatorJS" + index);
-                });
-                $(this).on("mouseleave", function(){
-                    $(MENU_CAREER_INDICATOR).removeClass("menuCareerIndicatorJS" + index);
+                $(this).on({
+                    click: () => {
+                        $(this).addClass("yearsJS").siblings(".menuCareerPoints").removeClass("yearsJS");
+                        create_objects_from_boards(index, $(COMPANY_NAME),Company_Name_Board,"companyNameLettersJS1","companyNameLettersJS2");
+                        show($(COMPANY_NAME).children(),"companyNameLettersJS3", 100, "add");
+                        create_objects_from_boards(index, $(COMPANY_POSITION),Company_Position_Board,"companyPositionLettersJS1","companyPositionLettersJS1");
+                        show($(COMPANY_POSITION).children(),"companyPositionLettersJS3", 100, "add");
+                        create_objects_from_boards(index, $(COMPANY_YEARS),Company_Years_Work_Board,"companyPositionLettersJS1","companyPositionLettersJS1");
+                        show($(COMPANY_YEARS).children(),"companyYearsLettersJS3", 100, "add");
+                        how_i_like_job(index);
+                        resize_wall_page_two(WALLPAPER_PAGE_TWO, wallTab[index], wallTabM[index]);
+                    },
+                    mouseover: () => $(MENU_CAREER_INDICATOR).addClass("menuCareerIndicatorJS" + index),
+                    mouseleave: () => $(MENU_CAREER_INDICATOR).removeClass("menuCareerIndicatorJS" + index),
                 });
             });
-        //  kliknięcie w obowiazki
             $(DUTIES_BUTTON).on("click" , function(){
-                let actualIndexNr = $(MENU_CAREER_CONTAINER).children(".yearsJS").index();
-                hide_elements_on_page_two();
-                setTimeout(function(){
-                    create_elements_duties_to_duties_container(actualIndexNr); 
-                    add_class($(DUTIES_CONTAINER), "dutiesContainerJS1"); 
-                },400);
+                var actualIndexNr = $(MENU_CAREER_CONTAINER).children(".yearsJS").index();
+                menu_career_show_or_hide(0, "hide");
+                content_page_two_show_or_hide(0, "hide");
+                duties_box_show_or_hide(700, "open", actualIndexNr);
             });
-        //  -- klikniecie w close w obowiązkach
             $(DUTIES_CLOSE).on("click" , function(){
-                remove_class($(DUTIES_CONTAINER), "dutiesContainerJS1"); 
-                setTimeout(function(){
-                    $(DUTIES_CONTAINER).children(".dutiesBoxesJS1").remove();
-                    show_elements_on_page_two();
-                },400); 
+                duties_box_show_or_hide(700, "close");
+                content_page_two_show_or_hide(700, "show");
+                menu_career_show_or_hide(500, "show");
             });
         // -- klikniecie w punkty menu glownego
-            $(MENU_POINTS[1]).siblings(".menuPunkty").on("click", function(){
-                WALLPAPER_PAGE_TWO.css("opacity", "0");
-                iteracja_for($(".packTwo").children(), animuj_children_page_two);
+            $(MENU_POINTS[1]).on("click", function(){
+                menu_career_show_or_hide(1600, "show");
+                content_page_two_show_or_hide(1600, "show");
+            }).siblings(".menuPunkty").on("click", function(){
+                duties_box_show_or_hide(700, "close");
+                menu_career_show_or_hide(0, "hide");
+                content_page_two_show_or_hide(0, "hide");
             });
-            function animuj_children_page_two(i){
-                setTimeout(function(){
-                    let a = $(".packTwo").children();
-                    $(a[i]).addClass("siteChildrenJS");
-                }, 20 + 200 * i); 
-            }
         // -- FUNKCJE
+        function content_page_two_show_or_hide(time, option){
+            if(option === "show" && PageTwoClicked === true){
+                setTimeout(function(){
+                    iteracja_for(ELEMENTS_TO_ANIAMTE_PAGE_TWO, show_content_page_two);
+                }, time);
+            }if(option === "hide"){
+                setTimeout(function(){
+                    iteracja_for(ELEMENTS_TO_ANIAMTE_PAGE_TWO, hide_content_page_two);
+                }, time);
+            }
+        }
+        function show_content_page_two(i){
+            setTimeout(function(){
+                $(ELEMENTS_TO_ANIAMTE_PAGE_TWO[i]).addClass("siteTwoChildrenJS");
+            }, 50 + 150 * i);
+        }
+        function hide_content_page_two(i){
+            setTimeout(function(){
+                $(ELEMENTS_TO_ANIAMTE_PAGE_TWO[i]).removeClass("siteTwoChildrenJS");
+            }, 50 + 150 * i);
+        }
+        function menu_career_show_or_hide(time, option){
+            setTimeout(function(){
+                if(option === "show"){
+                    $(MENU_CAREER_CONTAINER).addClass("siteTwoChildrenJS");
+                }if(option === "hide"){
+                    $(MENU_CAREER_CONTAINER).removeClass("siteTwoChildrenJS");
+                }
+            }, time);
+        }
+        function duties_box_show_or_hide(time, option, index){
+            if(option === "close"){
+                $(DUTIES_MAIN_CONT).addClass("contMenuPage3");
+                setTimeout(function(){
+                    $(DUTIES_CONTAINER).children(".dutiesBoxesJS1").remove();
+                }, time);
+            }if(option === "open"){
+                create_elements_duties_to_duties_container(index); 
+                padding_cont();
+                setTimeout(function(){
+                    $(DUTIES_MAIN_CONT).removeClass("contMenuPage3");
+                }, time);
+            }
+        }
         // -- funkcja zmieniajća tło drugiej strony w zależności czy urządzenie małe / duże
         function resize_wall_page_two(el, wall, wallM){
             var resize_600 = window.matchMedia("(max-width: 600px)");
@@ -352,10 +412,6 @@ $(START_BUTTON).on("click", function(){
                 $(el).css("background-image", wall);
             }
         }
-        // -- funkcja pokaz ukryj po kliknieciu menu kariery
-            function show_hide_menu_career(){
-                change_class($(MENU_CAREER_CONTAINER), "menuCareerContainerJS");
-            }
         // -- funkcja tworzenie objektow i animaowanie liter tych obiektow w kontenerze company
             function create_objects_from_boards(nr,el,el2,classes1,classes2){
                 el.text("");
@@ -412,32 +468,8 @@ $(START_BUTTON).on("click", function(){
                 $(newDutiesBox).appendTo(DUTIES_CONTAINER);
             }
         }
-        // -- funkcja ukryj elementy strony drugiej - menu, company, stars, duties button
-        function hide_elements_on_page_two(){
-            show_hide_menu_career();
-            remove_class($(COMPANY_CONTAINER), "companyContainerJS2");
-            remove_class($(CAREER_LIKE_INDICATOR_CONTAINER), "careerLikeIndicatorConatainerJS1");
-            remove_class($(DUTIES_BUTTON), "dutiesButtonJS1");
-        }
-        // -- funkcja pokaż elementy strony drugiej - menu, company, stars, duties button
-        function show_elements_on_page_two(){
-            show_hide_menu_career();
-            add_class($(COMPANY_CONTAINER), "companyContainerJS2");
-            add_class($(CAREER_LIKE_INDICATOR_CONTAINER), "careerLikeIndicatorConatainerJS1");
-            add_class($(DUTIES_BUTTON), "dutiesButtonJS1");
-        }
-        $(MENU_POINTS[1]).on("click", function(){
-            setTimeout(function(){
-                $(".packTwo").children().removeClass("siteChildrenJS");
-                setTimeout(function(){
-                    WALLPAPER_PAGE_TWO.css("opacity", "1");
-                },700);
-            },700);
-        });
-        
-    
-    
-    
+
+
     // -- STRONA TRZECIA -- //
         // -- STAŁE, ZMIENNE
             const SKILLS_MAIN_TEXT = $(".skillsMainText");
@@ -445,147 +477,166 @@ $(START_BUTTON).on("click", function(){
             const MENU_SKILLS_TABS = $(".menuSkillsTabs");
             const MENU_SKILLS_INDICATOR = $(".menuSkillsIndicator");
             const MENU_SKILLS_CONTAINER = $(".menuSkillsContainer");
-            var programmingSkills = 
-            [
+            var programmingSkills = [
                 "Języki i narzędzia poznane w trakcie samonauczania rozpoczętego w Marcu 2020", "JQuery", "Java Script" , 
                 "HyperText Markup Language 5" , "Cascading Style Sheets 3", "Sass", "GitHub", "Visual Studio Code", "IntelliJ IDEA", "Responsive Web Design"
             ];
-            var testingSkills = 
-            [   
+            var testingSkills = [   
                 "Zakres programowy i narzędzia poznane w trakcie kursu na testera oprogramowania organizowanego przez Software Development Academy Gdynia od Marca do Sierpnia 2020 [ 105h ]", 
                 "Certyfikat ISTQB" , "Certyikat SDA" , "Test Rail" , "Jira" , "Agile, Scrum, Kanban", "Selenium IDE", 
                 "Podstawy Selenium Web Driver", "Gherkin, Cucumber", "Podstawy SQL, JAVA", "Testowanie manulane, automatyzacja" 
             ];
-            var othersSkills = 
-            [
+            var othersSkills = [
                 "Umiejętności zdobyte w trakcie kariery zawodowej", "Język Angielski B1-B2", "Prawo Jazdy kat. B" , "Znajomość Norm Budowlanych", 
                 "Znajomość Branży - Budowa Dróg" , "MS Windows", "MS Office"
             ];
             var mainTextSkill = "CZEGO SIĘ UCZĘ ?";
             if(lang === "eng"){
-                programmingSkills = 
-                [
+                programmingSkills = [
                     "Languages ​​and tools learned during the self-learning process started in March 2020", "JQuery", "Java Script" , 
                     "HyperText Markup Language 5" , "Cascading Style Sheets 3", "Sass", "GitHub", "Visual Studio Code", "IntelliJ IDEA", "Responsive Web Design"
                 ];
-                testingSkills = 
-                [   
+                testingSkills = [   
                     "Program scope and tools learned during the software tester course organized by Software Development Academy Gdynia from March to August 2020 [105h]", 
                     "ISTQB Certificate" , "SDA Certificate" , "Test Rail" , "Jira" , "Agile, Scrum, Kanban", "Selenium IDE", 
                     "Selenium Web Driver Basics", "Gherkin, Cucumber", "SQL Basics, JAVA", "Manual testing, automation" 
                 ];
-                othersSkills = 
-                [
+                othersSkills = [
                     "Skills acquired during a professional career", "English B1-B2", "Driving license. B" , "Knowledge of Building Standards", 
                     "Industry Knowledge - Road Construction" , "MS Windows", "MS Office"
                 ];
                 mainTextSkill = "WHAT AM I LEARNING ?";
             }
-            
             var arrayOfSkills = [programmingSkills, testingSkills, othersSkills];
             var flagsSkill = true;
+        // -- START FUNKCJI
+            indictaor_in_menu_skill_move(MENU_SKILLS_CONTAINER);
         // -- EVENTY
         // -- [ 1 ] klikanie w punkty menu strony 3
             $(MENU_SKILLS_TABS).each(function(){
-                $(this).on("click" , function(){
-                    let w = $(this).index()-1;
-                    let x = $(MENU_SKILLS_TABS).length;
-                    let y = $(this).position();
-                    let z =  $(this).outerWidth();
-                    $(SKILLS_MAIN_TEXT).children().remove();
-                    $(MENU_SKILLS_INDICATOR).css("opacity" , ".9");
-                    $(MENU_SKILLS_INDICATOR).width(z);
-                    $(MENU_SKILLS_INDICATOR).css("left" , y.left);
-                    remElements(arrayOfSkills, w);
-                    setTimeout(function(){
-                        $(SKILLS_CONTAINER).children('.skillsPointContainer').remove();
-                    },600);
-                    setTimeout(function(){
-                        addElements(arrayOfSkills, w);
-                    },750);
-                });
-                $(this).on("mouseover", function(){
-                    remove_class($(MENU_SKILLS_CONTAINER) , "menuSkillsContainerJS");
+                $(this).on({
+                    click: () => {
+                        var indx_minus = $(this).index()-1;
+                        indicator_menu_skills_move("on", this);
+                        resize_indicator();
+                        // main_text_skills("off");
+                        content_page_three_fast_remove();
+                        content_page_three_create(arrayOfSkills, indx_minus, 1000);
+                        padding_cont(1050);
+                    },
+                    mouseover: () => menu_skills_animate("off"),
+                    mouseout: () => menu_skills_animate("on")
                 });
             });
-            
-        // -- [ 2 ] glowne menu punkty, klikanie
             $(MENU_POINTS[2]).on("click" , function(){
                 if(flagsSkill == true){
-                    setTimeout(function(){
-                        animujTextSkills();
-                    }, 400);
+                    main_text_skills("on", 1600);
+                    padding_cont(1600);
                 }
                 flagsSkill = false;
-                setTimeout(function(){
-                    add_class($(MENU_SKILLS_CONTAINER) , "menuSkillsContainerJS2");
-                }, 1200);
-                setTimeout(function(){
-                    add_class($(MENU_SKILLS_CONTAINER) , "menuSkillsContainerJS");
-                }, 2200);
+                menu_skills("on", 1600);
                 
-            });
-            $(MENU_POINTS[2]).siblings().on("click" , function(){
+            }).siblings(".menuPunkty").on("click" , function(){
                 flagsSkill = true;
-                $(SKILLS_MAIN_TEXT).children().remove();
-                $(SKILLS_CONTAINER).children('.skillsPointContainer').remove();
-                $(MENU_SKILLS_INDICATOR).css("opacity" , "0");
-                remove_class(MENU_SKILLS_CONTAINER , "menuSkillsContainerJS menuSkillsContainerJS2");
+                content_page_three_fast_remove();
+                main_text_skills("off");
+                indicator_menu_skills_move("off");
+                menu_skills("off");
             });
         // -- FUNKCJE
-        // -- [ 1 ] dodaj punkty obowiazkow [kontenry] z odpowiedzniej tablicy do html, nadaj klasy, dodaj zdjecia i opisy
-            function addElements(el, nr){
-                let skillPointArray = el[nr];
-                for(let r=0, s = skillPointArray.length; r<s; r++){
-                    $(SKILLS_CONTAINER).append("<div class='skillsPointContainer'></div>");
-                    show($(SKILLS_CONTAINER).children('.skillsPointContainer'), "skillsPointContainerJS", 100, "add");
+        // -- dodaj punkty obowiazkow [kontenry] z odpowiedzniej tablicy do html, nadaj klasy, dodaj zdjecia i opisy
+            function indicator_menu_skills_move(option, ths){
+                if(option === "on"){
+                    let y = $(ths).position();
+                    let z =  $(ths).outerWidth();
+                    $(MENU_SKILLS_INDICATOR).addClass("menuSkillsIndicatorJS");
+                    $(MENU_SKILLS_INDICATOR).css({"left": y.left, "width": z });
+                }if(option === "off"){
+                    $(MENU_SKILLS_INDICATOR).removeClass("menuSkillsIndicatorJS");
                 }
-                let a = $(SKILLS_CONTAINER).children().not(".menuSkillsContainer");
-                for(let t=0, u=$(a).length; t<u; t++){
-                    add_class($(a[0]), "firstContainerSkills");
-                    if(t>0){
-                        $(a[t]).append("<img class='skillsImg' src='img/icn/skill_"+nr+"_"+t+".png'/>");
+            }
+            function main_text_skills(option, time = 0){
+                if(option === "off"){
+                    setTimeout(function(){
+                        $(SKILLS_MAIN_TEXT).children().removeClass("textMainJS");
+                        setTimeout(function(){
+                            $(SKILLS_MAIN_TEXT).children().remove();
+                        }, 1000);
+                    }, time);
+                }if(option === "on"){
+                    setTimeout(function(){
+                        for(i=0, j=mainTextSkill.length; i<j; i++){
+                            $(SKILLS_MAIN_TEXT).append("<span class='textMain'>"+mainTextSkill[i]+"</span>");
+                            var b = $(SKILLS_MAIN_TEXT).children();
+                            show(b, "textMainJS", 50, "add");
+                        }
+                    }, time);
+                }
+            }
+            function menu_skills_animate(option, time = 0){
+                setTimeout(function(){
+                    if(option === "on"){
+                        $(MENU_SKILLS_CONTAINER).addClass("menuSkillsContainerJS");
+                    }if(option === "off"){
+                        $(MENU_SKILLS_CONTAINER).removeClass("menuSkillsContainerJS");
                     }
-                    $(a[t]).append("<div class='skillsText'>" + skillPointArray[t] + "</div>");
-                }
+                }, time);
             }
-        // - [ 2 ] usun dodane umiejetnosci ze strony
-            function remElements(el, nr){
-                let b = el[nr].length;
-                for(let r=b; r>=0; r--){
-                    show($(SKILLS_CONTAINER).children('.skillsPointContainer'), "skillsPointContainerJS", 50, "rem");
-                }
+            function menu_skills(option, time = 0){
+                setTimeout(function(){
+                    if(option === "on"){
+                        $(MENU_SKILLS_CONTAINER).addClass("menuSkillsContainerJS2");
+                        menu_skills_animate(option);
+                    }if(option === "off"){
+                        $(MENU_SKILLS_CONTAINER).removeClass("menuSkillsContainerJS2");
+                        menu_skills_animate(option);
+                    }
+                }, time);
             }
-        // -- [ 3 ] animuj slogan na stronie skill
-            function animujTextSkills(){
-                for(i=0, j=mainTextSkill.length; i<j; i++){
-                    $(SKILLS_MAIN_TEXT).append("<span class='textMain'>"+mainTextSkill[i]+"</span>");
-                    let b = $(SKILLS_MAIN_TEXT).children();
-                    show(b, "textMainJS", 50, "add");
-                }
+            function content_page_three_create(el, nr, time = 0){
+                setTimeout(function(){
+                    for(let r=0, s = skillPointArray.length; r<s; r++){
+                        $(SKILLS_CONTAINER).append("<div class='skillsPointContainer'></div>");
+                        show($(SKILLS_CONTAINER).children('.skillsPointContainer'), "skillsPointContainerJS", 250, "add");
+                    }
+                    var a = $(SKILLS_CONTAINER).children().not(".menuSkillsContainer");
+                    for(let t=0, u=$(a).length; t<u; t++){
+                        add_class($(a[0]), "firstContainerSkills");
+                        if(t>0){
+                            $(a[t]).append("<img class='skillsImg' src='img/icn/skill_"+nr+"_"+t+".png'/>");
+                        }
+                        $(a[t]).append("<div class='skillsText'>" + skillPointArray[t] + "</div>");
+                    }
+                }, time);
+                var skillPointArray = el[nr];
             }
-        // -- [ 4 ] wskaznik na menu skills , na ruszanie myszka
-        function trial(el){
-            $(el).on("mouseenter" , function(){
-                $(this).prepend("<div class='shadowMenuSkill'></div>");
-            });
-            $(el).on("mouseleave" , function(){
-                $(this).children(".shadowMenuSkill").remove();
-            });
-            $(el).on("mousemove" , function(event){
-                let a = $(this).children(".shadowMenuSkill");
-                let relX = event.pageX - $(this).offset().left;
-                let relY = event.pageY - $(this).offset().top;
-                $(a).css("left" , relX);
-                $(a).css("top" , relY);
-            });
-        }
-        
-        // -- START FUNKCJI
-        trial(MENU_SKILLS_CONTAINER);
-    
-    
-    
+            function content_page_three_fast_remove(time = 0){
+                setTimeout(function(){
+                    $(SKILLS_CONTAINER).children('.skillsPointContainer').css({"left": "-100px", "opacity": 0});
+                    setTimeout(function(){
+                        $(SKILLS_CONTAINER).children('.skillsPointContainer').remove();
+                    }, 600);
+                }, time);
+            }
+            function indictaor_in_menu_skill_move(el){
+                $(el).on({
+                    mouseenter: () => $(el).prepend("<div class='shadowMenuSkill'></div>"),
+                    mouseleave: () => $(el).children(".shadowMenuSkill").remove(),
+                    mousemove: (event) => {
+                        let a = $(el).children(".shadowMenuSkill");
+                        let relX = event.pageX - $(el).offset().left;
+                        let relY = event.pageY - $(el).offset().top;
+                        $(a).css({"left": relX, "top": relY});
+                    }
+                });
+            }
+            function resize_indicator(){
+                var a = $(".shadowMenuSkill");
+                $(a).addClass("shadowMenuSkillJS");
+                setTimeout(function(){
+                    $(a).removeClass("shadowMenuSkillJS");
+                }, 200);
+            }
     // -- STRONA CZWARTA -- //
         // -- STAŁE, ZMIENNE
         const MENU_TAB_EDU = $(MENU_POINTS[3]);
@@ -593,13 +644,7 @@ $(START_BUTTON).on("click", function(){
         const FOUR_PAGE = $(".Four");
         const EDU_CONT = $(".eduContainer");
         var colorArr = ["#bf6df7", "#f0e034", "#89fca0", "#f97284"];
-        var colorArrImg = [
-            "linear-gradient(to right top, #d8d8d8, #cbc1e6, #c2a8f0, #bf8df6, #c06df7)", 
-            "linear-gradient(to right top, #cfcfcf, #ddc8d9, #f9becb, #ffb9a6, #ffc07a, #ffc965, #fcd34e, #f0e034, #f0e034, #f0e034, #f0e034, #f0e034)", 
-            "linear-gradient(to right top, #cfcfcf, #c7d4e8, #a5dffc, #72ecfd, #52f6e3, #5af9d0, #6ffbb9, #89fca0, #89fca0, #89fca0, #89fca0, #89fca0)", 
-            "linear-gradient(to right top, #cfcfcf, #ccc2d4, #d3b2d1, #e0a0c5, #ee8caf, #f383a2, #f77a94, #f97284, #f97284, #f97284, #f97284, #f97284)"
-        ];
-        var EDU_PACK = $(FOUR_PAGE).children(".pack");
+        var EDU_PACK = $(FOUR_PAGE).children(".pack").children(".contChildren");
         var EDU_CONT_ARR = $(EDU_PACK).children(".eduContainer");
         var EDU_TXT_ARR = $(EDU_CONT).children(".eduTxt");
         var t1 = ["POZIOM PODSTAWOWY", "WRZESIEŃ 2020", "ISTQB, SJSI"];
@@ -617,11 +662,14 @@ $(START_BUTTON).on("click", function(){
         // -- START FUNKCJI
         // -- eventy
         MENU_TAB_EDU.on("click" , function(){
-            iteration_without_continue(zmien_wyglad_strony_edu_po_klikaniu_w_punkty_menu_glownego, EDU_CONT);
-            stworz_div_dla_dynamicznego_motywu(40);
             setTimeout(function(){
-                stan_poczatkowy_dynamic_theme();
-            }, 200); 
+                iteration_without_continue(zmien_wyglad_strony_edu_po_klikaniu_w_punkty_menu_glownego, EDU_CONT);
+                stworz_div_dla_dynamicznego_motywu(40);
+                setTimeout(function(){
+                    stan_poczatkowy_dynamic_theme();
+                }, 200); 
+            }, 1600);
+            
         });
         MENU_TAB_NOT_EDU.on("click" , function(){
             iteration_without_continue(przywroc_wyglad_strony_edu_po_klikaniu_w_punkty_menu_glownego, EDU_CONT);
@@ -644,18 +692,20 @@ $(START_BUTTON).on("click", function(){
             zmien_wyglad_edu_cont_po_najechaniu_myszka($(this), zmien_wyglad_edu_cont_po_zjechaniu_myszki);
         });
         // -- funkcje
+        
         // -- 1
         function zmien_wyglad_strony_edu_po_klikaniu_w_punkty_menu_glownego(i){
             setTimeout(function(){
-                $(EDU_CONT[i]).addClass("eduContainerJS");
+                $(EDU_CONT_ARR[i]).addClass("eduContainerJS");
                 $(EDU_TXT_ARR[i]).addClass("eduTxtJS");
-            }, 800 + 150 * i);
+            }, 200 + 100 * i);
         } 
         function przywroc_wyglad_strony_edu_po_klikaniu_w_punkty_menu_glownego(i){
             setTimeout(function(){
                 $(EDU_CONT_ARR[i]).removeClass("eduContainerJS");
                 $(EDU_TXT_ARR[i]).removeClass("eduTxtJS");
             }, 50 + 50 * i);
+            usun_div_dla_dynamicznego_motywu();
         } 
         // -- 2
         function zmien_kontenery_edu(element){
@@ -670,7 +720,7 @@ $(START_BUTTON).on("click", function(){
             iteration(dodaj_nowy_tekst_do_braci_edu, EL4_ADDED, indx);
             // -- funkcje pomocnicze
             function dodaj_nowy_tekst_do_braci_edu(i){
-                $(EDU_CONT).css({"box-shadow": "0 0 20px 0px" + colorArr[indx]});
+                $(EDU_CONT).css({"box-shadow": "inset 0 0 20px 2px" + colorArr[indx], "color": "white"});
                 $(EL4_ADDED[i]).text(CURRENT_ARRAY[i]);
                 $(EL4_ADDED[i]).css("color", colorArr[indx]);
                 setTimeout(function(){
@@ -690,8 +740,8 @@ $(START_BUTTON).on("click", function(){
             przywroc_txt();
             // -- funkcje pomocnicze
             function przywroc_txt(){
-                $(EDU_CONT).css({"box-shadow": "rgba(0, 161, 183, 1) 0 0 20px 0px, inset 0 0 20px 0 rgba(0, 161, 183, 1)"});
-                
+                var currentTheme = getComputedStyle(document.body).getPropertyValue('--myTheme');
+                $(EDU_CONT).css({"box-shadow": "inset 0 0 20px 2px " + currentTheme});
                 add_class($(EL3_TXT), "eduTxtJS");
             }
             function usun_dodany_tekst_z_braci_edu(i){
@@ -726,18 +776,20 @@ $(START_BUTTON).on("click", function(){
         }
         // -- 6
         function stworz_div_dla_dynamicznego_motywu(nr_of_div){
-            usun_div_dla_dynamicznego_motywu();
             for(i=0; i<nr_of_div; i++){
                 $(FOUR_PAGE).append("<div class='dynamicTheme'></div>"); 
             }
         }
         // -- 7
         function stan_poczatkowy_dynamic_theme(){
+            var currentTheme = getComputedStyle(document.body).getPropertyValue('--myTheme');
             var ARR_THEME = $(".dynamicTheme");
             for(z=0; z<ARR_THEME.length; z++){
+                var nw = 76;
+                change_par_wid_page_three();
                 var newTop = Math.floor(Math.random() * 101);
                 var newLeft = Math.floor(Math.random() * 101);
-                var newWidthHeight = Math.floor(Math.random() * 16 + 5);
+                var newWidthHeight = Math.floor(Math.random() * nw + 5);
                 var newOpa = "0." + Math.floor(Math.random() * 11 + 5);
                 $(ARR_THEME[z]).css({
                     "left":  newLeft + "%", 
@@ -745,10 +797,20 @@ $(START_BUTTON).on("click", function(){
                     "width": newWidthHeight + "px", 
                     "height": newWidthHeight + "px",
                     "opacity": newOpa,
-                    "background-image": "linear-gradient(to top, #39eeff, #2fdbee, #25c9dc, #1cb7ca, #11a5b9)",
-                    "border-radius": "50%"
+                    "background-color": currentTheme
                     });
             }
+            function change_par_wid_page_three(){
+                var resize_700 = window.matchMedia("(max-width: 700px)");
+                if (resize_700.matches) { 
+                    nw = 16;
+                } else {
+                    nw = 76;
+                }
+            }
+            $(EDU_CONT).each(function(){
+                $(this).css("color", currentTheme);
+            });
         }
         // -- 8
         // najazd myszki
@@ -761,28 +823,38 @@ $(START_BUTTON).on("click", function(){
             }
             var elWidth = $(EDU_CONT).width();
             var NEW_LEFT = elWidth - 70;
-            var NEW_TOP = elWidth - 70;
+            var NEW_TOP = elWidth - 170;
+            var MOVE_UP = 40;
+            function change_par_moveup_page_three(){
+                var resize_700 = window.matchMedia("(max-width: 700px)");
+                if (resize_700.matches) { 
+                    MOVE_UP = 0;
+                } else {
+                    MOVE_UP = 40;
+                }
+            }
+            change_par_moveup_page_three();
             for(z=0; z<ARR_THEME.length; z++){
                 var randomNr = Math.floor(Math.random() * 11);
                 var ELEMENTS = ARR_THEME[z];
                 change_wid_hei_random_square(ELEMENTS, 2, randomNr);
-                change_background(ELEMENTS, colorArrImg, indx);
+                change_background(ELEMENTS, colorArr, indx);
                 change_opacity(ELEMENTS);
                 if(z >= 0 && z <= ARR_THEME.length / 4){
                     change_left_random(ELEMENTS, TABLICA_OFFSETS[0] + 40, NEW_LEFT);
-                    change_top_random(ELEMENTS, TABLICA_OFFSETS[1] + 40, NEW_TOP);
+                    change_top_random(ELEMENTS, TABLICA_OFFSETS[1] + MOVE_UP, NEW_TOP);
                 }
                 if(z > ARR_THEME.length / 4 && z <= ARR_THEME.length / 2){
                     change_left_random(ELEMENTS, TABLICA_OFFSETS[2] + 40, NEW_LEFT);
-                    change_top_random(ELEMENTS, TABLICA_OFFSETS[3] + 40, NEW_TOP);
+                    change_top_random(ELEMENTS, TABLICA_OFFSETS[3] + MOVE_UP, NEW_TOP);
                 }
                 if(z > ARR_THEME.length / 2 && z <= ARR_THEME.length - (ARR_THEME.length / 4)){
                     change_left_random(ELEMENTS, TABLICA_OFFSETS[4] + 40, NEW_LEFT);
-                    change_top_random(ELEMENTS, TABLICA_OFFSETS[5] + 40, NEW_TOP);
+                    change_top_random(ELEMENTS, TABLICA_OFFSETS[5] + MOVE_UP, NEW_TOP);
                 }
                 if(z > ARR_THEME.length - (ARR_THEME.length / 4)){
                     change_left_random(ELEMENTS, TABLICA_OFFSETS[6] + 40, NEW_LEFT);
-                    change_top_random(ELEMENTS, TABLICA_OFFSETS[7] + 40, NEW_TOP);
+                    change_top_random(ELEMENTS, TABLICA_OFFSETS[7] + MOVE_UP, NEW_TOP);
                 }
             }
             
@@ -794,11 +866,10 @@ $(START_BUTTON).on("click", function(){
         // -- funkcje dodatkowe ogolne
         const change_left_random = (el, offLeft, randmNr) => $(el).css({"left":  offLeft + randomNr(randmNr) + "px"});
         const change_top_random = (el, offTop, randmNr) => $(el).css({"top":  offTop + randomNr(randmNr) + "px"});
-        const change_background = (el, arrayName, b=indx) => $(el).css({"background-image": arrayName[b]});
-        const change_opacity = (el) => $(el).css({"opacity": "1", "border-radius": "10px"});
+        const change_background = (el, arrayName, b=indx) => $(el).css({"background-color": arrayName[b]});
+        const change_opacity = (el) => $(el).css({"opacity": "1"});
         const change_wid_hei_random_square = (el, minDim, randmNr) => $(el).css({"width": minDim + randmNr + "px", "height": minDim + randmNr + "px"});
         var randomNr = (a) => Math.floor(Math.random() * a);
-    
     
     // -- STRONA PIATA -- //
         // -- STAŁE, ZMIENNE
@@ -877,7 +948,7 @@ $(START_BUTTON).on("click", function(){
         function pokaz_el_kontakt(i,el){
             setTimeout(function(){
                 add_class($(el[i]), "contJS2");
-            }, 1000 + 150 * i);
+            }, 100 + 150 * i);
         }
         function ukryj_el_kontakt(i,el){
             setTimeout(function(){
@@ -893,14 +964,11 @@ $(START_BUTTON).on("click", function(){
         // -- EVENTY
         $(MENU_POINTS[4]).on("click", () => {
             setTimeout(function(){
-                $(".wallFive").css("opacity", "1");
-            }, 1500);
-            iteracja_for(SITE_CHILDREN_EL, pokaz_el_kontakt);
+                iteracja_for(SITE_CHILDREN_EL, pokaz_el_kontakt);
+            }, 1600);
         });
         $(MENU_POINTS[4]).siblings(".menuPunkty").on("click", () => {
-            $(".wallFive").css("opacity", "0");
             iteracja_for(SITE_CHILDREN_EL, ukryj_el_kontakt);
-            
         });
         zmien_kontenery_i_nazwy(ICON_CONT, NEW_TEXT_PROFILE, OLD_TEXT_PROFILE);
         zmien_kontenery_i_nazwy(DOCS_CONT, NEW_TEXT_DOCS, OLD_TEXT_DOCS);
@@ -908,9 +976,10 @@ $(START_BUTTON).on("click", function(){
         zmien_tekst_sec_title(MAIL, NEW_TXT_MAIL, OLD_TXT_MAILPHONE);
         zmien_tekst_sec_title(PHONE, NEW_TXT_PHONE, OLD_TXT_MAILPHONE);
     
-    
+        padding_cont();
 }); // finish start button function
 }); // document ready finish
+
 //-- jezyki
 var elementsToTranslate = [];
 var elementsToTranslateTxt = [];
@@ -928,6 +997,17 @@ var eng = [
     "SKILLS", 
     "EDUCATION", 
     "CONTACT", 
+    "OPTIONS",
+    "Main color",
+    "Wallpaper tone",
+    "Gray",
+    "Color",
+    "Main theme",
+    "Gray",
+    "Black",
+    "Borders",
+    "Show",
+    "Hide",
     "more", 
     "Hi,", 
     "My name is Luke. A few months ago, I decided to change my current industry. I started learning programming, I focused my efforts on Front-End languages ​​and software testing:", 
@@ -937,9 +1017,9 @@ var eng = [
     "My next steps will be to improve my JavaScript programming skills and start learning", 
     "and", 
     "My goal is to start a career in the IT industry.",
-    "Click year to change",
-    "HOW MUCH I LOVED WORK ?", 
+    "HOW MUCH I LOVED WORK ?",
     "DUTIES", 
+    "Click year to change",
     "close",
     "PROGRAMMING", 
     "SOFTWARE TESTING", 
@@ -970,8 +1050,90 @@ function languagesEng(){
         }
     }
 }
+// -- theme
+var THEME_ARRAY = ["#00a1b7", "#d20000", "#de7f00", "#de0058", "#9400e8", "#007ff5"];
+var MAIN_THEME_ARRAY = ["rgb(37, 37, 37)", "rgb(0,0,0)"];
+var MAIN_THEME_CONTENT_ARRAY = ["rgba(37, 37, 37, .8)", "rgba(0,0,0,.7)"];
+var THEME_BORDER_ARRAY = ["1px", "0"];
+const ROOT = document.documentElement.style;
+const WALL_THEME = $(".wall");
+const THEME_COLOR_CHOOSE_OPT = $(".themeChoose");
+const WALLP_COLOR_OPT = $(".wallCol");
+const MAIN_THEME = $(".mainTheme");
+const BORDER_THEME = $(".borderTheme");
+$(THEME_COLOR_CHOOSE_OPT).each(function(index){
+    var a = THEME_ARRAY[index];
+    $(this).css("background-color", a);
+    $(this).on("click", function(){
+        set_frame_option(this, ".themeChoose");
+        change_property_root('--myTheme', a);
+        change_property_root('--myTxtTheme', a);
+        change_property_root('--myBorder', a);
+        var con = index != 0 ? change_property_root('--myGrayScaleNone', "grayscale(.9)") : change_property_root('--myGrayScaleNone', "grayscale(0)");
+        return con;
+    });
+});
+$(WALLP_COLOR_OPT).each(function(index){
+    $(this).on("click", function(){
+        set_frame_option(this, ".wallCol");
+        var con = index === 0 ? grayscale_full(WALL_THEME) : grayscale_none(WALL_THEME);
+        return con;
+    });
+});
+$(MAIN_THEME).each(function(index){
+    $(this).on({
+        click: () => {
+            set_frame_option(this, ".mainTheme");
+            change_property_root('--myMainBackTheme', MAIN_THEME_ARRAY[index]);
+            change_property_root('--myHalfMainBackTheme', MAIN_THEME_CONTENT_ARRAY[index]);
+        }
+    });
+});
+$(BORDER_THEME).each(function(index){
+    $(this).on({
+        click: () => {
+            set_frame_option(this, ".borderTheme");
+            change_property_root('--myBorderSize', THEME_BORDER_ARRAY[index]);
+        }
+    });
+});
+function change_property_root(propertyName, propertyVal){
+    ROOT.setProperty(propertyName, propertyVal);
+}
+function set_frame_option(el, siblingsName){
+    $(el).addClass("activetedSettingsFrame").siblings(siblingsName).removeClass("activetedSettingsFrame");
+}
+function grayscale_full(el){
+    $(el).css("filter", "grayscale(.9)");
+}
+function grayscale_none(el){
+    $(el).css("filter", "grayscale(0)");
+}
 
 
+// resize
+const CONT = $(".cont");
+function padding_cont(time = 500){
+    setTimeout(function(){
+        $(CONT).each(function(){
+            let thisChild = $(this).children(".contChildren");
+            let childHeight = $(thisChild).height();
+            let thisHeight = $(this).height();
+            let paddingVertical = Math.floor((thisHeight - childHeight) / 2);
+            let_margin($(this), paddingVertical);
+        });
+        function let_margin(el, pad){
+            $(el).css({"padding-top": 0});
+            $(el).css({"padding-bottom": 0});
+            $(el).css({"padding-top": pad + "px"});
+            $(el).css({"padding-bottom": pad + "px"});
+        }
+    }, time);
+}
+padding_cont();
+$(window).on("resize", function(){
+    padding_cont();
+});
 
 
 
