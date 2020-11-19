@@ -2,6 +2,8 @@
 html {
   padding: 0;
   margin: 0;
+  max-height: 100vh;
+  max-width: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
   background-color: var(--myBack);
@@ -9,6 +11,8 @@ html {
 }
 
 body {
+  max-height: 100vh;
+  max-width: 100%;
   padding: 0;
   margin: 0;
   overflow-x: hidden;
@@ -19,7 +23,7 @@ body {
   position: relative;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 150px);
   transition: 0.5s all linear;
   -webkit-transition: 0.5s all linear;
   -moz-transition: 0.5s all linear;
@@ -59,7 +63,7 @@ body {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 150px);
   overflow-y: auto;
   overflow-x: hidden;
   transition: linear .3s;
@@ -141,6 +145,8 @@ body {
   -o-transition: 0.3s all linear;
   z-index: 99996;
   opacity: 0;
+  height: 100vh;
+  width: 100%;
 }
 
 .chooseLangJS {
@@ -440,21 +446,22 @@ body {
 }
 
 .optionArea {
-  width: 200px;
+  width: 100%;
   background-color: var(--myMainBackTheme);
   position: absolute;
-  top: 100px;
+  top: -100%;
   max-height: calc(100vh - 150px);
-  right: -210px;
+  left: 0;
   padding: 10px;
   transition: .5s;
   opacity: 0;
   border-left: var(--myBorderSize) solid var(--myBorder);
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .optionAreaJS {
-  right: 0;
+  top: 100px;
   opacity: 1;
 }
 
