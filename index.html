@@ -14,24 +14,26 @@
         <link rel="icon" sizes="256x256" href="/public_html/favicon.ico">
     </head>
     <body>
-        <div class="preloader">
-            <div class='preloaderTxtCont'>
+        <div class="cont preloader">
+            <div class='contChildren preloaderTxtCont'>
                 <span class="prelTxt">Ładowanie strony... &nbsp;&nbsp;/&nbsp;&nbsp; Loading...</span>
                 <span class="prelImg">
                     <span></span>
                 </span>
             </div>
         </div>
-        <div class="chooseLang">
-            <div class="borderLng">
-                <div class="flag"></div>
-                <span class="lng lngsp">Wybierz język &nbsp;&nbsp;/&nbsp;&nbsp; Choose language: </span>
-                <div class="pol lng">Polski &nbsp;&nbsp;/&nbsp;&nbsp; Polish</div>
-                <div class="ang lng">Angielski &nbsp;&nbsp;/&nbsp;&nbsp; English</div>
-            </div>
+        <div class="cont chooseLang">
+            <!-- <div class="borderLng"> -->
+                <div class="contChildren flag">
+                    <span class="lng lngsp">Wybierz język &nbsp;&nbsp;/&nbsp;&nbsp; Choose language: </span>
+                    <div class="pol lng">Polski &nbsp;&nbsp;/&nbsp;&nbsp; Polish</div>
+                    <div class="ang lng">Angielski &nbsp;&nbsp;/&nbsp;&nbsp; English</div>
+                </div>
+                
+            <!-- </div> -->
         </div>
-        <div class="infoStart">
-            <div class='infoBut'>
+        <div class="cont infoStart">
+            <div class='contChildren infoBut'>
                 <span class="pl">Witaj, </span><br><br><span class="pl">Strona przygotowana w celach rekrutacyjnych</span>
                 <span class="pl">Przygotowana na urządzenia o różnych rozdzielczościach.</span><span class="pl"> Zaprojektowana i przetestowana na przeglądarkach:</span> <br><br>
                 <span class="meTxtPoints txtmar" title="kliknij aby pobrać"><a href="https://www.google.com/intl/pl_pl/chrome/" target="_blank">Chrome 86+</a></span>
@@ -56,41 +58,98 @@
                     <div class="tagMenu"></div>
                 </div>
                 <div class="logo">
-                    <div>L</div>
-                    <div>L</div>
+                        <div class="logoBox">
+                        <div>L</div>
+                        <div>L</div>
+                        <p class="optionButton pl">OPCJE</p>
+                    </div>
                 </div>
+                <div class="optionArea">
+                    <!-- <h2 class="pl">USTAWIENIA</h2> -->
+                    <h3 class="pl">Główny kolor</h3>
+                    <div class="themeCont">
+                        <span class="themeChoose activetedSettingsFrame"></span>
+                        <span class="themeChoose"></span>
+                        <span class="themeChoose"></span>
+                        <span class="themeChoose"></span>
+                        <span class="themeChoose"></span>
+                        <span class="themeChoose"></span>
+                    </div>
+                    <h3 class="pl">Tapeta odcień</h3>
+                    <div class="themeCont">
+                        <span class="wallCol activetedSettingsFrame pl">Szary</span>
+                        <span class="wallCol pl">Kolor</span>
+                    </div>
+                    <h3 class="pl">Główny motyw</h3>
+                    <div class="themeCont">
+                        <span class="mainTheme activetedSettingsFrame pl">Szary</span>
+                        <span class="mainTheme pl">Czarny</span>
+                    </div>
+                    <h3 class="pl">Krawędzie</h3>
+                    <div class="themeCont">
+                        <span class="borderTheme activetedSettingsFrame pl">Pokaż</span>
+                        <span class="borderTheme pl">Ukryj</span>
+                    </div>
+                </div>
+                
             </div>
         </header>
         <section class="allPagesBox">
+            
             <!-- Strona 1 -->
             <section class="One Page PageActiveJS">
                 <div class="wallOne wall"></div>
-                <div class="pack packOne">
-                    <div class="nameLewSloganKodBox">
-                        <div class="helloBox"></div>
-                        <div class="nameLewandowskiBox"></div>
-                        <div class="sloganKodowanieBox"></div>
-                        <div class="moreInfo pl">więcej</div>
-                        <div class="meTxtCont">
-                            <img src="img/header/foto_1.jpg" alt="my">
-                            <span class="meTxt"><b class="pl" style="font-size: 18px;">Cześć,</b></span><br><br> <span class="meTxt pl">Mam na imię Łukasz. Kilka miesiący temu postanowiłem zmienić dotychczasową branżę. Rozopocząłem naukę programowania, swoje wysiłki skupiłem na językach Front-Endowych oraz testowaniu oprogramowania:</span> <br> <br>
-                            <span class="meTxtPoints txtmar">Jquerry</span>
-                            <span class="meTxtPoints txtmar">Java Script</span>
-                            <span class="meTxtPoints txtmar">CSS3</span>
-                            <span class="meTxtPoints txtmar">HTML5</span> 
-                            <span class="meTxtPoints pl txtmar">Testowanie</span><br><br>
-                            <span class="meTxt pl">Dodatkowo ukończyłem kurs na testera manualnego oraz uzyskałem certyfikat</span><span class="meTxtPoints">ISTQB.</span><span class="meTxt pl">Wiedzę odnośnie programowania zdobywam w głównej mierze w internecie a mianowicie na portalach: udemy.com, w3school.com, developer.mozilla.org, stackoverflow.com. Efektami dotychczasowej nauki jest niniejsza strona</span><br><br>
-                            <span class="meTxt pl">Moimi następnym krokami będzie poszerzanie umiejętności programowania w JavaScript oraz rozpoczęcie nauki</span><span class="meTxtPoints">React-js</span><span class="meTxt pl">oraz</span><span class="meTxtPoints">Node-js.</span><span class="meTxt pl">Moim celem jest rozpocząć karierę w branży IT.</span><br><br>
-                            <span class="closeMeInfo" title="zamknij">X</span>
+                    <div class="cont packOne">
+                        <div class="contChildren nameLewSloganKodBox">
+                            <div class="helloBox"></div>
+                            <div class="nameLewandowskiBox"></div>
+                            <div class="sloganKodowanieBox"></div>
+                            <div class="moreInfo">
+                                <span class="pl">więcej</span>
+                            </div>
                         </div>
                     </div>
+                <div class="cont contZindx">
+                    <div class="contChildren meTxtCont">
+                        <img src="img/header/foto_1.jpg" alt="my">
+                        <span class="meTxt"><b class="pl" style="font-size: 18px;">Cześć,</b></span><br><br> <span class="meTxt pl">Mam na imię Łukasz. Kilka miesiący temu postanowiłem zmienić dotychczasową branżę. Rozopocząłem naukę programowania, swoje wysiłki skupiłem na językach Front-Endowych oraz testowaniu oprogramowania:</span> <br> <br>
+                        <span class="meTxtPoints txtmar">Jquerry</span>
+                        <span class="meTxtPoints txtmar">Java Script</span>
+                        <span class="meTxtPoints txtmar">CSS3</span>
+                        <span class="meTxtPoints txtmar">HTML5</span> 
+                        <span class="meTxtPoints pl txtmar">Testowanie</span><br><br>
+                        <span class="meTxt pl">Dodatkowo ukończyłem kurs na testera manualnego oraz uzyskałem certyfikat</span><span class="meTxtPoints">ISTQB.</span><span class="meTxt pl">Wiedzę odnośnie programowania zdobywam w głównej mierze w internecie a mianowicie na portalach: udemy.com, w3school.com, developer.mozilla.org, stackoverflow.com. Efektami dotychczasowej nauki jest niniejsza strona</span><br><br>
+                        <span class="meTxt pl">Moimi następnym krokami będzie poszerzanie umiejętności programowania w JavaScript oraz rozpoczęcie nauki</span><span class="meTxtPoints">React-js</span><span class="meTxt pl">oraz</span><span class="meTxtPoints">Node-js.</span><span class="meTxt pl">Moim celem jest rozpocząć karierę w branży IT.</span><br><br>
+                        <span class="closeMeInfo" title="zamknij">X</span>
+                    </div>
                 </div>
+                
             </section>
             <!-- Strona 2 -->
             <section class="Two Page">
                 <div class="wallTwo wall"></div>
-                <div class="pack packTwo">
-                    <div class="menuCareerContainer">
+                <div class="cont packTwo">
+                    <div class="contChildren">
+                        <div class="companyContainer">
+                            <div class="companyName"></div>
+                            <div class="companyPosition"></div>
+                            <div class="companyYears"></div>
+                        </div>
+                        <div class="careerLikeIndicatorConatainer">
+                            <span class="pl">JAK BARDZO LUBIŁEM PRACĘ ?</span>
+                            <div class="careerLikeStarsContainer">
+                                <span class="careerLikeStars"></span>
+                                <span class="careerLikeStars"></span>
+                                <span class="careerLikeStars"></span>
+                                <span class="careerLikeStars"></span>
+                                <span class="careerLikeStars"></span>
+                            </div>      
+                        </div>
+                        <div class="dutiesButton pl">OBOWIĄZKI</div>
+                    </div>
+                </div>
+                <div class="cont contMenuPage2">
+                    <div class="contChildren menuCareerContainer">
                         <div id="leftYear" class="menuCareerPoints">2010</div>
                         <div id="topYear" class="menuCareerPoints">2015</div>
                         <div id="rightYear" class="menuCareerPoints">2017</div>
@@ -102,23 +161,9 @@
                         </div>
                         <div class="menuCareerTip pl">Kliknij rok by zmienić</div>
                     </div>
-                    <div class="companyContainer">
-                        <div class="companyName"></div>
-                        <div class="companyPosition"></div>
-                        <div class="companyYears"></div>
-                    </div>
-                    <div class="careerLikeIndicatorConatainer">
-                        <span class="pl">JAK BARDZO LUBIŁEM PRACĘ ?</span>
-                        <div class="careerLikeStarsContainer">
-                            <span class="careerLikeStars"></span>
-                            <span class="careerLikeStars"></span>
-                            <span class="careerLikeStars"></span>
-                            <span class="careerLikeStars"></span>
-                            <span class="careerLikeStars"></span>
-                        </div>      
-                    </div>
-                    <div class="dutiesButton pl">OBOWIĄZKI</div>
-                    <div class="dutiesContainer">
+                </div>
+                <div class="cont contMenuPage3">
+                    <div class="contChildren dutiesContainer">
                         <div class="dutiesClose pl">zamknij</div>
                     </div>
                 </div>
@@ -126,74 +171,82 @@
             <!-- Strona 3 -->
             <section class="Three Page">
                 <div class="wallThree wall"></div>
-                <div class="pack">
-                <div class="skillsContainer">
-                    <div class="menuSkillsContainer" title="KLIKNIJ">
-                        <div class="menuSkillsTabs pl">PROGRAMOWANIE</div>
-                        <div class="menuSkillsTabs pl">TESTOWANIE</div>
-                        <div class="menuSkillsTabs pl">POZOSTAŁE</div>
-                        <div class="menuSkillsIndicator"></div>
+                <div class="cont">
+                    <div class="contChildren packThree">
+                        <div class="skillsMainText"></div>
+                        <div class="skillsContainer">
+                            <div class="menuSkillsContainer" title="KLIKNIJ">
+                                <div class="menuSkillsTabs pl">PROGRAMOWANIE</div>
+                                <div class="menuSkillsTabs pl">TESTOWANIE</div>
+                                <div class="menuSkillsTabs pl">POZOSTAŁE</div>
+                                <div class="menuSkillsIndicator"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="skillsMainText"></div>
-                </div>
+                
             </section>
             <!-- Strona 4 -->
             <section class="Four Page">
                 <div class="wallFour wall"></div>
-                <div class="pack packFour">
-                    <div class="eduContainer"title="CERTYFIKAT ISTQB">
-                        <div class="eduTxt pl"> CERTYFIKOWANY TESTER</div>
-                    </div>
-                    <div class="eduContainer" title="CERTYFIKAT SDA">
-                        <div class="eduTxt pl"> TESTER</div>
-                    </div>
-                    <div class="eduContainer" title="DYPLOM">
-                        <div class="eduTxt pl"> MAGISTER</div>
-                    </div>
-                    <div class="eduContainer" title="DYPLOM">
-                        <div class="eduTxt pl"> LICENCJAT</div>
+                <div class="cont pack packFour">
+                    <div class="contChildren">
+                        <div class="eduContainer"title="CERTYFIKAT ISTQB">
+                            <div class="eduTxt pl"> CERTYFIKOWANY TESTER</div>
+                        </div>
+                        <div class="eduContainer" title="CERTYFIKAT SDA">
+                            <div class="eduTxt pl"> TESTER</div>
+                        </div>
+                        <div class="eduContainer" title="DYPLOM">
+                            <div class="eduTxt pl"> MAGISTER</div>
+                        </div>
+                        <div class="eduContainer" title="DYPLOM">
+                            <div class="eduTxt pl"> LICENCJAT</div>
+                        </div>
                     </div>
                 </div>
             </section>
             <!-- Strona 5 -->
             <section class="Five Page">
                 <div class="wallFive wall"></div>
-                <div class="pack">
-                    <div class="societyCont">
-                        <div class="secTitle pl">Moje profile</div>
-                        <div class="societyIconCont"></div>
-                    </div>
-                    <div class="documentsCont">
-                        <div class="secTitle pl">Dokumenty</div>
-                        <div class="documentsIconCont"></div>
-                    </div>
-                    <div class="emailPhoneCont">
-                        <div class="secTitle pl">Kontakt</div>
-                        <div id="mail" class="emailPhone">
-                            <div class="emailPhoneIcnCont">
-                                <a class='contactLinks' href='mailto:lukaszlevy@outlook.com'>
-                                    <img class='icons' src='img/icn/contact_0.png'>
-                                    <span class='iconsName'>E-MAIL</span>
-                                </a>
-                            </div>
+                <div class="cont pack">
+                    <div class="contChildren">
+                        <div class="societyCont">
+                            <div class="secTitle pl">Moje profile</div>
+                            <div class="societyIconCont"></div>
                         </div>
-                        <div id="phone" class="emailPhone">
-                            <div class="emailPhoneIcnCont">
-                                <img class='icons' src='img/icn/contact_1.png'>
-                                <span class='iconsName pl'>TELEFON</span>
+                        <div class="documentsCont">
+                            <div class="secTitle pl">Dokumenty</div>
+                            <div class="documentsIconCont"></div>
+                        </div>
+                        <div class="emailPhoneCont">
+                            <div class="secTitle pl">Kontakt</div>
+                            <div id="mail" class="emailPhone">
+                                <div class="emailPhoneIcnCont">
+                                    <a class='contactLinks' href='mailto:lukaszlevy@outlook.com'>
+                                        <img class='icons' src='img/icn/contact_0.png'>
+                                        <span class='iconsName'>E-MAIL</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="phone" class="emailPhone">
+                                <div class="emailPhoneIcnCont">
+                                    <img class='icons' src='img/icn/contact_1.png'>
+                                    <span class='iconsName pl'>TELEFON</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+            <div class="brightLess"></div>
         </section>
         <!-- Stopka -->
         <footer class="copyRigths">Copyright &#169; 2020 Lewandowski Łukasz. All rights reserved
             <div class="social">
-                <a href="https://www.linkedin.com/in/lukaszlewandowskilaboratorium/" target="_blank"> <img src="img/icn/soci_0.png"></a> 
-                <a href="https://www.facebook.com/lukasz.lewandowski.14/" target="_blank"> <img src="img/icn/soci_1.png"></a> 
-                <a href="https://github.com/LukaszLevy/lukaszlewandowski.pl" target="_blank"> <img src="img/icn/soci_2.png"></a> 
+                <a href="https://www.linkedin.com/in/lukaszlewandowskilaboratorium/" target="_blank"> <img class="icnSoc" src="img/icn/soci_0.png"></a> 
+                <a href="https://www.facebook.com/lukasz.lewandowski.14/" target="_blank"> <img class="icnSoc" src="img/icn/soci_1.png"></a> 
+                <a href="https://github.com/LukaszLevy/lukaszlewandowski.pl" target="_blank"> <img class="icnSoc" src="img/icn/soci_2.png"></a> 
                 <img class="me" src="img/startPage/foto_1.jpg" alt="me">
             </div>
         </footer>
