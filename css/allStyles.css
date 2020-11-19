@@ -45,7 +45,7 @@ body {
   position: absolute;
   top: 100px;
   width: 100%;
-  height: calc( 100% - 150px);
+  height: calc( 100vh - 150px);
   transition: 0.5s all linear;
   -webkit-transition: 0.5s all linear;
   -moz-transition: 0.5s all linear;
@@ -63,6 +63,7 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   transition: linear .3s;
+  box-sizing: border-box;
 }
 
 .contZindx {
@@ -440,7 +441,7 @@ body {
   background-color: var(--myMainBackTheme);
   position: absolute;
   top: 100px;
-  height: calc(100vh - 169px);
+  height: calc(100vh - 150px);
   right: -210px;
   padding: 10px;
   transition: .5s;
