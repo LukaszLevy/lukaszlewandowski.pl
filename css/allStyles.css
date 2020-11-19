@@ -308,6 +308,9 @@ body {
 
 .naglowek {
   height: 100%;
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 .naglowek:hover .logo {
@@ -441,7 +444,7 @@ body {
   background-color: var(--myMainBackTheme);
   position: absolute;
   top: 100px;
-  height: calc(100vh - 150px);
+  max-height: calc(100vh - 150px);
   right: -210px;
   padding: 10px;
   transition: .5s;
