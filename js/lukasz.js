@@ -10,6 +10,7 @@
         const ENGLISH = $(".ang");
         const CHOOSE_LANG_SITE = $(".chooseLang");
         const FLAG = $(".flag");
+        activePage = 0;
     // -- START
     // -- FUNKCJE
         var check = function(){
@@ -57,7 +58,7 @@
 // -- start strony
 $( document ).ready(function() {
 $(START_BUTTON).one("click", function(){
-    padding_cont(100);
+    activePage = 1;
     $(INFO_START).remove();
     // -- FUNKCJE OGÓLNE
         $.fn.extend({
@@ -103,6 +104,7 @@ $(START_BUTTON).one("click", function(){
         // -- EVENTY
         $(MENU_POINTS).each(function(index){
             $(this).on("click", function(){
+                activePage = index + 1;
                 let current = $(this);
                 let y = $(this).outerWidth();
                 let x = $(this).position();
@@ -112,7 +114,6 @@ $(START_BUTTON).one("click", function(){
                     $(current).siblings("p").removeClass('colorMenuPunkty');
                     $(ALL_PAGES_BOX).css("left" , "-" + index * 100 + "%");
                 }, 800);
-                padding_cont();
             });
         });
         $(LOGO).on({
@@ -135,7 +136,7 @@ $(START_BUTTON).one("click", function(){
                     let x = $(a).position();
                     MENU_TAG.css({left: x.left , width: y});
                     // $(OPT_BUT).css("left", WIDTH_MENU_CONT / 2 );
-                }, 400);
+                }, 1000);
             });
             function option_menu_show(opt){
                 if(opt === "on"){
@@ -193,14 +194,13 @@ $(START_BUTTON).one("click", function(){
                 setTimeout(function(){
                     $(OPIS_O_MNIE_CONT).addClass("meTxtContJS");
                     $(CONT_Z_INDEX_SITE_ONE).addClass("contZindxJS");
-                    padding_cont();
+                    padding_cont(300, CONT_Z_INDEX_SITE_ONE);
                 }, 400);
             });
             $(CLOS_ME_INFO).on("click", function(){
                 $(OPIS_O_MNIE_CONT).removeClass("meTxtContJS");
                 setTimeout(function(){
                     iteracja_for(EL_TO_ANIMATE_SITE_ONE, show_el_site_one);
-                    padding_cont();
                     $(CONT_Z_INDEX_SITE_ONE).removeClass("contZindxJS");
                 }, 400);
             });
@@ -219,12 +219,14 @@ $(START_BUTTON).one("click", function(){
                         }
                     }
                 });
+                padding_cont(0, $(".packOne"));
             }
             function animate_text_page_one(cb1){
                 cb1();
                 itteration_for__animate_text_page_one();
                 setTimeout(function(){
                     add_class($(MORE_INFO_BUT) , "moreInfoJS");
+                    
                 }, 4500);
             }
             function iteration_for_adding_class_fn(el){
@@ -318,9 +320,9 @@ $(START_BUTTON).one("click", function(){
             });
             $(MENU_CAREER_POINTS).each(function(index){
                 $(this).one("click", function(){
+                    padding_cont(0, $(".packTwo"));
                     PageTwoClicked = true;
                     iteracja_for(ELEMENTS_TO_ANIAMTE_PAGE_TWO, show_content_page_two);
-                    padding_cont();
                 });
                 $(this).on({
                     click: () => {
@@ -333,6 +335,7 @@ $(START_BUTTON).one("click", function(){
                         show($(COMPANY_YEARS).children(),"companyYearsLettersJS3", 100, "add");
                         how_i_like_job(index);
                         resize_wall_page_two(WALLPAPER_PAGE_TWO, wallTab[index], wallTabM[index]);
+                        
                     },
                     mouseover: () => $(MENU_CAREER_INDICATOR).addClass("menuCareerIndicatorJS" + index),
                     mouseleave: () => $(MENU_CAREER_INDICATOR).removeClass("menuCareerIndicatorJS" + index),
@@ -343,6 +346,7 @@ $(START_BUTTON).one("click", function(){
                 menu_career_show_or_hide(0, "hide");
                 content_page_two_show_or_hide(0, "hide");
                 duties_box_show_or_hide(700, "open", actualIndexNr);
+                padding_cont(0, $(".contMenuPage2").next());
             });
             $(DUTIES_CLOSE).on("click" , function(){
                 duties_box_show_or_hide(700, "close");
@@ -351,6 +355,7 @@ $(START_BUTTON).one("click", function(){
             });
         // -- klikniecie w punkty menu glownego
             $(MENU_POINTS[1]).on("click", function(){
+                padding_cont(100, $(".contMenuPage2"));
                 menu_career_show_or_hide(1600, "show");
                 content_page_two_show_or_hide(1600, "show");
             }).siblings(".menuPunkty").on("click", function(){
@@ -397,7 +402,6 @@ $(START_BUTTON).one("click", function(){
                 }, time);
             }if(option === "open"){
                 create_elements_duties_to_duties_container(index); 
-                padding_cont();
                 setTimeout(function(){
                     $(DUTIES_MAIN_CONT).removeClass("contMenuPage3");
                 }, time);
@@ -522,7 +526,8 @@ $(START_BUTTON).one("click", function(){
                         // main_text_skills("off");
                         content_page_three_fast_remove();
                         content_page_three_create(arrayOfSkills, indx_minus, 1000);
-                        padding_cont(1050);
+                        // padding_cont(1050);
+                        
                     },
                     mouseover: () => menu_skills_animate("off"),
                     mouseout: () => menu_skills_animate("on")
@@ -531,7 +536,8 @@ $(START_BUTTON).one("click", function(){
             $(MENU_POINTS[2]).on("click" , function(){
                 if(flagsSkill == true){
                     main_text_skills("on", 1600);
-                    padding_cont(1600);
+                    // padding_cont(1600);
+                    
                 }
                 flagsSkill = false;
                 menu_skills("on", 1600);
@@ -570,6 +576,7 @@ $(START_BUTTON).one("click", function(){
                             var b = $(SKILLS_MAIN_TEXT).children();
                             show(b, "textMainJS", 50, "add");
                         }
+                        padding_cont(0, $(".Three > .cont"));
                     }, time);
                 }
             }
@@ -607,6 +614,7 @@ $(START_BUTTON).one("click", function(){
                         }
                         $(a[t]).append("<div class='skillsText'>" + skillPointArray[t] + "</div>");
                     }
+                    padding_cont(0, $(".Three > .cont"));
                 }, time);
                 var skillPointArray = el[nr];
             }
@@ -668,6 +676,7 @@ $(START_BUTTON).one("click", function(){
                 setTimeout(function(){
                     stan_poczatkowy_dynamic_theme();
                 }, 200); 
+                padding_cont(0, $(".packFour"));
             }, 1600);
             
         });
@@ -965,6 +974,7 @@ $(START_BUTTON).one("click", function(){
         $(MENU_POINTS[4]).on("click", () => {
             setTimeout(function(){
                 iteracja_for(SITE_CHILDREN_EL, pokaz_el_kontakt);
+                padding_cont(0, $(".Five > .cont"));
             }, 1600);
         });
         $(MENU_POINTS[4]).siblings(".menuPunkty").on("click", () => {
@@ -976,7 +986,23 @@ $(START_BUTTON).one("click", function(){
         zmien_tekst_sec_title(MAIL, NEW_TXT_MAIL, OLD_TXT_MAILPHONE);
         zmien_tekst_sec_title(PHONE, NEW_TXT_PHONE, OLD_TXT_MAILPHONE);
     
-        padding_cont();
+        $(window).on("resize", function(){
+            if(activePage === 1){
+                padding_cont(1000, $(".packOne"), $(".contZindx"));
+            }
+            if(activePage === 2){
+                padding_cont(1000, $(".packTwo"), $(".contMenuPage2"), $(".contMenuPage2").next());
+            }
+            if(activePage === 3){
+                padding_cont(1000, $(".Three > .cont"));
+            }
+            if(activePage === 4){
+                padding_cont(1000, $(".packFour"));
+            }
+            if(activePage === 5){
+                padding_cont(1000, $(".Five > .cont"));
+            }
+        });
 }); // finish start button function
 }); // document ready finish
 
@@ -1113,26 +1139,39 @@ function grayscale_none(el){
 
 // resize
 const CONT = $(".cont");
-function padding_cont(time = 500){
+const PAGE_ZERO_EL_TO_PAD = [PRELOADER, CHOOSE_LANG_SITE, INFO_START];
+function padding_cont(time, ...params){
     setTimeout(function(){
-        $(CONT).each(function(){
-            let thisChild = $(this).children(".contChildren");
-            let childHeight = $(thisChild).height();
-            let thisHeight = $(this).height();
-            let paddingVertical = Math.floor((thisHeight - childHeight) / 2);
-            let_margin($(this), paddingVertical);
+        $(params).each(function(){
+            let_margin(this);
         });
-        function let_margin(el, pad){
-            $(el).css({"padding-top": 0});
-            $(el).css({"padding-bottom": 0});
-            $(el).css({"padding-top": pad + "px"});
-            $(el).css({"padding-bottom": pad + "px"});
+        function let_margin(el){
+            let child = $(el).children(".contChildren");
+            let childHeight = $(child).outerHeight();
+            let thisHeight = $(el).outerHeight();
+            let paddingVertical = Math.floor((thisHeight - childHeight) / 2);
+            console.log("cont H: " + thisHeight);
+            console.log("contChild H: " + childHeight);
+            console.log("pad T and pad B: " + paddingVertical);
+            
+            if(childHeight > thisHeight){
+                $(el).css({"padding-top": "30px"});
+                $(el).css({"padding-bottom": "30px"});
+            }else{
+                $(el).css({"padding-top": paddingVertical + "px"});
+                $(el).css({"padding-bottom": paddingVertical + "px"});
+            }
         }
+        // function let_margin_zero(el){
+        //     $(el).css({"padding-top": 0});
+        //     $(el).css({"padding-bottom": 0});
+        // }
     }, time);
 }
-padding_cont();
+padding_cont(100, PRELOADER, CHOOSE_LANG_SITE, INFO_START);
+padding_cont(CHOOSE_LANG_SITE);
 $(window).on("resize", function(){
-    padding_cont();
+    padding_cont(1000, PRELOADER, CHOOSE_LANG_SITE, INFO_START);
 });
 
 
