@@ -24,7 +24,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: calc(100% - 150px);
+  height: calc(100% - 100px);
   margin-top: 100px;
   transition: 0.5s all linear;
   -webkit-transition: 0.5s all linear;
@@ -38,7 +38,7 @@ body {
   top: 0;
   left: 0;
   width: 0;
-  height: calc(100vh - 150px);
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 500;
 }
@@ -51,7 +51,7 @@ body {
   position: absolute;
   top: 0;
   width: 100%;
-  height: calc(100vh - 150px);
+  height: 100%;
   transition: 0.5s all linear;
   -webkit-transition: 0.5s all linear;
   -moz-transition: 0.5s all linear;
@@ -65,7 +65,7 @@ body {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 50px);
   overflow-y: auto;
   overflow-x: hidden;
   transition: linear .3s;
@@ -461,6 +461,7 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;
+  height: max-content;
 }
 
 .optionAreaJS {
