@@ -90,18 +90,18 @@ $(START_BUTTON).one("click", function(){
             const MENU_TAG = $('.tagMenu');
             const MENU_POINTS = $('.menuPunkty');
             const OPT_BUT = $('.optionButton');
-            const HEADER = $('.header');
+            // const HEADER = $('.header');
             const OPT_AREA = $(".optionArea");
             const LOGO = $(".logo");
             const MENU_CONT = $("#menuKontener");
             const BRIGHT_LESS = $(".brightLess");
             const PAGE = $('.Page');
             const SOCIAL = $(".social");
-            var WIDTH_MENU_CONT = $(MENU_CONT).width();
-            var ovHeight = $(PAGE).height();
+            // var WIDTH_MENU_CONT = $(MENU_CONT).width();
+            // var ovHeight = $(PAGE).height();
         // -- start funkcji ogolnych
             nadaj_index(MENU_POINTS,"index-nr");
-            $(OPT_AREA).css("max-height", ovHeight - 49 + "px");
+            // $(OPT_AREA).css("max-height", ovHeight - 49 + "px");
             // $(OPT_BUT).css("left", WIDTH_MENU_CONT / 2 );
         // -- EVENTY
         $(MENU_POINTS).each(function(index){
@@ -137,25 +137,28 @@ $(START_BUTTON).one("click", function(){
                     let y = $(a).outerWidth();
                     let x = $(a).position();
                     MENU_TAG.css({left: x.left , width: y});
-                    var ovHeight = $(PAGE).height();
-                    $(OPT_AREA).css("max-height", ovHeight - 49 + "px");
+                    // var ovHeight = $(PAGE).height();
+                    // $(OPT_AREA).css("max-height", ovHeight - 49 + "px");
                     // $(OPT_BUT).css("left", WIDTH_MENU_CONT / 2 );
                 }, 1000);
             });
             function option_menu_show(opt){
                 if(opt === "on"){
+                    $(".copyRigths").addClass("copyRigthsJS");
                     $(BRIGHT_LESS).addClass("brightLessJS");
-                    $(SOCIAL).addClass("socialJS");
+                    // $(SOCIAL).addClass("socialJS");
                     $(OPT_BUT).addClass("optionButtonJS");
                     $(OPT_AREA).addClass("optionAreaJS");
                     $(LOGO).addClass("logoJS");
                     
                 }else if(opt === "off"){
+                    
                     $(OPT_BUT).removeClass("optionButtonJS");
                     $(OPT_AREA).removeClass("optionAreaJS");
                     $(LOGO).removeClass("logoJS");
                     $(BRIGHT_LESS).removeClass("brightLessJS");
-                    $(SOCIAL).removeClass("socialJS");
+                    // $(SOCIAL).removeClass("socialJS");
+                    $(".copyRigths").removeClass("copyRigthsJS");
                 }
             }
     // STRONA 1
@@ -1006,7 +1009,28 @@ $(START_BUTTON).one("click", function(){
             if(activePage === 5){
                 padding_cont(1000, $(".Five > .cont"));
             }
+            resize_wallpapers();
         });
+        function resize_wallpapers(){
+            var resize_600 = window.matchMedia("(max-width: 600px)");
+            var wallElements = [$(".wallOne"), $(".wallTwo"), $(".wallThree"), $(".wallFour"), $(".wallFive")];
+            var wallTab = ["url(img/wallpapers/wallpaper_1.jpg)", "url(img/wallpapers/wallpaper_2_0.jpg)", "url(img/wallpapers/wallpaper_3.jpg)", "url(img/wallpapers/wallpaper_4.jpg)", "url(img/wallpapers/wallpaper_5.jpg)"];
+            var wallTabM = ["url(img/wallpapers/wallpaper_1m.jpg)", "url(img/wallpapers/wallpaper_2_0m.jpg)", "url(img/wallpapers/wallpaper_4m.jpg)", "url(img/wallpapers/wallpaper_5m.jpg)"];
+            if (resize_600.matches) { 
+                $(wallElements[0]).css("background-image", wallTabM[0]);
+                $(wallElements[1]).css("background-image", wallTabM[1]);
+                $(wallElements[2]).css("background-image", wallTabM[2]);
+                $(wallElements[3]).css("background-image", wallTabM[3]);
+                $(wallElements[4]).css("background-image", wallTabM[4]);
+            } else {
+                $(wallElements[0]).css("background-image", wallTab[0]);
+                $(wallElements[1]).css("background-image", wallTab[1]);
+                $(wallElements[2]).css("background-image", wallTab[2]);
+                $(wallElements[3]).css("background-image", wallTab[3]);
+                $(wallElements[4]).css("background-image", wallTab[4]);
+            }
+        }
+        resize_wallpapers();
 }); // finish start button function
 }); // document ready finish
 
