@@ -98,8 +98,10 @@ $(START_BUTTON).one("click", function(){
             const PAGE = $('.Page');
             const SOCIAL = $(".social");
             var WIDTH_MENU_CONT = $(MENU_CONT).width();
+            var ovHeight = $(PAGE).height();
         // -- start funkcji ogolnych
             nadaj_index(MENU_POINTS,"index-nr");
+            $(OPT_AREA).css("height", ovHeight + 1);
             // $(OPT_BUT).css("left", WIDTH_MENU_CONT / 2 );
         // -- EVENTY
         $(MENU_POINTS).each(function(index){
