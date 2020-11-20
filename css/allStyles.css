@@ -169,11 +169,11 @@ body {
 }
 
 .flagJS1 {
-  background-color: #db4343;
+  background-color: #880000;
 }
 
 .flagJS2 {
-  background-color: #2b74c2;
+  background-color: #004792;
 }
 
 .lng {
@@ -184,8 +184,8 @@ body {
 }
 
 .pol {
-  color: var(--myTxtDark);
-  background-color: var(--myTheme);
+  color: white;
+  background-color: black;
   padding: var(--mypaddingButton);
   cursor: pointer;
   width: max-content;
@@ -202,12 +202,12 @@ body {
 }
 
 .pol:hover {
-  background-color: var(--myHover);
+  color: var(--myTheme);
 }
 
 .ang {
-  color: var(--myTxtDark);
-  background-color: var(--myTheme);
+  color: white;
+  background-color: black;
   padding: var(--mypaddingButton);
   cursor: pointer;
   width: max-content;
@@ -224,7 +224,7 @@ body {
 }
 
 .ang:hover {
-  background-color: var(--myHover);
+  color: var(--myTheme);
 }
 
 .lngsp {
@@ -279,8 +279,8 @@ body {
 }
 
 .closeInfoStartTxt {
-  color: var(--myTxtDark);
-  background-color: var(--myTheme);
+  color: white;
+  background-color: black;
   padding: var(--mypaddingButton);
   cursor: pointer;
   width: max-content;
@@ -304,7 +304,7 @@ body {
 }
 
 .closeInfoStartTxt:hover {
-  background-color: var(--myHover);
+  color: var(--myTheme);
 }
 
 .header {
@@ -403,7 +403,7 @@ body {
 }
 
 .logoJS {
-  width: 221px;
+  width: 200px;
   background-color: transparent;
   color: var(--myTheme);
 }
@@ -466,7 +466,7 @@ body {
   overflow-x: hidden;
   box-sizing: border-box;
   height: max-content;
-  max-height: calc(100vh - 200px);
+  max-height: calc(100vh - 150px);
 }
 
 .optionAreaJS {
@@ -573,6 +573,7 @@ body {
   box-sizing: border-box;
   border-top: var(--myBorderSize) solid var(--myBorder);
   background-color: var(--myMainBackTheme);
+  text-align: center;
 }
 
 .copyRigthsJS {
@@ -581,7 +582,7 @@ body {
 
 .social {
   position: absolute;
-  top: -78px;
+  top: -126px;
   right: 0;
   width: max-content;
   padding: 10px;
@@ -726,8 +727,8 @@ body {
   -moz-transition: 0.3s all linear;
   -ms-transition: 0.3s all linear;
   -o-transition: 0.3s all linear;
-  color: var(--myTxtDark);
-  background-color: var(--myTheme);
+  color: white;
+  background-color: black;
   padding: var(--mypaddingButton);
   cursor: pointer;
   width: max-content;
@@ -742,7 +743,7 @@ body {
 }
 
 .moreInfo:hover {
-  background-color: var(--myHover);
+  color: var(--myTheme);
 }
 
 .moreInfoJS {
@@ -910,7 +911,7 @@ body {
 
 .packTwo {
   width: calc(100% - 320px);
-  left: 320px;
+  left: 250px;
 }
 
 .contMenuPage2 {
@@ -1186,6 +1187,7 @@ body {
   box-sizing: border-box;
   background-color: var(--myHalfMainBackTheme);
   font-size: 40px;
+  text-align: center;
 }
 
 .companyName {
@@ -1296,8 +1298,8 @@ body {
 
 .dutiesButton {
   font-size: 20px;
-  color: var(--myTxtDark);
-  background-color: var(--myTheme);
+  color: white;
+  background-color: black;
   padding: var(--mypaddingButton);
   cursor: pointer;
   width: max-content;
@@ -1311,7 +1313,7 @@ body {
 }
 
 .dutiesButton:hover {
-  background-color: var(--myHover);
+  color: var(--myTheme);
 }
 
 .dutiesContainer {
@@ -1577,6 +1579,7 @@ body {
   -moz-transition: 0.4s all linear;
   -ms-transition: 0.4s all linear;
   -o-transition: 0.4s all linear;
+  padding: 10px 20px;
   margin: 50px auto 30px auto;
   display: block;
   background-color: var(--myTheme);
@@ -1939,11 +1942,12 @@ body {
 @media only screen and (max-width: 1100px) {
   .packTwo {
     width: calc(100% - 120px);
-    left: 120px;
+    left: 100px;
   }
   .menuCareerContainer {
     width: auto;
     height: auto;
+    background-color: var(--myTheme);
   }
   .menuCareerPointsJS {
     padding: 0;
@@ -1951,8 +1955,15 @@ body {
   .menuCareerPoints {
     font-size: 15px;
     padding: 20px;
+    margin: 14px 0 0 0;
+    filter: drop-shadow(2px 4px 6px black);
+    -webkit-filter: drop-shadow(2px 4px 6px black);
     color: white;
     position: relative;
+    background-color: var(--myHalfMainBackTheme);
+  }
+  #leftYear {
+    margin-top: 0;
   }
   .yearsJS {
     color: var(--myTxtTheme);
@@ -2015,7 +2026,7 @@ body {
     width: 100px;
   }
   .logoJS {
-    width: 121px;
+    width: 100px;
   }
   .optionButton {
     font-size: 10px;
@@ -2036,8 +2047,8 @@ body {
   .me {
     display: none;
   }
-  .copyRigths {
-    text-align: center;
+  .social {
+    border-left: var(--myBorderSize) solid var(--myBorder);
   }
   .helloBox, .nameLewandowskiBox, .sloganKodowanieBox {
     font-size: 50px;
@@ -2055,7 +2066,7 @@ body {
     font-size: 14px;
   }
   .meTxtCont {
-    font-size: 14px;
+    font-size: 12px;
     padding: 12px;
   }
   .dutiesBoxesJS1 {
@@ -2120,6 +2131,7 @@ body {
   }
   .firstContainerSkills {
     font-size: 12px;
+    padding: 10px 10px;
   }
   .skillsImg {
     width: 25px;
@@ -2162,7 +2174,7 @@ body {
     font-size: 12px;
   }
   .meTxtCont {
-    font-size: 12px;
+    font-size: 10px;
     padding: 10px;
   }
   .packTwo {
@@ -2172,6 +2184,10 @@ body {
   .menuCareerPoints {
     font-size: 12px;
     padding: 10px;
+    margin: 26px 0 0 0;
+  }
+  #leftYear {
+    margin-top: 0;
   }
   .companyContainer, .careerLikeIndicatorConatainer, .dutiesButton {
     font-size: 14px;
@@ -2200,15 +2216,13 @@ body {
     min-width: 280px;
   }
   .menuSkillsTabs {
-    font-size: 10px;
-    padding: 10px 4px;
-    text-transform: lowercase;
+    font-size: 9px;
   }
   .skillsPointContainer {
-    font-size: 10px;
+    font-size: 9px;
   }
   .firstContainerSkills {
-    font-size: 10px;
+    font-size: 9px;
   }
   .eduContainer {
     margin: 10px 5px;
