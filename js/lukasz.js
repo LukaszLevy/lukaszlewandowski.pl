@@ -137,6 +137,8 @@ $(START_BUTTON).one("click", function(){
                     let y = $(a).outerWidth();
                     let x = $(a).position();
                     MENU_TAG.css({left: x.left , width: y});
+                    var ovHeight = $(PAGE).height();
+                    $(OPT_AREA).css("height", ovHeight + 1);
                     // $(OPT_BUT).css("left", WIDTH_MENU_CONT / 2 );
                 }, 1000);
             });
