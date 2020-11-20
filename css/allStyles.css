@@ -2,7 +2,6 @@
 html {
   padding: 0;
   margin: 0;
-  max-height: 100vh;
   max-width: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -11,7 +10,6 @@ html {
 }
 
 body {
-  max-height: 100vh;
   max-width: 100%;
   padding: 0;
   margin: 0;
@@ -453,8 +451,6 @@ body {
   background-color: var(--myMainBackTheme);
   position: absolute;
   top: 1100px;
-  max-height: calc(100vh - 149px);
-  height: calc(100vh - 149px);
   right: 0;
   padding: 10px;
   transition: .5s linear;
