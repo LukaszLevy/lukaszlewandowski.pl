@@ -90,19 +90,12 @@ $(START_BUTTON).one("click", function(){
             const MENU_TAG = $('.tagMenu');
             const MENU_POINTS = $('.menuPunkty');
             const OPT_BUT = $('.optionButton');
-            // const HEADER = $('.header');
             const OPT_AREA = $(".optionArea");
             const LOGO = $(".logo");
-            const MENU_CONT = $("#menuKontener");
             const BRIGHT_LESS = $(".brightLess");
             const PAGE = $('.Page');
-            const SOCIAL = $(".social");
-            // var WIDTH_MENU_CONT = $(MENU_CONT).width();
-            // var ovHeight = $(PAGE).height();
         // -- start funkcji ogolnych
             nadaj_index(MENU_POINTS,"index-nr");
-            // $(OPT_AREA).css("max-height", ovHeight - 49 + "px");
-            // $(OPT_BUT).css("left", WIDTH_MENU_CONT / 2 );
         // -- EVENTY
         $(MENU_POINTS).each(function(index){
             $(this).on("click", function(){
@@ -131,22 +124,18 @@ $(START_BUTTON).one("click", function(){
             }
         });
         // -- FUNKCJE
-            $(window).resize(function() {
-                setTimeout(function(){
-                    let a = $(".colorMenuPunkty");
-                    let y = $(a).outerWidth();
-                    let x = $(a).position();
-                    MENU_TAG.css({left: x.left , width: y});
-                    // var ovHeight = $(PAGE).height();
-                    // $(OPT_AREA).css("max-height", ovHeight - 49 + "px");
-                    // $(OPT_BUT).css("left", WIDTH_MENU_CONT / 2 );
-                }, 1000);
-            });
+            // $(window).resize(function() {
+            //     setTimeout(function(){
+            //         let a = $(".colorMenuPunkty");
+            //         let y = $(a).outerWidth();
+            //         let x = $(a).position();
+            //         MENU_TAG.css({left: x.left , width: y});
+            //     }, 1000);
+            // });
             function option_menu_show(opt){
                 if(opt === "on"){
                     $(".copyRigths").addClass("copyRigthsJS");
                     $(BRIGHT_LESS).addClass("brightLessJS");
-                    // $(SOCIAL).addClass("socialJS");
                     $(OPT_BUT).addClass("optionButtonJS");
                     $(OPT_AREA).addClass("optionAreaJS");
                     $(LOGO).addClass("logoJS");
@@ -157,7 +146,6 @@ $(START_BUTTON).one("click", function(){
                     $(OPT_AREA).removeClass("optionAreaJS");
                     $(LOGO).removeClass("logoJS");
                     $(BRIGHT_LESS).removeClass("brightLessJS");
-                    // $(SOCIAL).removeClass("socialJS");
                     $(".copyRigths").removeClass("copyRigthsJS");
                 }
             }
@@ -288,8 +276,7 @@ $(START_BUTTON).one("click", function(){
             const DUTIES_CONTAINER = $(".dutiesContainer");
             const DUTIES_CLOSE = $(".dutiesClose");
             const DUTIES_MAIN_CONT = $(".contMenuPage2").next("div");
-            var wallTab = ["url(img/wallpapers/wallpaper_2_0.jpg)", "url(img/wallpapers/wallpaper_2_1.jpg)", "url(img/wallpapers/wallpaper_2_2.jpg)", "url(img/wallpapers/wallpaper_2_3.jpg)"];
-            var wallTabM = ["url(img/wallpapers/wallpaper_2_0m.jpg)", "url(img/wallpapers/wallpaper_2_1m.jpg)", "url(img/wallpapers/wallpaper_2_2m.jpg)", "url(img/wallpapers/wallpaper_2_3m.jpg)"];
+            
             var Company_Name_Board = ["GEOSTANDARD","ASTALDI","PIZZAROTTI","ERPLAST"];
             var Company_Position_Board = ["LABORANT","SPECJALISTA","KOORDYNATOR","DORADCA"];
             var Company_Years_Work_Board = ["2010-2015","2015-2017","2017-2019","2020"];
@@ -341,7 +328,7 @@ $(START_BUTTON).one("click", function(){
                         create_objects_from_boards(index, $(COMPANY_YEARS),Company_Years_Work_Board,"companyPositionLettersJS1","companyPositionLettersJS1");
                         show($(COMPANY_YEARS).children(),"companyYearsLettersJS3", 100, "add");
                         how_i_like_job(index);
-                        resize_wall_page_two(WALLPAPER_PAGE_TWO, wallTab[index], wallTabM[index]);
+                        // resize_wall_page_two(WALLPAPER_PAGE_TWO, wallTab[index], wallTabM[index]);
                         
                     },
                     mouseover: () => $(MENU_CAREER_INDICATOR).addClass("menuCareerIndicatorJS" + index),
@@ -415,14 +402,14 @@ $(START_BUTTON).one("click", function(){
             }
         }
         // -- funkcja zmieniajća tło drugiej strony w zależności czy urządzenie małe / duże
-        function resize_wall_page_two(el, wall, wallM){
-            var resize_600 = window.matchMedia("(max-width: 600px)");
-            if (resize_600.matches) { 
-                $(el).css("background-image", wallM);
-            } else {
-                $(el).css("background-image", wall);
-            }
-        }
+        // function resize_wall_page_two(el, wall, wallM){
+        //     var resize_600 = window.matchMedia("(max-width: 600px)");
+        //     if (resize_600.matches) { 
+        //         $(el).css("background-image", wallM);
+        //     } else {
+        //         $(el).css("background-image", wall);
+        //     }
+        // }
         // -- funkcja tworzenie objektow i animaowanie liter tych obiektow w kontenerze company
             function create_objects_from_boards(nr,el,el2,classes1,classes2){
                 el.text("");
@@ -530,10 +517,8 @@ $(START_BUTTON).one("click", function(){
                         var indx_minus = $(this).index()-1;
                         indicator_menu_skills_move("on", this);
                         resize_indicator();
-                        // main_text_skills("off");
                         content_page_three_fast_remove();
                         content_page_three_create(arrayOfSkills, indx_minus, 1000);
-                        // padding_cont(1050);
                         
                     },
                     mouseover: () => menu_skills_animate("off"),
@@ -543,8 +528,6 @@ $(START_BUTTON).one("click", function(){
             $(MENU_POINTS[2]).on("click" , function(){
                 if(flagsSkill == true){
                     main_text_skills("on", 1600);
-                    // padding_cont(1600);
-                    
                 }
                 flagsSkill = false;
                 menu_skills("on", 1600);
@@ -708,7 +691,6 @@ $(START_BUTTON).one("click", function(){
             zmien_wyglad_edu_cont_po_najechaniu_myszka($(this), zmien_wyglad_edu_cont_po_zjechaniu_myszki);
         });
         // -- funkcje
-        
         // -- 1
         function zmien_wyglad_strony_edu_po_klikaniu_w_punkty_menu_glownego(i){
             setTimeout(function(){
@@ -814,7 +796,7 @@ $(START_BUTTON).one("click", function(){
                     "height": newWidthHeight + "px",
                     "opacity": newOpa,
                     "background-color": currentTheme
-                    });
+                });
             }
             function change_par_wid_page_three(){
                 var resize_700 = window.matchMedia("(max-width: 700px)");
@@ -873,7 +855,6 @@ $(START_BUTTON).one("click", function(){
                     change_top_random(ELEMENTS, TABLICA_OFFSETS[7] + MOVE_UP, NEW_TOP);
                 }
             }
-            
         }
         // -- 9
         function usun_div_dla_dynamicznego_motywu(){
@@ -976,7 +957,6 @@ $(START_BUTTON).one("click", function(){
                 callback(i,el);
             }
         }
-        
         // -- EVENTY
         $(MENU_POINTS[4]).on("click", () => {
             setTimeout(function(){
@@ -993,6 +973,7 @@ $(START_BUTTON).one("click", function(){
         zmien_tekst_sec_title(MAIL, NEW_TXT_MAIL, OLD_TXT_MAILPHONE);
         zmien_tekst_sec_title(PHONE, NEW_TXT_PHONE, OLD_TXT_MAILPHONE);
     
+
         $(window).on("resize", function(){
             if(activePage === 1){
                 padding_cont(1000, $(".packOne"), $(".contZindx"));
@@ -1010,26 +991,49 @@ $(START_BUTTON).one("click", function(){
                 padding_cont(1000, $(".Five > .cont"));
             }
             resize_wallpapers();
+            setTimeout(function(){
+                let a = $(".colorMenuPunkty");
+                let y = $(a).outerWidth();
+                let x = $(a).position();
+                MENU_TAG.css({left: x.left , width: y});
+            }, 1000);
         });
-        function resize_wallpapers(){
-            var resize_600 = window.matchMedia("(max-width: 600px)");
-            var wallElements = [$(".wallOne"), $(".wallTwo"), $(".wallThree"), $(".wallFour"), $(".wallFive")];
-            var wallTab = ["url(img/wallpapers/wallpaper_1.jpg)", "url(img/wallpapers/wallpaper_2_0.jpg)", "url(img/wallpapers/wallpaper_3.jpg)", "url(img/wallpapers/wallpaper_4.jpg)", "url(img/wallpapers/wallpaper_5.jpg)"];
-            var wallTabM = ["url(img/wallpapers/wallpaper_1m.jpg)", "url(img/wallpapers/wallpaper_2_0m.jpg)", "url(img/wallpapers/wallpaper_4m.jpg)", "url(img/wallpapers/wallpaper_5m.jpg)"];
-            if (resize_600.matches) { 
-                $(wallElements[0]).css("background-image", wallTabM[0]);
-                $(wallElements[1]).css("background-image", wallTabM[1]);
-                $(wallElements[2]).css("background-image", wallTabM[2]);
-                $(wallElements[3]).css("background-image", wallTabM[3]);
-                $(wallElements[4]).css("background-image", wallTabM[4]);
-            } else {
-                $(wallElements[0]).css("background-image", wallTab[0]);
-                $(wallElements[1]).css("background-image", wallTab[1]);
-                $(wallElements[2]).css("background-image", wallTab[2]);
-                $(wallElements[3]).css("background-image", wallTab[3]);
-                $(wallElements[4]).css("background-image", wallTab[4]);
+
+        // wallpapers functions
+        var wallElements = [$(".wallOne"), $(".wallTwo"), $(".wallThree"), $(".wallFour"), $(".wallFive")];
+        var wallTab = ["url(img/wallpapers/wallpaper_2_0.jpg)", "url(img/wallpapers/wallpaper_2_1.jpg)", "url(img/wallpapers/wallpaper_2_2.jpg)", "url(img/wallpapers/wallpaper_2_3.jpg)"];
+        var wallTabM = ["url(img/wallpapers/wallpaper_2_0m.jpg)", "url(img/wallpapers/wallpaper_2_1m.jpg)", "url(img/wallpapers/wallpaper_2_2m.jpg)", "url(img/wallpapers/wallpaper_2_3m.jpg)"];
+        var wallTabMxs = ["url(img/wallpapers/wallpaper_2_0xs.jpg)", "url(img/wallpapers/wallpaper_2_1xs.jpg)", "url(img/wallpapers/wallpaper_2_2xs.jpg)", "url(img/wallpapers/wallpaper_2_3xs.jpg)"];
+        var wallTabL = ["url(img/wallpapers/wallpaper_1.jpg)", "url(img/wallpapers/wallpaper_2_0.jpg)", "url(img/wallpapers/wallpaper_3.jpg)", "url(img/wallpapers/wallpaper_4.jpg)", "url(img/wallpapers/wallpaper_5.jpg)"];
+        var wallTabS = ["url(img/wallpapers/wallpaper_1m.jpg)", "url(img/wallpapers/wallpaper_2_0m.jpg)", "url(img/wallpapers/wallpaper_3m.jpg)", "url(img/wallpapers/wallpaper_4m.jpg)", "url(img/wallpapers/wallpaper_5m.jpg)"];
+        var wallTabXS = ["url(img/wallpapers/wallpaper_1xs.jpg)", "url(img/wallpapers/wallpaper_2_0xs.jpg)", "url(img/wallpapers/wallpaper_3xs.jpg)", "url(img/wallpapers/wallpaper_4xs.jpg)", "url(img/wallpapers/wallpaper_5xs.jpg)"];
+        function resize_wallpapers(indx){
+            var resize = $(window).width();
+            if(resize < 3000){
+                resize_wall_all_pages(wallTabL);
+                resize_wall_page_two(wallTab);
+            }
+            if(resize < 800) { 
+                resize_wall_all_pages(wallTabS);
+                resize_wall_page_two(wallTabM);
+            }
+            if(resize < 450){
+                resize_wall_all_pages(wallTabXS);
+                resize_wall_page_two(wallTabMxs);
             }
         }
+            function resize_wall_all_pages(wall){
+                for(i=0; i<wallElements.length; i++){
+                    $(wallElements[i]).css("background-image", wall[i]);
+                }
+            }
+            function resize_wall_page_two(wall){
+                $(MENU_CAREER_POINTS).each(function(index){
+                    $(this).on({
+                        click: () => $(WALLPAPER_PAGE_TWO).css("background-image", wall[index])
+                    });
+                });
+            }
         resize_wallpapers();
 }); // finish start button function
 }); // document ready finish
@@ -1164,8 +1168,7 @@ function grayscale_none(el){
     $(el).css("filter", "grayscale(0)");
 }
 
-
-// resize
+// padding function
 const CONT = $(".cont");
 const PAGE_ZERO_EL_TO_PAD = [PRELOADER, CHOOSE_LANG_SITE, INFO_START];
 function padding_cont(time, ...params){
@@ -1178,10 +1181,6 @@ function padding_cont(time, ...params){
             let childHeight = $(child).outerHeight();
             let thisHeight = $(el).outerHeight();
             let paddingVertical = Math.floor((thisHeight - childHeight) / 2);
-            console.log("cont H: " + thisHeight);
-            console.log("contChild H: " + childHeight);
-            console.log("pad T and pad B: " + paddingVertical);
-            
             if(childHeight > thisHeight){
                 $(el).css({"padding-top": "30px"});
                 $(el).css({"padding-bottom": "30px"});
@@ -1190,10 +1189,6 @@ function padding_cont(time, ...params){
                 $(el).css({"padding-bottom": paddingVertical + "px"});
             }
         }
-        // function let_margin_zero(el){
-        //     $(el).css({"padding-top": 0});
-        //     $(el).css({"padding-bottom": 0});
-        // }
     }, time);
 }
 padding_cont(100, PRELOADER, CHOOSE_LANG_SITE, INFO_START);
