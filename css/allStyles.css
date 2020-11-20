@@ -39,7 +39,7 @@ body {
   left: 0;
   width: 0;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 500;
 }
 
@@ -92,6 +92,7 @@ body {
   background-color: var(--myBack);
   z-index: 1000000000000;
   font-size: var(--myTxtHeaderNormal);
+  height: 100%;
 }
 
 .preloaderTxtCont {
@@ -148,6 +149,7 @@ body {
   background-color: var(--myBack);
   z-index: 99996;
   opacity: 0;
+  height: 100%;
 }
 
 .chooseLangJS {
@@ -238,6 +240,7 @@ body {
   display: block;
   overflow-y: auto;
   overflow-x: hidden;
+  height: 100%;
 }
 
 .infoBut {
@@ -458,10 +461,12 @@ body {
   transition: .5s linear;
   opacity: 0;
   border-left: var(--myBorderSize) solid var(--myBorder);
+  border-bottom: var(--myBorderSize) solid var(--myBorder);
   overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;
   height: max-content;
+  max-height: calc(100vh - 200px);
 }
 
 .optionAreaJS {
@@ -568,6 +573,10 @@ body {
   box-sizing: border-box;
   border-top: var(--myBorderSize) solid var(--myBorder);
   background-color: var(--myMainBackTheme);
+}
+
+.copyRigthsJS {
+  opacity: 0;
 }
 
 .social {
