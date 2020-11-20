@@ -21,9 +21,10 @@ body {
 
 .allPagesBox {
   position: relative;
+  top: 0;
   left: 0;
   width: 100%;
-  height: calc(100vh - 150px);
+  height: 100vh;
   transition: 0.5s all linear;
   -webkit-transition: 0.5s all linear;
   -moz-transition: 0.5s all linear;
@@ -33,10 +34,10 @@ body {
 
 .brightLess {
   position: absolute;
-  top: 0;
+  top: 100px;
   left: 0;
   width: 0;
-  height: 100%;
+  height: calc(100vh - 150px);
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 500;
 }
@@ -49,7 +50,7 @@ body {
   position: absolute;
   top: 100px;
   width: 100%;
-  height: calc( 100vh - 150px);
+  height: calc(100vh - 150px);
   transition: 0.5s all linear;
   -webkit-transition: 0.5s all linear;
   -moz-transition: 0.5s all linear;
@@ -63,7 +64,7 @@ body {
   position: absolute;
   top: 0;
   width: 100%;
-  height: calc(100vh - 150px);
+  height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
   transition: linear .3s;
@@ -81,7 +82,7 @@ body {
 .contChildren {
   position: relative;
   width: max-content;
-  margin: auto;
+  margin: 0 auto;
   box-sizing: border-box;
   max-width: 90%;
 }
@@ -137,16 +138,16 @@ body {
 }
 
 .chooseLang {
-  background-color: var(--myBack);
+  width: 100%;
+  height: 100vh;
   transition: 0.3s all linear;
   -webkit-transition: 0.3s all linear;
   -moz-transition: 0.3s all linear;
   -ms-transition: 0.3s all linear;
   -o-transition: 0.3s all linear;
+  background-color: var(--myBack);
   z-index: 99996;
   opacity: 0;
-  height: 100vh;
-  width: 100%;
 }
 
 .chooseLangJS {
@@ -154,6 +155,7 @@ body {
 }
 
 .flag {
+  padding: 20px;
   background-color: var(--myMainBackTheme);
   transition: 0.3s all linear;
   -webkit-transition: 0.3s all linear;
@@ -165,16 +167,16 @@ body {
 }
 
 .flagJS1 {
-  background-color: #560000;
+  background-color: #db4343;
 }
 
 .flagJS2 {
-  background-color: #002246;
+  background-color: #2b74c2;
 }
 
 .lng {
   position: relative;
-  margin: 20px auto;
+  margin: 0 auto;
   font-size: var(--myTxtHeader2Normal);
   text-align: center;
 }
@@ -194,6 +196,7 @@ body {
   -webkit-animation: menuSkillShadow linear 3s infinite;
   max-width: 90%;
   box-sizing: border-box;
+  margin-top: 40px;
 }
 
 .pol:hover {
@@ -215,6 +218,7 @@ body {
   -webkit-animation: menuSkillShadow linear 3s infinite;
   max-width: 90%;
   box-sizing: border-box;
+  margin-top: 20px;
 }
 
 .ang:hover {
@@ -222,7 +226,6 @@ body {
 }
 
 .lngsp {
-  margin: 20px 10px 40px 10px;
   font-size: var(--myTxtHeaderNormal);
   color: var(--myTheme);
   cursor: default;
@@ -446,18 +449,20 @@ body {
 }
 
 .optionArea {
-  width: 100%;
+  width: 200px;
   background-color: var(--myMainBackTheme);
   position: absolute;
-  top: -100%;
-  max-height: calc(100vh - 150px);
-  left: 0;
+  top: 1100px;
+  max-height: calc(100vh - 149px);
+  height: calc(100vh - 149px);
+  right: 0;
   padding: 10px;
-  transition: .5s;
+  transition: .5s linear;
   opacity: 0;
   border-left: var(--myBorderSize) solid var(--myBorder);
   overflow-y: auto;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .optionAreaJS {
@@ -1157,7 +1162,7 @@ body {
   width: max-content;
   height: max-content;
   padding: 20px 35px;
-  margin: 20px auto;
+  margin: 0 auto;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -1252,6 +1257,7 @@ body {
 .careerLikeIndicatorConatainer {
   color: var(--myTxtTheme);
   font-size: 22px;
+  margin: 30px auto;
 }
 
 .careerLikeStarsContainer {
@@ -1429,7 +1435,7 @@ body {
   filter: drop-shadow(2px 4px 6px black);
   -webkit-filter: drop-shadow(2px 4px 6px black);
   font-size: 60px;
-  margin: 0 auto 70px auto;
+  margin: 0 auto 50px auto;
   text-align: center;
 }
 
@@ -1477,7 +1483,7 @@ body {
   -webkit-filter: drop-shadow(2px 4px 6px black);
   background-color: var(--myHalfMainBackTheme);
   opacity: 0;
-  margin: 30px auto;
+  margin: 0 auto;
 }
 
 .menuSkillsContainerJS {
@@ -1563,7 +1569,7 @@ body {
   -moz-transition: 0.4s all linear;
   -ms-transition: 0.4s all linear;
   -o-transition: 0.4s all linear;
-  margin: 20px auto;
+  margin: 50px auto 30px auto;
   display: block;
   background-color: var(--myTheme);
   color: var(--myTxtLight);
@@ -1980,11 +1986,9 @@ body {
   }
   .skillsPointContainer {
     font-size: 12px;
-    margin: 15px;
   }
   .firstContainerSkills {
     font-size: 12px;
-    margin: 15px auto;
   }
   .skillsImg {
     width: 25px;
@@ -2095,7 +2099,6 @@ body {
   }
   .skillsMainText {
     font-size: 26px;
-    margin: 0 auto 40px auto;
   }
   .menuSkillsContainer {
     max-width: 100%;
@@ -2106,11 +2109,9 @@ body {
   }
   .skillsPointContainer {
     font-size: 12px;
-    margin: 15px;
   }
   .firstContainerSkills {
     font-size: 12px;
-    margin: 15px auto;
   }
   .skillsImg {
     width: 25px;
