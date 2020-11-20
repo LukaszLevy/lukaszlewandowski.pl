@@ -2,6 +2,7 @@
 html {
   padding: 0;
   margin: 0;
+  height: 100%;
   max-width: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -10,6 +11,7 @@ html {
 }
 
 body {
+  height: 100%;
   max-width: 100%;
   padding: 0;
   margin: 0;
@@ -22,7 +24,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: calc(100% - 150px);
+  margin-top: 100px;
   transition: 0.5s all linear;
   -webkit-transition: 0.5s all linear;
   -moz-transition: 0.5s all linear;
@@ -32,7 +35,7 @@ body {
 
 .brightLess {
   position: absolute;
-  top: 100px;
+  top: 0;
   left: 0;
   width: 0;
   height: calc(100vh - 150px);
@@ -46,7 +49,7 @@ body {
 
 .Page {
   position: absolute;
-  top: 100px;
+  top: 0;
   width: 100%;
   height: calc(100vh - 150px);
   transition: 0.5s all linear;
@@ -137,7 +140,6 @@ body {
 
 .chooseLang {
   width: 100%;
-  height: 100vh;
   transition: 0.3s all linear;
   -webkit-transition: 0.3s all linear;
   -moz-transition: 0.3s all linear;
