@@ -101,7 +101,7 @@ $(START_BUTTON).one("click", function(){
             var ovHeight = $(PAGE).height();
         // -- start funkcji ogolnych
             nadaj_index(MENU_POINTS,"index-nr");
-            $(OPT_AREA).css("height", ovHeight + 1);
+            $(OPT_AREA).css("max-height", ovHeight - 49 + "px");
             // $(OPT_BUT).css("left", WIDTH_MENU_CONT / 2 );
         // -- EVENTY
         $(MENU_POINTS).each(function(index){
@@ -138,7 +138,7 @@ $(START_BUTTON).one("click", function(){
                     let x = $(a).position();
                     MENU_TAG.css({left: x.left , width: y});
                     var ovHeight = $(PAGE).height();
-                    $(OPT_AREA).css("height", ovHeight + 1);
+                    $(OPT_AREA).css("max-height", ovHeight - 49 + "px");
                     // $(OPT_BUT).css("left", WIDTH_MENU_CONT / 2 );
                 }, 1000);
             });
