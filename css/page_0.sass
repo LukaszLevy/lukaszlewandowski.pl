@@ -178,6 +178,14 @@ body
     font-size: 16px
 .colorMenuPunkty
     color: var(--myTxtTheme)
+    
+.projekty
+    @extend .menuPunkty
+    color: rgb(90,130,0)
+    text-decoration-line: none
+    transition: .2s
+.projekty:hover
+    color: rgb(170,255,0)
 .tagMenu
     +POS_TB_LR(a, relative)
     +WIDTH_HEIGHT(ab, 0, 3px)
@@ -240,7 +248,7 @@ body
     height: max-content
     max-height: calc(100vh - 150px)
 .optionAreaJS
-    top: 100px
+    top: 130px
     opacity: 1
 .optionArea > h3
     color: var(--myTxtLight)

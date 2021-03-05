@@ -347,7 +347,7 @@ body {
   overflow: hidden;
 }
 
-.menuPunkty {
+.menuPunkty, .projekty {
   padding: 10px;
   transition: 0.5s all linear;
   -webkit-transition: 0.5s all linear;
@@ -358,11 +358,21 @@ body {
   cursor: pointer;
   color: var(--myTxtGrey);
   letter-spacing: 1px;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .colorMenuPunkty {
   color: var(--myTxtTheme);
+}
+
+.projekty {
+  color: #5a8200;
+  text-decoration-line: none;
+  transition: .2s;
+}
+
+.projekty:hover {
+  color: #aaff00;
 }
 
 .tagMenu {
@@ -471,7 +481,7 @@ body {
 }
 
 .optionAreaJS {
-  top: 100px;
+  top: 130px;
   opacity: 1;
 }
 
@@ -2017,7 +2027,7 @@ body {
 }
 
 @media only screen and (max-width: 700px) {
-  .menuPunkty {
+  .menuPunkty, .projekty {
     font-size: 14px;
     letter-spacing: 0;
     padding: 4px;
@@ -2096,7 +2106,7 @@ body {
 }
 
 @media only screen and (max-width: 500px) {
-  .menuPunkty {
+  .menuPunkty, .projekty {
     font-size: 11px;
     display: block;
     text-align: center;

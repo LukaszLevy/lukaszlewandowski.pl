@@ -346,7 +346,7 @@ body {
   overflow: hidden;
 }
 
-.menuPunkty {
+.menuPunkty, .projekty {
   padding: 10px;
   transition: 0.5s all linear;
   -webkit-transition: 0.5s all linear;
@@ -362,6 +362,16 @@ body {
 
 .colorMenuPunkty {
   color: var(--myTxtTheme);
+}
+
+.projekty {
+  color: #5a8200;
+  text-decoration-line: none;
+  transition: .2s;
+}
+
+.projekty:hover {
+  color: #aaff00;
 }
 
 .tagMenu {
@@ -470,7 +480,7 @@ body {
 }
 
 .optionAreaJS {
-  top: 100px;
+  top: 130px;
   opacity: 1;
 }
 
