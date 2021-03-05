@@ -1,0 +1,57 @@
+@import 'overallStyles'
+.Four
+    left: 300%
+.wallFour
+    +BACKGROUND_IMG(url(../img/wallpapers/wallpaper_5.jpg))
+    z-index: -10
+.packFour
+    text-align: center
+.packFour > .contChildren
+    max-width: 90%
+.eduContainer
+    +POS_TB_LR(ab1c1, relative, 0, -150px)
+    +WIDTH_HEIGHT(ab, 220px, 220px)
+    +PADDING_MARGIN(b, 20px 40px)
+    +BORDER_RADIUS(50%)
+    +TRANSITION(.3s)
+    +FILTER(drop-shadow(2px 4px 6px black))
+    background-color: rgba(29, 29, 29, .4)
+    opacity: 0
+    display: inline-block
+    color: var(--myTxtTheme)
+    z-index: 0
+    overflow: hidden
+    cursor: pointer
+    box-shadow: inset 0 0 10px 2px var(--myTheme)
+.eduContainerJS
+    +POS_TB_LR(c1, 0)
+    opacity: 1
+.eduTxt
+    +POS_TB_LR(ab1, relative, 60%)
+    +WIDTH_HEIGHT(ab, max-content)
+    +TRANSFORM(translateY(-50%))
+    +TRANSITION(.3s)
+    max-width: 90%
+    cursor: pointer
+    transform-origin: center
+    opacity: 0
+    font-size: 18px
+    +PADDING_MARGIN(b, 0 auto)
+.eduTxtJS
+    +POS_TB_LR(b1, 50%)
+    opacity: 1
+.added
+    @extend .eduTxt
+    +POS_TB_LR(b1, 100%)
+.addedJS
+    +POS_TB_LR(b1, 50%)
+    opacity: 1
+.dynamicTheme
+    +POS_TB_LR(ab1c1, absolute, 40%, 50%)
+    +TRANSITION(.7s)
+    +BORDER_RADIUS(50%)
+    +TRANSFORM(translate(-100%, -100%))
+    z-index: -2
+    transform-origin: center
+.eduContBG_4
+    color: var(--myTxtLight)

@@ -1,0 +1,62 @@
+@import 'overallStyles'
+.Five
+    left: 400%
+.wallFive
+    +BACKGROUND_IMG(url(../img/wallpapers/wallpaper_3.jpg))
+.societyCont
+    +POS_TB_LR(ab1c1, relative, 0, -150px)
+    +WIDTH_HEIGHT(a, max-content )
+    +BORDER_RADIUS(20px)
+    +TRANSITION(.4s)
+    border: var(--myBorderSize) solid var(--myBorder)
+    opacity: 0
+    text-align: center
+    background-color: var(--myHalfMainBackTheme)
+    +PADDING_MARGIN(b, 0 auto)
+.documentsCont
+    @extend .societyCont
+    +PADDING_MARGIN(b, 50px auto)
+.emailPhoneCont
+    @extend .societyCont
+.contJS
+    +TRANSITION(.2s)
+    background-color: black
+    border-radius: 20px
+.contJS2
+    +POS_TB_LR(c1, 0)
+    opacity: 1
+.secTitle
+    +POS_TB_LR(ab1c1, absolute, 0, 100px)
+    +TRANSFORM(translate(-50%,-50%))
+    +PADDING_MARGIN(a, 5px 10px)
+    +BORDER_RADIUS(20px)
+    +TRANSITION(.3s)
+    background-color: var(--myTheme)
+    color: var(--myTxtDark)
+.secTitleJS
+    background-color: white
+.contactLinks
+    display: inline-block
+    text-decoration-line: none
+.icons
+    +TRANSITION(.2s)
+    +POS_TB_LR(ab1, relative, 10px)
+    +PADDING_MARGIN(b, 20px 50px)
+    +WIDTH_HEIGHT(a, 60px)
+    +FILTER(var(--myGrayScaleNone))
+    box-sizing: border-box
+.icons:hover
+    box-shadow: 0 0 0 2px var(--myTheme)
+    border-radius: 50%
+    background-color: white
+.iconsName
+    color: var(--myTxtLight)
+    display: block
+    padding-bottom: 20px
+.emailPhone
+    display: inline-block
+    position: relative
+    cursor: pointer
+
+
+    

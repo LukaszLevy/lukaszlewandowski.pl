@@ -1,0 +1,62 @@
+@import 'overallStyles'
+
+$White: white
+$Black: black
+$myGrey: rgb(150,150,150)
+$myBack: rgb(0, 0, 0)
+$myMainBackTheme: rgb(37, 37, 37)
+$myTheme:  rgb(0, 161, 183)
+$myHover: white
+$myBorder:  rgb(0, 161, 183)
+$myRed: rgb(185, 53, 43)
+$myGrayScaleYes: grayscale(1)
+$myGrayScaleNone: grayscale(0)
+
+$myHalfBlack: rgba(0, 0, 0, .5)
+$myHalfMainBackTheme: rgba(37, 37, 37, .8)
+$myThemeHalf:  rgba(0, 161, 183, .7)
+$transparentColor: transparent
+
+$borderSize: 1px
+
+\:root 
+    --myTheme: #{$myTheme}
+    --myBlack: #{$Black}
+    --myRed: #{$myRed}
+    --myWhite: #{$White}
+    --myGrey: #{$myGrey}
+    --myBack: #{$myBack}
+    --myMainBackTheme: #{$myMainBackTheme}
+    --myTxtLight: #{$White}
+    --myTxtDark: #{$Black}
+    --myTxtGrey: #{$myGrey}
+    --myTxtTheme: #{$myTheme}
+    --myHover: #{$myHover}
+    --myBorder: #{$myBorder}
+    --myHalfMainBackTheme: #{$myHalfMainBackTheme}
+    --myHalfBlack: #{$myHalfBlack}
+    --myThemeHalf: #{$myThemeHalf}
+    --myGrayScaleNone: #{$myGrayScaleNone}
+    --myBorderSize: #{$borderSize}
+    --myTxtHeaderNormal: 22px
+    --myTxtHeader2Normal: 18px
+    --myTxtContentNormal: 16px
+    --myTxtSmallElementsNormal: 14px
+    --mypaddingButton: 7px 15px
+
+@media only screen and (max-width: 700px)
+    \:root
+        --myTxtHeaderNormal: 16px
+        --myTxtHeader2Normal: 14px
+        --myTxtContentNormal: 13px
+        --myTxtSmallElementsNormal: 11px
+        --mypaddingButton: 5px 10px
+@media only screen and (max-width: 400px)
+    \:root
+        --myTxtHeaderNormal: 14px
+        --myTxtHeader2Normal: 12px
+        --myTxtContentNormal: 11px
+        --myTxtSmallElementsNormal: 10px
+        --mypaddingButton: 3px 7px
+
+

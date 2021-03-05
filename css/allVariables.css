@@ -1,0 +1,45 @@
+:root {
+  --myTheme: #00a1b7;
+  --myBlack: black;
+  --myRed: #b9352b;
+  --myWhite: white;
+  --myGrey: #969696;
+  --myBack: black;
+  --myMainBackTheme: #252525;
+  --myTxtLight: white;
+  --myTxtDark: black;
+  --myTxtGrey: #969696;
+  --myTxtTheme: #00a1b7;
+  --myHover: white;
+  --myBorder: #00a1b7;
+  --myHalfMainBackTheme: rgba(37, 37, 37, 0.8);
+  --myHalfBlack: rgba(0, 0, 0, 0.5);
+  --myThemeHalf: rgba(0, 161, 183, 0.7);
+  --myGrayScaleNone: grayscale(0);
+  --myBorderSize: 1px;
+  --myTxtHeaderNormal: 22px;
+  --myTxtHeader2Normal: 18px;
+  --myTxtContentNormal: 16px;
+  --myTxtSmallElementsNormal: 14px;
+  --mypaddingButton: 7px 15px;
+}
+
+@media only screen and (max-width: 700px) {
+  :root {
+    --myTxtHeaderNormal: 16px;
+    --myTxtHeader2Normal: 14px;
+    --myTxtContentNormal: 13px;
+    --myTxtSmallElementsNormal: 11px;
+    --mypaddingButton: 5px 10px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  :root {
+    --myTxtHeaderNormal: 14px;
+    --myTxtHeader2Normal: 12px;
+    --myTxtContentNormal: 11px;
+    --myTxtSmallElementsNormal: 10px;
+    --mypaddingButton: 3px 7px;
+  }
+}

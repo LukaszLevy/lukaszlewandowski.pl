@@ -1,0 +1,152 @@
+
+// mixiny
+=POS_TB_LR($case: ab1c1, $par_1: relative, $par_2: 0, $par_3: 0)
+    @if $case == a
+        position: $par_1
+    @if $case == ab1 
+        position: $par_1
+        top: $par_2
+    @if $case == ab2
+        position: $par_1
+        bottom: $par_2
+    @if $case == ac1
+        position: $par_1
+        left: $par_2
+    @if $case == ac2
+        position: $par_1
+        right: $par_2
+    @if $case == ab1c1
+        position: $par_1
+        top: $par_2
+        left: $par_3
+    @if $case == ab1c2
+        position: $par_1
+        top: $par_2
+        right: $par_3
+    @if $case == ab2c1
+        position: $par_1
+        bottom: $par_2
+        left: $par_3
+    @if $case == ab2c2
+        position: $par_1
+        bottom: $par_2
+        right: $par_3
+    @if $case == b1
+        top: $par_1
+    @if $case == b1c1
+        top: $par_1
+        left: $par_2
+    @if $case == b1c2
+        top: $par_1
+        right: $par_2
+    @if $case == b2
+        bottom: $par_1
+    @if $case == b2c1
+        bottom: $par_1
+        left: $par_2
+    @if $case == b2c2
+        bottom: $par_1
+        right: $par_2
+    @if $case == c1
+        left: $par_1
+    @if $case == c2
+        right: $par_1
+=WIDTH_HEIGHT($case: ab, $par_1: auto, $par_2: auto)
+    @if $case == ab
+        width: $par_1
+        height: $par_2
+    @if $case == a
+        width: $par_1
+    @if $case == b
+        height: $par_1
+=MINWIDTH_MINHEIGHT($case: ab, $par_1: unset, $par_2: unset)
+    @if $case == ab
+        min-width: $par_1
+        min-height: $par_2
+    @if $case == a
+        min-width: $par_1
+    @if $case == b
+        min-height: $par_1
+=PADDING_MARGIN($case: ab, $par_1: 0, $par_2: 0)
+    @if $case == ab
+        padding: $par_1
+        margin: $par_2
+    @if $case == a
+        padding: $par_1
+    @if $case == b
+        margin: $par_1
+=OVERX_OVERY($case: ab, $par_1: hidden, $par_2: hidden)
+    @if $case == ab
+        overflow-x: $par_1
+        overflow-y: $par_2
+    @if $case == a
+        overflow-x: $par_1
+    @if $case == b
+        overflow-y: $par_1
+=TRANSITION($time: .4s, $property: all, $timing: linear)
+    transition: $time $property $timing
+    -webkit-transition: $time $property $timing
+    -moz-transition: $time $property $timing
+    -ms-transition: $time $property $timing
+    -o-transition: $time $property $timing
+=TRANSFORM($parameter)
+    transform: $parameter
+    -webkit-transform: $parameter
+    -moz-transform: $parameter
+    -ms-transform: $parameter
+    -o-transform: $parameter
+=BORDER_RADIUS($parameter...)
+    border-radius: $parameter
+    -webkit-border-radius: $parameter
+    -moz-border-radius: $parameter
+    -ms-border-radius: $parameter
+    -o-border-radius: $parameter 
+=BACKGROUND_IMG($image: null, $size: cover, $attachment: fixed, $repeat: no-repeat)
+    background-image: $image
+    background-size: $size
+    background-attachment: $attachment
+    background-repeat: $repeat
+=FILTER($par...)
+    filter: $par
+    -webkit-filter: $par
+=ANIMATION($par...)
+    animation: $par
+    -webkit-animation: $par
+=PLACEHOLDER()
+    &::-webkit-input-placeholder 
+        @content
+    &:-moz-placeholder           
+        @content
+    &::-moz-placeholder          
+        @content
+    &:-ms-input-placeholder      
+        @content
+=BUTTON()
+    color: white
+    background-color: black
+    padding: var(--mypaddingButton)
+    cursor: pointer
+    width: max-content
+    +BORDER_RADIUS(10px)
+    +ANIMATION(menuSkillShadow linear 3s infinite)
+    &:hover
+        color: var(--myTheme)
+
+
+
+
+    
+    
+
+    
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    

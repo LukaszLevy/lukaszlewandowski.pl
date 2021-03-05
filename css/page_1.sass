@@ -1,0 +1,97 @@
+@import 'overallStyles'
+.One
+    left: 0
+.wallOne
+    +BACKGROUND_IMG(url(../img/wallpapers/wallpaper_1.jpg))
+.helloBox
+    +POS_TB_LR(ac1, relative, 0)
+    +TRANSITION(.5s)
+    +PADDING_MARGIN(b, 0 0 55px 0)
+    text-shadow: -3px 2px 4px black
+    font-size: 90px
+.helloLetter
+    +POS_TB_LR(ab1, relative, -15px)
+    +PADDING_MARGIN(b, 0px 3px)
+    +TRANSITION(.3s)
+    display: inline-block
+    box-sizing: border-box
+    text-align: center
+    opacity: 0
+    color: var(--myGrey)
+.helloLetterJS1
+    +POS_TB_LR(b1, 0px)
+    opacity: 1
+    color: var(--myTxtTheme)
+.helloLetterJS2
+    @extend .helloLetterJS1
+    color: var(--myTxtLight)
+.nameLewandowskiBox
+    @extend .helloBox
+    font-size: 50px
+.sloganKodowanieBox
+    @extend .nameLewandowskiBox
+.marginLetter
+    +PADDING_MARGIN(b, 0 15px 0 0)
+.moreInfo
+    opacity: 0
+    z-index: 100
+    +POS_TB_LR(ab1c1, relative, 0, -50px)
+    +TRANSITION(.3s, all, linear)
+    +BUTTON()
+    +PADDING_MARGIN(b, auto)
+.moreInfoJS
+    opacity: 1
+    +POS_TB_LR(c1, 0)
+.meTxtCont
+    +POS_TB_LR(ab1, relative, -700px)
+    +WIDTH_HEIGHT(a, 90%)
+    max-width: 800px
+    +PADDING_MARGIN(a, 30px)
+    +TRANSITION(.5s)
+    +BORDER_RADIUS(10px)
+    background-color: var(--myHalfMainBackTheme)
+    color: var(--myTxtLight)
+    font-size: 16px
+    z-index: -1
+.meTxtContJS
+    +POS_TB_LR(b1, 0)
+    z-index: 1
+.meTxtCont > img 
+    +POS_TB_LR(ab1c1, relative, 0, 0)
+    +WIDTH_HEIGHT(ab, 50px, 50px)
+    +BORDER_RADIUS(50%)
+    border: 4px solid var(--myBorder)
+    margin-right: 10px
+.meTxtPoints
+    +PADDING_MARGIN(ab, 1px 6px, 0px 5px)
+    +BORDER_RADIUS(5px)
+    background-color: var(--myTheme)
+    display: inline-block
+    color: var(--myTxtDark)
+.txtmar
+    +PADDING_MARGIN(b, 10px 5px)
+.closeMeInfo
+    +POS_TB_LR(ac1, relative, 0)
+    display: block
+    +BORDER_RADIUS(50%)
+    +WIDTH_HEIGHT(ab, 20px, 20px)
+    +PADDING_MARGIN(ab, 2px, auto)
+    font-size: 14px
+    background-color: var(--myRed)
+    cursor: pointer
+    text-align: center
+    &:hover
+        box-shadow: 0 0 0 2px var(--myHover)
+.siteOneChildrenJS
+    left: -150px
+    opacity: 0
+.siteOneChildrenJS2
+    top: -150px
+    opacity: 0
+@keyframes show
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+

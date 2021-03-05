@@ -1,0 +1,193 @@
+.One {
+  left: 0;
+}
+
+.wallOne {
+  background-image: url(../img/wallpapers/wallpaper_1.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.helloBox, .nameLewandowskiBox, .sloganKodowanieBox {
+  position: relative;
+  left: 0;
+  transition: 0.5s all linear;
+  -webkit-transition: 0.5s all linear;
+  -moz-transition: 0.5s all linear;
+  -ms-transition: 0.5s all linear;
+  -o-transition: 0.5s all linear;
+  margin: 0 0 55px 0;
+  text-shadow: -3px 2px 4px black;
+  font-size: 90px;
+}
+
+.helloLetter {
+  position: relative;
+  top: -15px;
+  margin: 0px 3px;
+  transition: 0.3s all linear;
+  -webkit-transition: 0.3s all linear;
+  -moz-transition: 0.3s all linear;
+  -ms-transition: 0.3s all linear;
+  -o-transition: 0.3s all linear;
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  opacity: 0;
+  color: var(--myGrey);
+}
+
+.helloLetterJS1, .helloLetterJS2 {
+  top: 0px;
+  opacity: 1;
+  color: var(--myTxtTheme);
+}
+
+.helloLetterJS2 {
+  color: var(--myTxtLight);
+}
+
+.nameLewandowskiBox, .sloganKodowanieBox {
+  font-size: 50px;
+}
+
+.marginLetter {
+  margin: 0 15px 0 0;
+}
+
+.moreInfo {
+  opacity: 0;
+  z-index: 100;
+  position: relative;
+  top: 0;
+  left: -50px;
+  transition: 0.3s all linear;
+  -webkit-transition: 0.3s all linear;
+  -moz-transition: 0.3s all linear;
+  -ms-transition: 0.3s all linear;
+  -o-transition: 0.3s all linear;
+  color: var(--myTxtDark);
+  background-color: var(--myTheme);
+  padding: var(--mypaddingButton);
+  cursor: pointer;
+  width: max-content;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  animation: menuSkillShadow linear 3s infinite;
+  -webkit-animation: menuSkillShadow linear 3s infinite;
+  margin: auto;
+}
+
+.moreInfo:hover {
+  background-color: var(--myHover);
+}
+
+.moreInfoJS {
+  opacity: 1;
+  left: 0;
+}
+
+.meTxtCont {
+  position: relative;
+  top: -700px;
+  width: 90%;
+  max-width: 800px;
+  padding: 30px;
+  transition: 0.5s all linear;
+  -webkit-transition: 0.5s all linear;
+  -moz-transition: 0.5s all linear;
+  -ms-transition: 0.5s all linear;
+  -o-transition: 0.5s all linear;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  background-color: var(--myHalfMainBackTheme);
+  color: var(--myTxtLight);
+  font-size: 16px;
+  z-index: -1;
+}
+
+.meTxtContJS {
+  top: 0;
+  z-index: 1;
+}
+
+.meTxtCont > img {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 4px solid var(--myBorder);
+  margin-right: 10px;
+}
+
+.meTxtPoints {
+  padding: 1px 6px;
+  margin: 0px 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background-color: var(--myTheme);
+  display: inline-block;
+  color: var(--myTxtDark);
+}
+
+.txtmar {
+  margin: 10px 5px;
+}
+
+.closeMeInfo {
+  position: relative;
+  left: 0;
+  display: block;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  margin: auto;
+  font-size: 14px;
+  background-color: var(--myRed);
+  cursor: pointer;
+  text-align: center;
+}
+
+.closeMeInfo:hover {
+  box-shadow: 0 0 0 2px var(--myHover);
+}
+
+.siteOneChildrenJS {
+  left: -150px;
+  opacity: 0;
+}
+
+.siteOneChildrenJS2 {
+  top: -150px;
+  opacity: 0;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

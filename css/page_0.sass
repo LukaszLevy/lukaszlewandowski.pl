@@ -1,0 +1,349 @@
+@import 'overallStyles';
+html
+    +PADDING_MARGIN(ab)
+    // max-height: 100vh
+    height: 100%
+    max-width: 100%
+    +OVERX_OVERY(ab,hidden,hidden)
+    background-color: var(--myBack)
+    font-family: 'system-ui', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+body
+    // max-height: 100vh
+    height: 100%
+    max-width: 100%
+    +PADDING_MARGIN(ab)
+    +OVERX_OVERY(ab,hidden,hidden)
+.allPagesBox
+    +POS_TB_LR(ab1c1, relative, 0, 0)
+    +WIDTH_HEIGHT(ab, 100%, calc(100% - 100px))
+    margin-top: 100px
+    +TRANSITION(.5s)
+.brightLess
+    +POS_TB_LR(ab1c1, absolute, 0, 0)
+    +WIDTH_HEIGHT(ab, 0, 100%)
+    background-color: rgba(0,0,0,.7)
+    z-index: 500
+.brightLessJS
+    +WIDTH_HEIGHT(a, 500%)
+.Page
+    +POS_TB_LR(ab1,absolute, 0)
+    +WIDTH_HEIGHT(ab, 100%, 100%)
+    +TRANSITION(.5s)
+    display: inline-block
+    overflow: hidden
+.cont
+    +POS_TB_LR(ab1, absolute, 0)
+    +WIDTH_HEIGHT(ab, 100%, calc(100% - 50px))
+    overflow-y: auto
+    overflow-x: hidden
+    transition: linear .3s
+    box-sizing: border-box
+.contZindx
+    z-index: -1
+.contZindxJS
+    z-index: 1
+.contChildren
+    +POS_TB_LR(a, relative)
+    +WIDTH_HEIGHT(a, max-content)
+    +PADDING_MARGIN(b, 0 auto)
+    box-sizing: border-box
+    max-width: 90%
+.preloader
+    background-color: var(--myBack)
+    z-index: 1000000000000
+    font-size: var(--myTxtHeaderNormal)
+    height: 100%
+.preloaderTxtCont
+    color: var(--myTxtLight)
+    text-align: center
+.prelTxt
+    display: inline-block
+    +PADDING_MARGIN(a, 20px)
+    +BORDER_RADIUS(10px)
+    border: var(--myBorderSize) solid var(--myBorder)
+    background-color: var(--myMainBackTheme)
+.prelImg
+    display: block
+    +POS_TB_LR(ab1c1, relative, 50px, 50%)
+    +TRANSFORM(translateX(-50%))
+    width: 200px
+    height: 10px
+    border-radius: 5px
+    border: var(--myBorderSize) solid var(--myBorder)
+.prelImg > span
+    +POS_TB_LR(ab1c1, absolute, 0, 0)
+    +WIDTH_HEIGHT(ab, 1%, 100%)
+    background-color: var(--myTheme)
+    +ANIMATION(fillPreloader 5s linear)
+.chooseLang
+    +WIDTH_HEIGHT(a, 100%)
+    +TRANSITION(.3s)
+    background-color: var(--myBack)
+    z-index: 99996
+    opacity: 0
+    height: 100%
+.chooseLangJS
+    opacity: 1
+.flag
+    +PADDING_MARGIN(a, 20px)
+    background-color: var(--myMainBackTheme)
+    +TRANSITION(.3s)
+    border-radius: 20px
+    border: var(--myBorderSize) solid var(--myBorder)
+.flagJS1
+    background-color: #880000
+.flagJS2
+    background-color: #004792
+.lng
+    +POS_TB_LR(a, relative)
+    +PADDING_MARGIN(b, 0 auto)
+    font-size: var(--myTxtHeader2Normal)
+    text-align: center
+.pol
+    +BUTTON()
+    max-width: 90%
+    box-sizing: border-box
+    margin-top: 40px
+.ang
+    +BUTTON()
+    max-width: 90%
+    box-sizing: border-box
+    margin-top: 20px
+.lngsp
+    font-size: var(--myTxtHeaderNormal)
+    color: var(--myTheme)
+    cursor: default
+    display: block
+.infoStart
+    background-color: var(--myBack)
+    z-index: 99995
+    display: block
+    overflow-y: auto
+    overflow-x: hidden
+    height: 100%
+.infoBut
+    +WIDTH_HEIGHT(a, 90%)
+    max-width: 600px
+    +PADDING_MARGIN(a, 30px)
+    +TRANSITION(1s)
+    border: var(--borderSize) solid var(--myTheme)
+    +BORDER_RADIUS(10px)
+    font-size: var(--myTxtContentNormal)
+    color: var(--myTxtLight)
+    background-color: var(--myMainBackTheme)
+    opacity: 0
+    box-sizing: border-box
+.infoButJS
+    opacity: 1
+.infoBut > .meTxtPoints
+    &:hover
+        background-color: var(--myHover)
+.meTxtPoints > a
+    text-decoration-line: none
+    color: var(--myBack)
+.closeInfoStartTxt
+    +BUTTON()
+    +POS_TB_LR(ac1, relative, 50%)
+    +TRANSFORM(translateX(-50%))
+    margin-top: 30px
+    box-sizing: border-box
+    max-width: 90%
+.header
+    +POS_TB_LR(ab1c1,absolute, 0, 0)
+    +WIDTH_HEIGHT(ab,100%,110px)
+    z-index: 1001
+    border-bottom: var(--myBorderSize) solid var(--myTheme)
+    background-color: var(--myMainBackTheme)
+    padding: 10px 0
+.naglowek
+    +WIDTH_HEIGHT(b,100%)
+    max-width: 100%
+    width: 100%
+    overflow: hidden
+    &:hover .logo
+        color: var(--myTxtLight)
+.menuKontener
+    +POS_TB_LR(ab1, relative, 50%)
+    +WIDTH_HEIGHT(a, calc(100% - 80px))
+    +TRANSITION(.3s)
+    +TRANSFORM(translateY(-50%))
+    overflow: hidden
+.menuPunkty
+    +PADDING_MARGIN(a, 10px)
+    +TRANSITION(.5s)
+    display: inline
+    cursor: pointer 
+    color: var(--myTxtGrey)
+    letter-spacing: 1px
+    font-size: 16px
+.colorMenuPunkty
+    color: var(--myTxtTheme)
+.tagMenu
+    +POS_TB_LR(a, relative)
+    +WIDTH_HEIGHT(ab, 0, 3px)
+    +TRANSITION(.5s)
+    +BORDER_RADIUS(10px)
+    background-color: var(--myTheme)
+    margin-top: 10px
+.logo
+    +POS_TB_LR(ab1c2, absolute, 0, 0)
+    +WIDTH_HEIGHT(ab, 80px, 100%)
+    +TRANSITION(.4s, width, linear)
+    +PADDING_MARGIN(a, 0 20px)
+    font-size: 30px
+    color: var(--myTxtDark)
+    background-color: var(--myTheme)
+    box-sizing: border-box
+    text-align: center
+    cursor: pointer
+.logoJS
+    +WIDTH_HEIGHT(a, 200px)
+    background-color: transparent
+    color: var(--myTheme)
+.logoBox
+    +POS_TB_LR(ab1c1, absolute, 50%, 50%)
+    +WIDTH_HEIGHT(a, max-content)
+    +TRANSFORM(translate(-50%, -50%))
+.logoBox > div:nth-child(1)
+    +POS_TB_LR(a, relative)
+    +TRANSFORM(rotateY(-180deg))
+    display: inline-block
+.logoBox > div:nth-child(2)
+    display: inline-block
+    +POS_TB_LR(a, relative)
+.optionButton
+    position: relative
+    padding: 5px 10px
+    background-color: var(--myTheme)
+    border-radius: 10px
+    font-size: 12px
+    margin-block-start: 5px
+    margin-block-end: 0
+.optionButtonJS
+    color: var(--myTxtLight)
+    z-index: 200
+    background-color: var(--myRed)
+.optionArea
+    width: 200px
+    background-color: var(--myMainBackTheme)
+    position: absolute
+    top: 1100px
+    right: 0
+    padding: 10px
+    transition: .5s linear
+    opacity: 0
+    border-left: var(--myBorderSize) solid var(--myBorder)
+    border-bottom: var(--myBorderSize) solid var(--myBorder)
+    overflow-y: auto
+    overflow-x: hidden
+    box-sizing: border-box
+    height: max-content
+    max-height: calc(100vh - 150px)
+.optionAreaJS
+    top: 100px
+    opacity: 1
+.optionArea > h3
+    color: var(--myTxtLight)
+    font-size: var(--myTxtContentNormal)
+    position: relative
+    margin-top: 50px
+    text-align: center
+.optionArea > h3:nth-child(1)
+    margin-top: 0
+.themeCont
+    +POS_TB_LR(ab1c1, relative, 0, 50%)
+    +TRANSFORM(translateX(-50%))
+    text-align: center
+.themeChoose
+    +POS_TB_LR(ab1, relative, 0)
+    margin: 10px auto
+    width: 50px
+    height: 50px
+    display: inline-block
+    border-radius: 10px
+    cursor: pointer
+.wallCol
+    width: 70px
+    position: relative
+    display: inline-block
+    border-radius: 10px
+    margin: 10px auto
+    padding: 10px 3px
+    box-sizing: border-box
+    cursor: pointer
+    font-size: var(--myTxtSmallElementsNormal)
+.wallCol:nth-Child(1)
+    background-color: grey
+.wallCol:nth-Child(2)
+    background-image: linear-gradient( 359deg,  rgba(150,192,255,1) -17.7%, rgba(255,180,161,1) 101.5% )
+.activetedSettingsFrame
+    box-shadow: inset 0 0 0px 2px white
+.mainTheme
+    @extend .wallCol
+.mainTheme:nth-Child(1)
+    background-color: grey
+.mainTheme:nth-Child(2)
+    background-image: none
+    background-color: black
+    color: white
+.borderTheme
+    @extend .mainTheme
+.borderTheme:nth-Child(1)
+    background-color: black
+    color: white
+.borderTheme:nth-Child(2)
+    background-color: black
+    color: white
+.copyRigths 
+    +POS_TB_LR(ab2c1, absolute, 0, 0)
+    +WIDTH_HEIGHT(ab, 100%, 50px)
+    +PADDING_MARGIN(a, 15px 0 0 0)
+    +TRANSITION(.3s)
+    opacity: 1
+    z-index: 1000
+    color: var(--myGrey)
+    font-size: var(--myTxtSmallElementsNormal)
+    letter-spacing: 1px
+    box-sizing: border-box
+    border-top: var(--myBorderSize) solid var(--myBorder)
+    background-color: var(--myMainBackTheme)
+    text-align: center
+.copyRigthsJS
+    opacity: 0
+.social
+    +POS_TB_LR(ab1c2, absolute, -126px, 0)
+    +WIDTH_HEIGHT(a, max-content)
+    +PADDING_MARGIN(a, 10px)
+    +TRANSITION(.1s)
+    background-color: var(--myMainBackTheme)
+    border-top: var(--myBorderSize) solid var(--myBorder)
+.social a
+    display: block
+.social:hover
+    background-color: var(--myBlack)
+.social a img
+    +WIDTH_HEIGHT(a, 35px)
+    +BORDER_RADIUS(50%)
+    +TRANSITION(.1s)
+.social a img:hover
+    box-shadow: 0 0 0 2px var(--myHover)
+.socialJS
+    opacity: 0
+.me
+    +POS_TB_LR(ab1c1, absolute, -1px, -84px)
+    +WIDTH_HEIGHT(b, 100%)
+    border-top: var(--myBorderSize) solid var(--myBorder)
+    border-left: var(--myBorderSize) solid var(--myBorder)
+.icnSoc
+    +FILTER(var(--myGrayScaleNone))
+.wall
+    +POS_TB_LR(a, absolute)
+    +WIDTH_HEIGHT(ab, 100%, 100%)
+    +FILTER(grayscale(.9))
+    +TRANSITION(.3s)
+
+@keyframes fillPreloader
+    100%
+        width: 100%
+        
+

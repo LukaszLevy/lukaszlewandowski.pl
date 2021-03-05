@@ -1,0 +1,253 @@
+@import 'overallStyles'
+@import 'allVariables'
+
+
+@media only screen and (max-width: 1100px)
+    // 1100
+    // Strona 2
+    .packTwo
+        width: calc(100% - 120px)
+        left: 100px
+    .menuCareerContainer
+        +WIDTH_HEIGHT(ab, auto, auto)
+        background-color: var(--myTheme)
+    .menuCareerPointsJS
+        +PADDING_MARGIN(a, 0)
+    .menuCareerPoints
+        font-size: 15px
+        +PADDING_MARGIN(ab, 20px, 14px 0 0 0)
+        +FILTER(drop-shadow(2px 4px 6px black))
+        color: white
+        position: relative
+        background-color: var(--myHalfMainBackTheme)
+    #leftYear
+        margin-top: 0
+    .yearsJS
+        color: var(--myTxtTheme)
+    .menuCareerIndicator
+        display: none
+    .menuCareerInfo
+        display: none
+    .menuCareerTip
+        display: none
+    .companyContainer
+        font-size: 22px
+        +PADDING_MARGIN(a, 10px 25px)
+    .companyPosition
+        font-size: 16px
+    .careerLikeIndicatorConatainer
+        font-size: 15px
+    .careerLikeStars
+        +WIDTH_HEIGHT(ab, 30px, 30px)
+    .dutiesButton
+        font-size: 16px
+    .dutiesBoxesJS1
+        font-size: 14px
+    // 1100
+    // Strona 3
+    .skillsMainText
+        font-size: 40px
+    .menuSkillsTabs
+        font-size: 13px
+    .skillsPointContainer
+        font-size: 12px
+    .firstContainerSkills
+        font-size: 12px
+    .skillsImg
+        width: 25px
+        height: 25px
+@media only screen and (max-width: 700px)
+    // 700
+    // Strona 0
+    .menuPunkty
+        font-size: 14px
+        letter-spacing: 0
+        +PADDING_MARGIN(a, 4px)
+    .tagMenu
+        display: none
+        .optionArea
+        width: 100px
+    .logoJS
+        width: 100px
+    .optionButton
+        font-size: 10px
+    .optionArea
+        width: 100px
+    .themeChoose
+        width: 60px
+        height: 20px
+        display: block
+    .wallCol
+        display: block
+        width: 60px
+        padding: 5px 3px
+    .me
+        display: none
+    .social
+        // top: -126px
+        border-left: var(--myBorderSize) solid var(--myBorder)
+    // .copyRigths
+    //     text-align: center
+    // 700
+    // STRONA 1
+    .helloBox
+        font-size: 50px
+    .nameLewandowskiBox
+        font-size: 30px
+    .helloLetter
+        margin: 0 1px
+    .marginLetter
+        +PADDING_MARGIN(b, 0 10px 0 0)
+    .moreInfo
+        font-size: 14px
+    .meTxtCont
+        font-size: 12px
+        padding: 12px
+    // 700 
+    // Strona 2
+    .dutiesBoxesJS1
+        font-size: 12px
+        padding: 5px 10px
+    // 700
+    // Strona 4
+    .eduContainer
+        width: 100px
+        height: 100px
+        margin: 20px
+    .eduTxt
+        font-size: 11px
+    // 700
+    // Strona 5
+    .secTitle
+        font-size: 12px
+    .icons
+        +PADDING_MARGIN(b, 20px 30px 10px 30px)
+        +WIDTH_HEIGHT(a, 40px)
+    .iconsName
+        font-size: 12px
+        margin-top: 10px
+@media only screen and (max-width: 500px)
+    // 500
+    // Strona 0
+    .menuPunkty
+        font-size: 11px
+        display: block
+        text-align: center
+        padding: 2px 4px
+        margin-block-start: 0
+        margin-block-end: 0
+    // 500
+    // Strona 2
+    .dutiesContainer
+        padding: 15px 5px 15px 5px
+    .dutiesBoxesJS1
+        margin: 10px auto
+        max-width: 95%
+    .dutiesClose
+        font-size: 12px
+    // 500
+    // Strona 3
+    .packThree
+        max-width: 100%
+    .skillsMainText
+        font-size: 26px
+    .menuSkillsContainer
+        max-width: 100%
+    .menuSkillsTabs
+        font-size: 12px
+        padding: 10px 10px
+    .skillsPointContainer
+        font-size: 12px
+    .firstContainerSkills
+        font-size: 12px
+        padding: 10px 10px
+    .skillsImg
+        width: 25px
+        height: 25px
+    @keyframes menuSkillShadow
+        0%
+            box-shadow: inset 0 0 0 0 var(--myTheme)
+        100%
+            box-shadow: inset 0px 0px 10px 3px transparent
+    // 500
+    // Strona 5
+    .secTitle
+        left: 50%
+    .icons
+        +PADDING_MARGIN(b, 20px 20px 10px 20px)
+        +WIDTH_HEIGHT(a, 30px)
+    .iconsName
+        font-size: 10px
+@media only screen and (max-width: 400px)
+    // 400
+    // STRONA 0
+    .infoBut
+        padding: 15px
+    .copyRigths
+        padding-top: 11px
+    // 400
+    // STRONA 1
+    .helloBox
+        font-size: 40px
+    .nameLewandowskiBox
+        font-size: 20px
+    .moreInfo
+        font-size: 12px
+    .meTxtCont
+        font-size: 10px
+        padding: 10px
+    // 400
+    // Strona 2
+    .packTwo
+        width: calc(100% - 60px)
+        left: 60px
+    .menuCareerPoints
+        font-size: 12px
+        +PADDING_MARGIN(ab, 10px, 26px 0 0 0)
+    #leftYear
+        margin-top: 0
+    .companyContainer
+        font-size: 14px
+        +PADDING_MARGIN(a, 7px 15px)
+    .companyPosition
+        font-size: 12px
+    .careerLikeIndicatorConatainer
+        font-size: 10px
+    .careerLikeStars
+        +WIDTH_HEIGHT(ab, 20px, 20px)
+    .dutiesButton
+        font-size: 12px
+    .dutiesBoxesJS1
+        font-size: 10px
+    // 400
+    // Strona 3
+    .Three > .cont
+        overflow-x: visible
+    .packThree
+        min-width: 280px
+    .menuSkillsTabs
+        font-size: 9px
+    .skillsPointContainer
+        font-size: 9px
+    .firstContainerSkills
+        font-size: 9px
+    // 400
+    // Strona 4
+    .eduContainer
+        margin: 10px 5px
+@media only screen and (max-width: 300px)
+    // 300
+    // Strona 5
+    .secTitle
+        font-size: 11px
+    .icons
+        +PADDING_MARGIN(b, 20px 10px 10px 10px)
+        +WIDTH_HEIGHT(a, 22px)
+    .iconsName
+        font-size: 8px
+@media only screen and (max-width: 230px)
+    // 230
+    // Strona 2
+    .Two
+        overflow-x: visible
+

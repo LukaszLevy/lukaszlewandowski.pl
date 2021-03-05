@@ -1,0 +1,117 @@
+.Five {
+  left: 400%;
+}
+
+.wallFive {
+  background-image: url(../img/wallpapers/wallpaper_3.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.societyCont, .documentsCont, .emailPhoneCont {
+  position: relative;
+  top: 0;
+  left: -150px;
+  width: max-content;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  transition: 0.4s all linear;
+  -webkit-transition: 0.4s all linear;
+  -moz-transition: 0.4s all linear;
+  -ms-transition: 0.4s all linear;
+  -o-transition: 0.4s all linear;
+  border: var(--myBorderSize) solid var(--myBorder);
+  opacity: 0;
+  text-align: center;
+  background-color: var(--myHalfMainBackTheme);
+  margin: 0 auto;
+}
+
+.documentsCont {
+  margin: 50px auto;
+}
+
+.contJS {
+  transition: 0.2s all linear;
+  -webkit-transition: 0.2s all linear;
+  -moz-transition: 0.2s all linear;
+  -ms-transition: 0.2s all linear;
+  -o-transition: 0.2s all linear;
+  background-color: black;
+  border-radius: 20px;
+}
+
+.contJS2 {
+  left: 0;
+  opacity: 1;
+}
+
+.secTitle {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  padding: 5px 10px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  transition: 0.3s all linear;
+  -webkit-transition: 0.3s all linear;
+  -moz-transition: 0.3s all linear;
+  -ms-transition: 0.3s all linear;
+  -o-transition: 0.3s all linear;
+  background-color: var(--myTheme);
+  color: var(--myTxtDark);
+}
+
+.secTitleJS {
+  background-color: white;
+}
+
+.contactLinks {
+  display: inline-block;
+  text-decoration-line: none;
+}
+
+.icons {
+  transition: 0.2s all linear;
+  -webkit-transition: 0.2s all linear;
+  -moz-transition: 0.2s all linear;
+  -ms-transition: 0.2s all linear;
+  -o-transition: 0.2s all linear;
+  position: relative;
+  top: 10px;
+  margin: 20px 50px;
+  width: 60px;
+  filter: var(--myGrayScaleNone);
+  -webkit-filter: var(--myGrayScaleNone);
+  box-sizing: border-box;
+}
+
+.icons:hover {
+  box-shadow: 0 0 0 2px var(--myTheme);
+  border-radius: 50%;
+  background-color: white;
+}
+
+.iconsName {
+  color: var(--myTxtLight);
+  display: block;
+  padding-bottom: 20px;
+}
+
+.emailPhone {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}

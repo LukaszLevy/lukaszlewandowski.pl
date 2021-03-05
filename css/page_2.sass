@@ -1,0 +1,260 @@
+@import 'overallStyles'
+@import 'allVariables';
+.Two
+    left: 100%
+.wallTwo
+    +BACKGROUND_IMG(url(../img/wallpapers/wallpaper_2_0.jpg))
+.packTwo
+    width: calc(100% - 320px)
+    left: 250px
+.contMenuPage2
+    width: max-content
+    position: relative
+.menuCareerContainer
+    +POS_TB_LR(b1c1, 0, -100px)
+    +WIDTH_HEIGHT(ab, 300px, 300px)
+    +TRANSITION(.3s)
+    +BORDER_RADIUS(10px)
+    +PADDING_MARGIN(b, 0 10px)
+    z-index: 1
+    background-color: var(--myHalfMainBackTheme)
+    cursor: pointer
+    opacity: 0
+.menuCareerContainerJS
+    +POS_TB_LR(c1, -325px)
+.menuCareerPoints
+    +POS_TB_LR(a, absolute)
+    +WIDTH_HEIGHT(a, auto)
+    +PADDING_MARGIN(a, 90px)
+    +TRANSITION()
+    +BORDER_RADIUS(10px)
+    box-sizing: border-box
+    text-align: center
+    font-size: 35px
+    color: var(--myTxtDark)
+.menuCareerPointsJS
+    +PADDING_MARGIN(a, 15px)
+    color: var(--myTxtLight)
+#leftYear
+    +POS_TB_LR(b1c1, 0, 0)
+#topYear
+    +POS_TB_LR(b1c2, 0, 0)
+#rightYear
+    +POS_TB_LR(b2c2, 0, 0)
+#bottomYear
+    +POS_TB_LR(b2c1, 0, 0)
+.yearsJS
+    color: var(--myTxtTheme)
+.menuCareerIndicator  
+    +POS_TB_LR(ab1c1, absolute, 50%, 50%)
+    +WIDTH_HEIGHT(ab, 100px, 100px)
+    +BORDER_RADIUS(50%)
+    +TRANSFORM(translate(-50%,-50%))
+    +TRANSITION(.3s)
+    display: block
+    box-sizing: border-box
+    background-color: black
+    box-shadow: 0px 0 4px 2px black , 0px 0px 8px 6px var(--myTheme)
+.menuCareerIndicatorJS0
+    box-shadow: 2px 0 4px 2px $Black , -8px -8px 12px 6px var(--myTheme)
+.menuCareerIndicatorJS1
+    box-shadow: 2px 0 4px 2px $Black , 8px -8px 12px 6px var(--myTheme)
+.menuCareerIndicatorJS2
+    box-shadow: 2px 0 4px 2px $Black , 8px 8px 12px 6px var(--myTheme)
+.menuCareerIndicatorJS3
+    box-shadow: 2px 0 4px 2px $Black , -8px 8px 12px 6px var(--myTheme)
+.menuCareerInfo
+    +POS_TB_LR(ab1c1, absolute, 50%, 50%)
+    +WIDTH_HEIGHT(ab, 180px, 180px)
+    +TRANSFORM(translate(-50%,-50%))
+    +BORDER_RADIUS(50%)
+    +TRANSITION(.2s)
+    background-color: black
+.menuCareerInfo::before
+    +POS_TB_LR(ab1c1, absolute, 85px, 50%)
+    +WIDTH_HEIGHT(ab, max-content, max-content)
+    +TRANSFORM(translate(-50%,-50%))
+    color: var(--myTxtTheme)
+    font-weight: lighter
+    font-size: 11px
+    content: "Porusz myszką aby rozpocząć"
+.menuCareerInfoJS2
+.menuCareerInfoJS2::before
+    content: "Move the mouse to start"
+.menuCareerInfoJS
+    opacity: 0
+.menuCareerMouseAnimation
+    +POS_TB_LR(ab1c1, absolute, 60%, 50%)
+    +WIDTH_HEIGHT(ab, 20px, 25px)
+    +TRANSFORM(translate(-50%,-50%))
+    +BORDER_RADIUS(30% 30% 10% 10%)
+    border: 2px solid var(--myBorder)
+.menuCareerMouseAnimationActive
+    +TRANSITION(.3s)
+    +ANIMATION(mouseMove 3s ease-in-out infinite)
+.menuCareerMouseAnimationActive::before
+    +POS_TB_LR(ab1c1, absolute, 50%, 50%)
+    +WIDTH_HEIGHT(ab, 8px, 2px)
+    +TRANSFORM(translate(-50%,-200%) rotate(-90deg))
+    background-color: white
+    content: ""
+.menuCareerTip
+    opacity: 0
+    +WIDTH_HEIGHT(a, max-content)
+    +POS_TB_LR(ab2c1, absolute, -20px, 50%)
+    +TRANSFORM(translateX(-50%))
+    +PADDING_MARGIN(a, 5px)
+    +BORDER_RADIUS(5px)
+    +TRANSITION(.4s)
+    background-color: var(--myHalfMainBackTheme)
+    box-sizing: border-box
+    text-align: center
+    font-size: 14px
+    color: var(--myTxtTheme)
+.menuCareerTipJS
+    +POS_TB_LR(b2, -35px)
+    opacity: 1
+.companyContainer
+    +POS_TB_LR(ab1c1, relative, 0, -100px)
+    +WIDTH_HEIGHT(ab, max-content, max-content)
+    +PADDING_MARGIN(ab, 20px 35px, 0 auto)
+    +BORDER_RADIUS(10px)
+    +TRANSITION(.5s)
+    display: block
+    opacity: 0
+    box-sizing: border-box
+    background-color: var(--myHalfMainBackTheme)
+    font-size: 40px
+    text-align: center
+.companyName
+    +POS_TB_LR(a, relative)
+    color: transparent
+.companyNameLettersJS1
+    +POS_TB_LR(ab1, relative, -50px)
+    +TRANSITION(.3s)
+    opacity: 0
+.companyNameLettersJS2
+    +POS_TB_LR(ab1, relative, 50px)
+    +TRANSITION(.3s)
+    opacity: 0
+.companyNameLettersJS3
+    +POS_TB_LR(b1, 0)
+    +PADDING_MARGIN(b, 2px)
+    color: var(--myTxtTheme)
+    opacity: 1
+.companyPosition
+    +POS_TB_LR(a, relative)
+    color: transparent
+    font-size: 25px
+.companyPositionLettersJS1
+    +POS_TB_LR(ac1, relative, 0)
+    +PADDING_MARGIN(b, 2px)
+    +TRANSITION(.3s)
+    opacity: 0
+.companyPositionLettersJS3
+    opacity: 1
+    color: var(--myTxtGrey)
+.companyYears
+    @extend .companyPosition
+.companyYearsLettersJS1
+    +POS_TB_LR(ac1, relative, 2px)
+    +PADDING_MARGIN(b, 4px)
+    +TRANSITION(.3s)
+    opacity: 0
+.companyYearsLettersJS3
+    opacity: 1
+    color: var(--myTxtGrey)
+.careerLikeIndicatorConatainer
+    @extend .companyContainer
+    color: var(--myTxtTheme)
+    font-size: 22px
+    +PADDING_MARGIN(b, 30px auto)
+.careerLikeStarsContainer
+    +POS_TB_LR(a, relative)
+    +WIDTH_HEIGHT(ab, max-content, max-content)
+    +PADDING_MARGIN(ab, 15px 0 0 0, 0 auto)
+.careerLikeStars
+    +POS_TB_LR(a, relative)
+    +WIDTH_HEIGHT(ab, 50px, 50px)
+    +TRANSITION(.3s)
+    display: inline-block
+    background-color: #525252
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)
+.careerLikeStarsJS1
+    background-color: white
+.dutiesButton
+    @extend .companyContainer
+    font-size: 20px
+    +BUTTON()
+// .dutiesButtonJS1
+//     +ANIMATION(menuSkillShadow linear 3s infinite)
+.dutiesContainer
+    +BORDER_RADIUS(10px)
+    +PADDING_MARGIN(a, 15px 35px 25px 35px)
+    display: block
+    cursor: pointer
+    background-color: var(--myHalfMainBackTheme)
+    +WIDTH_HEIGHT(a, max-content)
+    max-width: 90%
+    z-index: 100
+    transition: .7s
+.contMenuPage3
+    transition: .7s
+    top: -1200px
+.dutiesClose
+    +POS_TB_LR(ab1c1, relative, 0, 0)
+    +WIDTH_HEIGHT(a, max-content)
+    +BORDER_RADIUS(10px)
+    +PADDING_MARGIN(ab, 6px 10px, auto)
+    background-color: var(--myRed)
+    color: var(--myTxtDark)
+.dutiesClose:hover
+    background-color: white
+.dutiesBoxesJS1
+    +POS_TB_LR(a, relative)
+    +WIDTH_HEIGHT(a, max-content)
+    max-width: 90%
+    +PADDING_MARGIN(ab, 10px 35px, 25px auto)
+    +BORDER_RADIUS(10px)
+    border: var(--myBorderSize) solid var(--myBorder)
+    color: var(--myTxtLight)
+    box-sizing: border-box
+    text-align: center
+.dutiesBoxesJS1:hover
+    background-color: var(--myTheme)
+@keyframes mouseMove
+    from
+        height: 25px
+        transform: translate(-50%,-50%)
+        -webkit-transform: translate(-50%,-50%)
+        -moz-transform: translate(-50%,-50%)
+        -ms-transform: translate(-50%,-50%)
+        -o-transform: translate(-50%,-50%)
+    25%
+        height: 33px
+        width: 22px
+    50%
+        box-shadow: 0 0 4px 1px var(--myTheme)
+        height: 25px
+        width: 20px
+        transform: translate(-50%,-200%) 
+        -webkit-transform: translate(-50%,-200%)
+        -moz-transform: translate(-50%,-200%)
+        -ms-transform: translate(-50%,-200%)
+        -o-transform: translate(-50%,-200%)
+    75%
+        height: 33px
+        width: 22px
+    to
+        height: 25px
+        transform: translate(-50%,-50%)
+        -webkit-transform: translate(-50%,-50%)
+        -moz-transform: translate(-50%,-50%)
+        -ms-transform: translate(-50%,-50%)
+        -o-transform: translate(-50%,-50%)
+.siteTwoChildrenJS
+    left: 0
+    opacity: 1
+.siteTwoChildrenJS2
+    top: 0
+    opacity: 1

@@ -1,0 +1,120 @@
+@import 'overallStyles'
+
+.Three
+    left: 200%
+.wallThree
+    +BACKGROUND_IMG(url(../img/wallpapers/wallpaper_4.jpg))
+.packThree
+    width: 100%
+    max-width: 80%
+.skillsMainText
+    +FILTER(drop-shadow(2px 4px 6px black))
+    font-size: 60px
+    +PADDING_MARGIN(b, 0 auto 50px auto)
+    text-align: center
+.textMain
+    +POS_TB_LR(ab1, relative, 50px)
+    +TRANSITION(1s)
+    opacity: 0
+    color: transparent
+    letter-spacing: 2px
+.textMainJS
+    +POS_TB_LR(b1, 0)
+    color: var(--myTxtTheme)
+    opacity: 1
+.skillsContainer
+    text-align: center
+.menuSkillsContainer
+    +POS_TB_LR(ab1c1, relative, 0, -100px)
+    +WIDTH_HEIGHT(a, max-content)
+    +BORDER_RADIUS(10px)
+    +OVERX_OVERY(ab, hidden, hidden)
+    +TRANSITION(.4s)
+    +FILTER(drop-shadow(2px 4px 6px black))
+    background-color: var(--myHalfMainBackTheme)
+    opacity: 0
+    +PADDING_MARGIN(b, 0 auto)
+.menuSkillsContainerJS
+    +ANIMATION(menuSkillShadow linear 3s infinite) 
+.menuSkillsContainerJS2
+    +POS_TB_LR(c1, 0)
+    opacity: 1
+.menuSkillsTabs
+    +POS_TB_LR(a, relative)
+    +WIDTH_HEIGHT(a, max-content)
+    +PADDING_MARGIN(a, 10px 20px)
+    font-size: 18px
+    letter-spacing: 1px
+    display: inline-block
+    color: var(--myTxtLight)
+    cursor: pointer
+.menuSkillsIndicator
+    +WIDTH_HEIGHT(ab, 0, 100%)
+    +POS_TB_LR(ab1c1, absolute, 0, 0)
+    +TRANSITION(1.2s)
+    z-index: -1
+    opacity: 0
+    background-color: var(--myTheme)
+    filter: blur(20px)
+.menuSkillsIndicatorJS
+    opacity: .8
+.skillsPointContainer
+    +POS_TB_LR(ab1c1, relative, 50px, 0)
+    +WIDTH_HEIGHT(a, max-content)
+    +PADDING_MARGIN(ab, 5px 15px, 20px)
+    +BORDER_RADIUS(10px)
+    +TRANSITION(.4s)
+    display: inline-block
+    opacity: 0
+    background-color: var(--myHalfMainBackTheme)
+    color: var(--myTxtTheme)
+    font-size: 16px
+    text-align: center
+    box-sizing: border-box
+    &:hover
+        background-color: #000000
+.firstContainerSkills
+    +POS_TB_LR(ab1c1, relative, 50px, 0)
+    +WIDTH_HEIGHT(a, max-content)
+    max-width: 90%
+    +TRANSITION(.4s)
+    +PADDING_MARGIN(ab, 10px 20px, 50px auto 30px auto)
+    display: block
+    background-color: var(--myTheme)
+    color: var(--myTxtLight)
+    font-size: 18px
+.skillsPointContainerJS
+    +POS_TB_LR(b1c1, 0, 0)
+    opacity: 1
+.firstContainerSkills > img
+    display: none
+.skillsImg
+    +POS_TB_LR(a, relative )
+    +WIDTH_HEIGHT(ab, 35px, 35px)
+    display: inline-block
+    +PADDING_MARGIN(b, 0 15px 0 0)
+    vertical-align: middle
+.skillsText
+    +POS_TB_LR(ab1, relative)
+    display: inline-block
+    cursor: default
+    box-sizing: border-box
+.shadowMenuSkill
+    +POS_TB_LR(ab1c1, absolute, 0, 0)
+    +WIDTH_HEIGHT(ab, 20px, 20px)
+    +TRANSFORM(translate(-50%, -50%))
+    +FILTER(blur(20px))
+    +BORDER_RADIUS(50%)
+    box-shadow: 0 0 5px 1px var(--myTheme)
+    background-color: var(--myTheme)
+    z-index: -1
+    opacity: .8
+.shadowMenuSkillJS
+    +TRANSITION(.2s)
+    +WIDTH_HEIGHT(ab, 100px, 100px)
+@keyframes menuSkillShadow
+    0%
+        box-shadow: inset 0 0 0 0 var(--myTheme)
+    100%
+        box-shadow: inset 0px 0px 20px 5px transparent
+
