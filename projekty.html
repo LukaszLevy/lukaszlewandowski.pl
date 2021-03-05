@@ -22,7 +22,7 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link href="css/projekty.css" rel="stylesheet" />
+    <link href="projekty.css" rel="stylesheet" />
     <link rel="icon" sizes="64x64" href="favicon.ico" />
   </head>
 
@@ -100,7 +100,7 @@
         <div class="app-descr">Opis</div>
       </div>
       <div class="row mx-2 info-cont">
-        <p class="info-col">
+        <p class="info-col p-4">
           Aplikacja stworzona podczas nauki technologi back-end oraz metod HTTP.
           <br />
           W chwili wysłania zapytania [ wyszukiwania pogody ] przez klienta [
@@ -122,7 +122,7 @@
         <div class="app-descr">Obsługa</div>
       </div>
       <div class="row mx-2 info-cont">
-        <p class="info-col">
+        <p class="info-col p-4">
           W aplikacji można wyszukać aktualną prognozę pogody dla wpisanego
           przez użytkownika miasta. Aplikacja akceptuje tylko duże i małe
           litery. Nie obsługuje polskich liter, znaków specjalnych oraz liczb.
@@ -138,7 +138,7 @@
         <div class="app-descr">REST API</div>
       </div>
       <div class="row mx-2 info-cont">
-        <div class="info-col">
+        <div class="info-col p-4">
           Aplikacja po stronie serwera posiada API dla zapytań GET. Aby otrzymać
           dane pogodowe dla wybranego miasta należy wysłać zapytanie z
           następującymi danymi : <br />
@@ -175,8 +175,8 @@
           </div>
           Przykładowa odpowiedż aplikacji - obiekt w formacie JSON. Poniżej
           przykład dla zapytania dla miasta Bydgoszcz.
-          <div class="important">
-            <div class="imp-txt">
+        
+            <div class="imp-txt p-4">
               { "coord":{ "lon":18.0076, "lat":53.1235 }, "weather":[{ "id":500,
               "main":"Rain", "description":"słabe opady deszczu", "icon":"10d"
               }], "base":"stations", "main":{ "temp":3.02, "feels_like":-2.56,
@@ -187,7 +187,7 @@
               "sunset":1614961983}, "timezone":3600, "id":3102014,
               "name":"Bydgoszcz", "cod":200 }
             </div>
-          </div>
+          
         </div>
       </div>
     </section>
