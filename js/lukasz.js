@@ -875,7 +875,7 @@ $(START_BUTTON).one("click", function(){
         const EMAIL_PHONE_CONT = $(".emailPhoneCont");
         const MAIL = $("#mail");
         const PHONE = $("#phone");
-        var ADRESS = ["https://www.linkedin.com/in/lukaszlewandowskilaboratorium/", "https://www.facebook.com/lukasz.lewandowski.14/", "https://github.com/LukaszLevy/lukaszlewandowski.pl", "https://profil.pracuj.pl/?_ga=2.86218074.371591003.1604301688-1302104470.1604301688&_gac=1.83668452.1604314620.CjwKCAiA-f78BRBbEiwATKRRBHI3vFWBWTwBpfXAWVG9JpBK2ByUiXVp6DfYZC6S-NMisIWJUbRjpxoCDiEQAvD_BwE"];
+        var ADRESS = ["https://www.linkedin.com/in/lukaszlewandowskilaboratorium/", "https://www.facebook.com/lukasz.lewandowski.14/", "https://github.com/LukaszLevy", "https://profil.pracuj.pl/?_ga=2.86218074.371591003.1604301688-1302104470.1604301688&_gac=1.83668452.1604314620.CjwKCAiA-f78BRBbEiwATKRRBHI3vFWBWTwBpfXAWVG9JpBK2ByUiXVp6DfYZC6S-NMisIWJUbRjpxoCDiEQAvD_BwE"];
         var TEXT_ADD_ICON = ["LINKEDIN", "FACEBOOK", "GITHUB", "PRACUJ.PL"];
         var NEW_TEXT_PROFILE = "Przejdź do profilu";
         var OLD_TEXT_PROFILE = "Moje profile";
