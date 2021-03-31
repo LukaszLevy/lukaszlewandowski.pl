@@ -148,6 +148,9 @@ img:hover {
 .info-spec-cont {
   text-align: center;
   margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  place-content: flex-start;
 }
 .tech-ovr {
   background-color: black;
@@ -155,10 +158,19 @@ img:hover {
   padding: var(--pad-sml);
   border-radius: 10px;
   margin-bottom: 10px;
+  min-width: 100%;
 }
 .tech-des {
   color: white;
-  margin-bottom: 5px;
+  color: white;
+  margin: 5px;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  padding: 5px;
+  border: solid 1px;
+  border-radius: 10px;
+  min-width: 80px;
 }
 
 .p-txt {
@@ -179,4 +191,8 @@ img:hover {
   padding: var(--pad-sml);
   border-radius: var(--br-r);
   font-size: var(--small-txt);
+}
+.tech-tag-2{
+  width: max-content;
+  min-width: 0;
 }

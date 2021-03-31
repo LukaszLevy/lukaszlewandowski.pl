@@ -36,6 +36,92 @@
     </div>
   </section>
 
+  <!-- kontakty -->
+  <section class="container app-cont app-cont-first">
+    <div class="row app-title"><span>KONTAKTY</span></div>
+
+    <div class="row app-info-cont">
+      <div class="app-descr">Link do aplikacji</div>
+    </div>
+    <div class="row info-cont">
+      <a target="_blank" href="https://contacts-levandovski.herokuapp.com/" class="app-link">
+        https://contacts-levandovski.herokuapp.com//
+      </a>
+    </div>
+
+    <div class="row app-info-cont">
+      <div class="app-descr">Technologie i narzędzia</div>
+    </div>
+    <div class="row info-cont">
+      <div class="col info-spec-cont">
+        <div class="col tech-ovr">front-end</div>
+        <div class="col tech-des">java script</div>
+        <div class="col tech-des">jquery</div>
+        <div class="col tech-des">ajax</div>
+        <div class="col tech-des">json</div>
+        <div class="col tech-des">html</div>
+        <div class="col tech-des">css</div>
+      </div>
+      <div class="col info-spec-cont">
+        <div class="col tech-ovr">back-end</div>
+        <div class="col tech-des">node</div>
+        <div class="col tech-des">mongoDB</div>
+        <div class="col tech-des">express</div>
+        <div class="col tech-des">dotenv</div>
+        <div class="col tech-des">serve-static</div>
+        <div class="col tech-des">nodemon</div>
+      </div>
+      <div class="col info-spec-cont">
+        <div class="col tech-ovr">narzędzia</div>
+        <div class="col tech-des">heroku</div>
+        <div class="col tech-des">atlas mongo</div>
+        <div class="col tech-des">mongoDB compass</div>
+        <div class="col tech-des">visual studio</div>
+        <div class="col tech-des">git</div>
+        <div class="col tech-des">linux</div>
+        <div class="col tech-des">npm</div>
+      </div>
+    </div>
+
+    <div class="row app-info-cont">
+      <div class="app-descr">Opis</div>
+    </div>
+    <div class="row info-cont">
+      <p class="p-txt">
+        Aplikacja stworzona podczas nauki technologi back-end oraz metod HTTP.
+        W chwili wysłania zapytania [ wyszukiwania pogody ] przez klienta [
+        przeglądarkę ], zostaje wysłane zapytanie [ ajax ] do stworzonej
+        przeze mnie aplikacji back-end [ express ] na platformie heroku. Po
+        stronie serwera aplikacja przetwarza żądanie od klienta i wysyła
+        zapytanie [ przy pomocy axios ] do dostawcy pogody, uzykując dane
+        odnośnie aktualnej pogody, w odpowiedzi wysyła dane w formacie json do
+        klienta. Rozwiązanie takie pozwoliło na stworzenie zmiennych
+        środowiskowych w heroku. Dzięki temu klucze api po stronie klienta są
+        niedostępne.
+        Aplikacja testowana na: Microsoft Edge, Google Chrome, Windows 10, Linux Mint, Android 10 [ Telefony Samsung S10
+        i S20 ].
+      </p>
+    </div>
+
+    <div class="row app-info-cont">
+      <div class="app-descr">Obsługa</div>
+    </div>
+    <div class="row info-cont">
+      <p class="p-txt">
+        W aplikacji można wyszukać aktualną prognozę pogody dla wpisanego
+        przez użytkownika miasta. Aplikacja akceptuje tylko
+        litery. Można uzywać znaków "spacji" i "myślnika". Wilekość liter nie ma
+        znaczenia. Aplikacja ma ograniczenie rezultatów wyszukiwania [ max 5
+        miast ]. Dodatkowe funkcje: odświeżanie pogody dla danego miasta,
+        zmiana miasta zanjdującego się na liście rezultatów.
+      </p>
+    </div>
+
+   
+  </section>
+
+
+  <!-- Pogoda -->
   <section class="container app-cont app-cont-first">
     <div class="row app-title"><span>POGODA</span></div>
 
@@ -135,19 +221,19 @@
         <br /><br />
 
         <div>
-          <div class="tech-ovr tech-tag">url</div>
-          <div class="tech-api tech-tag">
+          <div class="tech-ovr tech-tag tech-tag-2">url</div>
+          <div class="tech-api tech-tag tech-tag-2">
             https://weather-levandovski.herokuapp.com/w
           </div>
           <br />
-          <div class="tech-ovr tech-tag">dataType</div>
-          <div class="tech-api tech-tag">json</div>
+          <div class="tech-ovr tech-tag tech-tag-2">dataType</div>
+          <div class="tech-api tech-tag tech-tag-2">json</div>
           <br />
-          <div class="tech-ovr tech-tag">data</div>
-          <div class="tech-api tech-tag">city: cityName</div>
+          <div class="tech-ovr tech-tag tech-tag-2">data</div>
+          <div class="tech-api tech-tag tech-tag-2">city: cityName</div>
           <br />
-          <div class="tech-ovr tech-tag">type</div>
-          <div class="tech-api tech-tag">GET</div>
+          <div class="tech-ovr tech-tag tech-tag-2">type</div>
+          <div class="tech-api tech-tag tech-tag-2">GET</div>
         </div>
 
         <br /><br />
@@ -155,16 +241,16 @@
         <br /><br />
 
         <div class="important">
-          <div class="tech-ovr tech-tag">url</div>
-          <div class="tech-api tech-tag">
+          <div class="tech-ovr tech-tag tech-tag-2">url</div>
+          <div class="tech-api tech-tag tech-tag-2">
             https://weather-levandovski.herokuapp.com/w
           </div>
           <br />
-          <div class="tech-ovr tech-tag">key</div>
-          <div class="tech-api tech-tag">city</div>
+          <div class="tech-ovr tech-tag tech-tag-2">key</div>
+          <div class="tech-api tech-tag tech-tag-2">city</div>
           <br />
-          <div class="tech-ovr tech-tag">value</div>
-          <div class="tech-api tech-tag">nazwa miasta</div>
+          <div class="tech-ovr tech-tag tech-tag-2">value</div>
+          <div class="tech-api tech-tag tech-tag-2">nazwa miasta</div>
           <br />
         </div>
 
@@ -188,19 +274,7 @@
     </div>
   </section>
 
-  <section class="container app-cont">
-    <div class="row app-title"><span>NASTĘPNA APLIKACJA</span></div>
-
-    <div class="row app-info-cont">
-      <div class="app-descr">OPIS</div>
-    </div>
-    <div class="row info-cont">
-      <p class="p-txt">
-        Tu będzie następna aplikacja. W planach mam stworzenie aplikacji webowej wykorzystującej bazy danych mongoDB.
-      </p>
-    </div>
-
-  </section>
+  
 
 
   <script src="js/jquery-3.4.1.min.js" defer></script>
